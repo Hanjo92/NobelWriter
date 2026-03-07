@@ -34,6 +34,7 @@
 ```text
 NobelWriter/
 ├─ AGENTS.md
+├─ Platform/
 ├─ README.md
 ├─ drafts/
 │  ├─ 초고/
@@ -45,6 +46,21 @@ NobelWriter/
    ├─ novel-writing/
    └─ series-qa/
 ```
+
+## Platform 구조
+
+이 저장소는 플랫폼별 운영 파일을 [Platform](/C:/Nobels/NobelWriter/Platform) 아래에 분리해서 관리할 수 있도록 확장 중입니다.
+
+- [Platform/README.md](/C:/Nobels/NobelWriter/Platform/README.md)
+  - 플랫폼 팩 전체 구조 설명
+- [Platform/OpenAI/README.md](/C:/Nobels/NobelWriter/Platform/OpenAI/README.md)
+  - OpenAI 계열 환경 선택 가이드
+- [Platform/OpenAI/Codex/README.md](/C:/Nobels/NobelWriter/Platform/OpenAI/Codex/README.md)
+  - Codex 적용용 메모
+- [Platform/OpenAI/GPT-OSS/README.md](/C:/Nobels/NobelWriter/Platform/OpenAI/GPT-OSS/README.md)
+  - GPT-OSS 적용용 메모
+
+공용 스킬 자산은 가능한 유지하고, 플랫폼별로 달라지는 운영 파일만 `Platform/` 아래에서 분리 관리하는 방식입니다.
 
 ## 사용 예시
 

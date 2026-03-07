@@ -1,0 +1,7 @@
+interface:
+  display_name: "Novel Writing"
+  short_description: "Narration-first Korean fiction drafting and prose revision."
+  default_prompt: "Use $novel-writing for Korean fiction planning, narration-heavy scene and chapter drafting, prose revision, 초고/개고/원고 production, and description-led manuscript work."
+
+policy:
+  allow_implicit_invocation: true

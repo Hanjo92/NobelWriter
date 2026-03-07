@@ -1,0 +1,4 @@
+interface:
+  display_name: "Character Voice Bible"
+  short_description: "Dialogue-first Korean character voice design and drift repair."
+  default_prompt: "Use $character-voice-bible for dialogue-only revision, speaker differentiation, relationship-based register control, or line-by-line Korean spoken exchange design."
