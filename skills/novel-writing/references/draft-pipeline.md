@@ -12,9 +12,9 @@ The user should be able to open and edit every stage file directly.
 
 Store stage files here:
 
-- `C:/Nobels/NobelWriter/drafts/초고`
-- `C:/Nobels/NobelWriter/drafts/개고`
-- `C:/Nobels/NobelWriter/drafts/원고`
+- `drafts/초고`
+- `drafts/개고`
+- `drafts/원고`
 
 Keep folder names in Korean exactly as above.
 
@@ -127,5 +127,5 @@ If the user gives an existing excerpt and asks for revision:
 In the final response:
 
 - mention that the files were saved
-- provide the absolute path to the returned stage file and, when helpful, the `초고`, `개고`, and `원고` files
+- provide the saved stage file path and, when helpful, the `초고`, `개고`, and `원고` file paths
 - summarize the main difference between stages in one short sentence

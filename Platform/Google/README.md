@@ -1,6 +1,6 @@
 # Google Platform Pack
 
-이 폴더는 Google 계열 환경(예: Antigravity)에서 NobelWriter를 사용할 때 필요한 플랫폼별 운영 파일을 분리해서 관리하는 공간입니다.
+이 폴더는 Google 계열 환경(예: Antigravity)에서 이 스킬 세트를 사용할 때 필요한 플랫폼별 운영 파일을 분리해서 관리하는 공간입니다.
 
 ## 목적
 

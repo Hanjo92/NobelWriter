@@ -1,4 +1,4 @@
-# NobelWriter — Korean Fiction Writing Rules
+# Korean Fiction Writing Rules
 
 ## Korean Fiction Default
 

@@ -1,4 +1,4 @@
-# NobelWriter GPT-OSS Router
+# Korean Fiction GPT-OSS Router
 
 이 문서는 사용자 요청을 어떤 작업층으로 보낼지 결정하는 GPT-OSS용 라우팅 규칙이다.
 

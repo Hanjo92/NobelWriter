@@ -1,6 +1,6 @@
 # Anthropic / Claude Code
 
-이 폴더는 Claude Code 환경에서 NobelWriter 스킬 세트를 적용할 때 사용하는 플랫폼 전용 파일을 모아두는 자리입니다.
+이 폴더는 Claude Code 환경에서 이 스킬 세트를 적용할 때 사용하는 플랫폼 전용 파일을 모아두는 자리입니다.
 
 ## Claude Code 규칙 파일 컨벤션
 
