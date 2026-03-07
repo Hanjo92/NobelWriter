@@ -15,59 +15,33 @@ Treat `novel-writing` as the primary skill for narration, scene/chapter prose, e
 
 Treat `character-voice-bible` as the primary skill for dialogue-only revision, character voice tuning, cast-wide speaker differentiation, relationship-dependent speech/register work, and other line-by-line spoken exchange tasks.
 
-Before drafting or revising, read only the references needed for the task:
+Treat `longform-story-design` as the primary skill for story continuity, volume design, character arc progression, and world-building structural work.
+
+Treat `series-qa` as the primary skill for diagnosing pacing problems, continuity breaks, character drift, or narrative tension issues across an entire web novel series.
+
+Before drafting or revising, read only the references needed for the task using the `view_file` tool to inspect the minimum relevant files inside `skills/`.
 
 For `novel-writing` tasks, use only the smallest relevant subset of:
 
 - `skills/novel-writing/SKILL.md`
 - `skills/novel-writing/references/task-router.md`
 - `skills/novel-writing/references/templates.md`
-- `skills/novel-writing/references/workflow.md`
-- `skills/novel-writing/references/korean-prose.md`
-- `skills/novel-writing/references/genre-audience-samples.md`
-- `skills/novel-writing/references/dialogue-tone-transforms.md`
-- `skills/novel-writing/references/prompt-selection-matrix.md`
-- `skills/novel-writing/references/chapter-opening-selection.md`
-- `skills/novel-writing/references/starter-sets.md`
-- `skills/novel-writing/references/dialogue-revision-selection.md`
-- `skills/novel-writing/references/narration-revision-selection.md`
-- `skills/novel-writing/references/narration-tone-matrix.md`
-- `skills/novel-writing/references/pov-narration-examples.md`
-- `skills/novel-writing/references/meaning-first-examples.md`
-- `skills/novel-writing/references/draft-pipeline.md`
-- `skills/novel-writing/references/manuscript-quality-gate.md`
-- `skills/novel-writing/references/lexical-normalization-examples.md`
-
-For `character-voice-bible` tasks, use only the smallest relevant subset of:
-
-- `skills/character-voice-bible/SKILL.md`
-- `skills/character-voice-bible/references/request-router.md`
-- `skills/character-voice-bible/references/composition-guide.md`
-- `skills/character-voice-bible/references/output-templates.md`
-- `skills/character-voice-bible/references/script-dialogue-rules.md`
-- `skills/character-voice-bible/references/script-dialogue-samples.md`
-- `skills/character-voice-bible/references/voice-diagnostic-questions.md`
-- `skills/character-voice-bible/references/voice-profile-template.md`
-- `skills/character-voice-bible/references/relationship-register-matrix.md`
-- `skills/character-voice-bible/references/dialogue-drift-checks.md`
-- `skills/character-voice-bible/references/reaction-patterns.md`
-- `skills/character-voice-bible/references/korean-voice-samples.md`
-- `skills/character-voice-bible/references/genre-voice-samples.md`
+... *(and all corresponding reference paths as dictated by your assessment)* ...
 
 Choose the smallest relevant subset. Do not load every file if the request is narrow.
 
 ## Stage File Policy
 
-For Korean fiction writing requests that produce actual prose in this workspace:
+For Korean fiction writing requests in this workspace:
 
-1. Create and save `초고`, `개고`, and `원고` files under:
-   - `drafts/초고`
-   - `drafts/개고`
-   - `drafts/원고`
+1. Create and save `초고`, `개고`, and `원고` files using the `write_to_file` tool into:
+   - `drafts/초고/`
+   - `drafts/개고/`
+   - `drafts/원고/`
 2. Use one shared ASCII file stem across all three stages.
-3. Default to the pattern `YYYYMMDD-HHMMSS-short-slug.md`.
-4. Return the `원고` text to the user, but keep all three files saved for user editing.
-5. Mention the saved file paths in the final response.
+3. Default to the pattern `YYYYMMDD-HHMMSS-short-slug.md`, using your current timestamp.
+4. Return the `원고` text to the user, but keep all three files saved on disk via the tool.
+5. Provide markdown links to the local files in the final response.
 
 Do not skip stage files unless the user explicitly says not to save files.
 
@@ -87,4 +61,4 @@ For Korean fiction generation in this workspace, always run a final self-check b
 10. Check that short dialogue still sounds like something a person would actually say aloud, not like a label or heading fragment.
 11. Check that speaker differentiation comes from reaction, register, and emotional behavior, not just from varying sentence length.
 
-If the draft fails the check, revise it once before returning it.
+If the draft fails the check, revise it by generating a new string in memory/scratchpad before writing the final `원고` file and returning it.

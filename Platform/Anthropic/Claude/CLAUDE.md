@@ -1,4 +1,4 @@
-# Workspace Rules
+# Korean Fiction Writing Rules
 
 ## Korean Fiction Default
 
@@ -15,7 +15,11 @@ Treat `novel-writing` as the primary skill for narration, scene/chapter prose, e
 
 Treat `character-voice-bible` as the primary skill for dialogue-only revision, character voice tuning, cast-wide speaker differentiation, relationship-dependent speech/register work, and other line-by-line spoken exchange tasks.
 
-Before drafting or revising, read only the references needed for the task:
+Treat `longform-story-design` as the primary skill for continuity architecture, volume design, character arc management, and world-building structural planning that spans multiple chapters or arcs.
+
+Treat `series-qa` as the primary skill for diagnosing continuity breaks, pacing problems, payoff failures, narration instability, or dialogue drift across a long-form manuscript or web novel arc.
+
+Before drafting or revising, read only the references you need. Use the Read tool to inspect only the minimum relevant files from `skills/`. Do not read every reference file if the request is narrow.
 
 For `novel-writing` tasks, use only the smallest relevant subset of:
 
@@ -54,26 +58,24 @@ For `character-voice-bible` tasks, use only the smallest relevant subset of:
 - `skills/character-voice-bible/references/korean-voice-samples.md`
 - `skills/character-voice-bible/references/genre-voice-samples.md`
 
-Choose the smallest relevant subset. Do not load every file if the request is narrow.
-
 ## Stage File Policy
 
 For Korean fiction writing requests that produce actual prose in this workspace:
 
-1. Create and save `초고`, `개고`, and `원고` files under:
-   - `drafts/초고`
-   - `drafts/개고`
-   - `drafts/원고`
+1. Create and save `초고`, `개고`, and `원고` files using the Write tool into:
+   - `drafts/초고/`
+   - `drafts/개고/`
+   - `drafts/원고/`
 2. Use one shared ASCII file stem across all three stages.
-3. Default to the pattern `YYYYMMDD-HHMMSS-short-slug.md`.
-4. Return the `원고` text to the user, but keep all three files saved for user editing.
-5. Mention the saved file paths in the final response.
+3. Default to the pattern `YYYYMMDD-HHMMSS-short-slug.md`, using the current timestamp.
+4. Return the `원고` text to the user, but keep all three files saved on disk.
+5. Mention the saved file paths at the end of the response.
 
 Do not skip stage files unless the user explicitly says not to save files.
 
 ## Mandatory Quality Pass
 
-For Korean fiction generation in this workspace, always run a final self-check before answering:
+For Korean fiction generation in this workspace, always run a final self-check before responding:
 
 1. Remove translation-like Korean syntax.
 2. Remove dialogue that explains information both speakers already know.
@@ -87,4 +89,4 @@ For Korean fiction generation in this workspace, always run a final self-check b
 10. Check that short dialogue still sounds like something a person would actually say aloud, not like a label or heading fragment.
 11. Check that speaker differentiation comes from reaction, register, and emotional behavior, not just from varying sentence length.
 
-If the draft fails the check, revise it once before returning it.
+If the draft fails the check, revise it before writing the `원고` file and returning it.

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Longform Story Design"
+  short_description: "Planning and continuity architecture for Korean long-form fiction."
+  default_prompt: "Use the longform-story-design tools and references to build scalable Korean series architecture, repair long-draft drift, and prepare continuity-safe arc, volume, and chapter-range design packets."
