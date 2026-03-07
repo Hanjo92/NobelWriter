@@ -10,9 +10,9 @@
 
 ## 하위 구조
 
-- [Codex](/C:/Nobels/NobelWriter/Platform/OpenAI/Codex)
+- [Codex](./Codex)
   - Codex 환경용 운영 파일
-- [GPT-OSS](/C:/Nobels/NobelWriter/Platform/OpenAI/GPT-OSS)
+- [GPT-OSS](./GPT-OSS)
   - GPT-OSS 환경용 운영 파일
 
 ## 사용 방식
@@ -20,7 +20,7 @@
 1. 현재 사용하는 환경이 Codex인지 GPT-OSS인지 먼저 결정합니다.
 2. 해당 폴더의 README를 읽고 필요한 파일을 확인합니다.
 3. 플랫폼 전용 운영 파일을 워크스페이스 루트 또는 대상 환경에 맞게 복사하거나 반영합니다.
-4. 공용 자산인 `skills/`, `references/`, `drafts/` 구조는 가능한 유지합니다.
+4. 공용 자산인 `skills/`, `skills/*/references/`, `drafts/` 구조는 가능한 유지합니다.
 
 ## 공용 원칙
 

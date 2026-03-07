@@ -17,7 +17,16 @@
 
 1. 현재 사용하는 환경에 맞는 폴더의 README를 읽고 필요한 파일을 확인합니다.
 2. 플랫폼 전용 운영 파일을 워크스페이스 루트 또는 대상 환경에 맞게 복사하거나 반영합니다.
-3. 공용 자산인 `skills/`, `references/`, `drafts/` 구조는 가능한 유지합니다.
+3. 공용 자산인 `skills/`, `skills/*/references/`, `drafts/` 구조는 가능한 유지합니다.
+
+## 권장 흐름
+
+- Claude Code를 쓸 때
+  - `Platform/Anthropic/Claude/README.md`부터 확인
+
+## 메모
+
+앞으로 Anthropic 계열의 다른 환경이 추가되면 같은 방식으로 하위 폴더를 늘립니다.
 
 ## 공용 원칙
 

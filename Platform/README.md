@@ -14,7 +14,7 @@ NobelWriter는 크게 두 층으로 나뉩니다.
 
 1. 공용 자산
    - `skills/`
-   - `references/`
+   - `skills/*/references/`
    - 소설 작업 규칙과 예시
 2. 플랫폼별 운영 레이어
    - 시스템 프롬프트
@@ -26,13 +26,13 @@ NobelWriter는 크게 두 층으로 나뉩니다.
 
 ## 현재 구조
 
-- [OpenAI](/C:/Nobels/NobelWriter/Platform/OpenAI)
+- [OpenAI](./OpenAI)
   - OpenAI 계열 런타임용 파일
   - 하위에 `Codex`, `GPT-OSS` 같은 환경별 폴더를 둠
-- [Google](/C:/Nobels/NobelWriter/Platform/Google)
+- [Google](./Google)
   - Google 계열 런타임용 파일
   - 하위에 `Antigravity` 환경별 폴더를 둠
-- [Anthropic](/C:/Nobels/NobelWriter/Platform/Anthropic)
+- [Anthropic](./Anthropic)
   - Anthropic Claude Code 런타임용 파일
   - 하위에 `Claude` 환경별 폴더를 둠 (`CLAUDE.md` + 슬래시 커맨드 기반)
 
@@ -41,7 +41,7 @@ NobelWriter는 크게 두 층으로 나뉩니다.
 1. 현재 사용할 AI 서비스 또는 런타임을 결정합니다.
 2. 해당 플랫폼 폴더의 README를 읽습니다.
 3. 필요한 운영 파일만 워크스페이스 또는 대상 환경으로 반영합니다.
-4. 공용 자산 구조는 가능한 유지합니다.
+4. 공용 자산인 `skills/`, `skills/*/references/`, `drafts/` 구조는 가능한 유지합니다.
 
 ## 확장 방식
 

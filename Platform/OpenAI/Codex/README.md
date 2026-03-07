@@ -26,8 +26,29 @@
 
 1. 이 폴더의 `AGENTS.md`를 워크스페이스 루트의 `AGENTS.md`로 복사하거나 교체한다.
 2. 이 폴더의 `skills/*/agents/openai.yaml` 파일들을 대상 워크스페이스의 같은 경로에 복사하거나 교체한다.
-3. `skills/` 본문과 `references/`가 대상 워크스페이스에 함께 존재하는지 확인한다.
+3. `skills/` 본문과 `skills/*/references/`가 대상 워크스페이스에 함께 존재하는지 확인한다.
 4. 적용 후 스킬 호출, 라우팅, 파일 저장 규칙이 정상 동작하는지 확인한다.
+
+## 플랫폼 전환 가이드
+
+다른 플랫폼에서 Codex로 전환할 때 처리해야 하는 파일 목록입니다.
+
+### Google Antigravity → Codex
+
+| 작업 | 대상 경로 |
+|------|-----------|
+| **교체** | `AGENTS.md` → 이 폴더의 `AGENTS.md`로 덮어쓴다 |
+| **교체** | `skills/*/agents/antigravity.yaml` → 각각 `openai.yaml`로 교체한다 |
+| **삭제** | `skills/*/agents/antigravity.yaml` 파일이 남아 있으면 제거한다 |
+
+### Anthropic Claude → Codex
+
+| 작업 | 대상 경로 |
+|------|-----------|
+| **교체** | 루트 `CLAUDE.md` → 이 폴더의 `AGENTS.md`로 교체한다 (`CLAUDE.md`는 삭제) |
+| **추가** | `skills/*/agents/openai.yaml` 파일들을 각 스킬 폴더에 추가한다 |
+| **삭제** | `.claude/commands/` 폴더 전체를 삭제한다 (Codex에서는 사용 안 함) |
+| **삭제** | `skills/*/commands/*.md` 파일들을 삭제한다 |
 
 ## 체크리스트
 
@@ -59,5 +80,5 @@
 ### 주의사항
 
 - 이 폴더는 Codex 운영 파일만 담습니다.
-- `SKILL.md`와 `references/`는 공용 자산이므로 기본적으로 루트 `skills/`를 사용합니다.
+- `SKILL.md`와 `skills/*/references/`는 공용 자산이므로 기본적으로 루트 `skills/`를 사용합니다.
 - 루트 파일이 변경되면 이 패키지 사본도 함께 갱신해야 합니다.
