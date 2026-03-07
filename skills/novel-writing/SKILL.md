@@ -1,15 +1,15 @@
 ---
 name: novel-writing
-description: Plan, draft, revise, and critique Korean-language fiction with emphasis on manuscript production, chapter execution, scene design, continuity, pacing, tone, and natural Korean prose. Use when Codex is asked to create or improve Korean novels, web novels, serialized fiction, synopses, chapter plans, scene lists, openings, manuscript pages, narration, or revision passes in Korean, including requests such as 기획, 시놉시스, 초고, 개고, 원고, 문장 수정, 장면 수정, and chapter drafting. Exclude standalone dialogue-only revision or character voice tuning, which should route to `character-voice-bible`.
+description: Plan, draft, revise, and critique Korean-language fiction with emphasis on manuscript production, chapter execution, scene design, narration, continuity, pacing, tone, and natural Korean prose. Use when Codex is asked to create or improve Korean novels, web novels, serialized fiction, synopses, chapter plans, scene lists, openings, manuscript pages, narration, or revision passes in Korean, including requests such as 기획, 시놉시스, 초고, 개고, 원고, 문장 수정, 장면 수정, and chapter drafting. Treat this as the primary skill for narration-heavy and description-heavy manuscript work. Exclude standalone dialogue-only revision, character voice tuning, or spoken-exchange texture design, which should route to `character-voice-bible`.
 ---
 
 # Novel Writing
 
 ## Overview
 
-Use this skill to turn a rough fiction idea into a workable Korean-language story package, produce chapter-ready scene plans, draft manuscript prose with controlled assumptions, and revise it in deliberate passes.
+Use this skill to turn a rough fiction idea into a workable Korean-language story package, produce chapter-ready scene plans, draft narration-led manuscript prose with controlled assumptions, and revise it in deliberate passes.
 
-Default to manuscript-first execution when the user wants actual prose. Planning, critique, and story development still matter, but they should support stronger scene and chapter delivery instead of replacing it.
+Default to manuscript-first execution when the user wants actual prose. Planning, critique, and story development still matter, but they should support stronger scene and chapter delivery instead of replacing it. Treat this skill as the prose layer for narration, blocking, image landing, exposition control, and paragraph rhythm.
 
 ## Start From The Deliverable
 
@@ -44,7 +44,7 @@ Before choosing references or generating output, classify the request into one p
 - critique-only: diagnose issues without rewriting unless asked
 
 Choose one primary lane first. Only mix lanes when the user clearly asks for both diagnosis and rewrite, or both planning and drafting.
-If the task is dialogue-only revision or character voice tuning, delegate that lane to `character-voice-bible` and keep `novel-writing` focused on planning, manuscript drafting, stage revision, narration, and critique.
+If the task is dialogue-only revision or character voice tuning, delegate that lane to `character-voice-bible` and keep `novel-writing` focused on planning, manuscript drafting, stage revision, narration, and critique. If both layers matter, let `character-voice-bible` stabilize spoken lines first, then use `novel-writing` to integrate them into finished prose.
 
 Read [references/task-router.md](references/task-router.md) when the request could fit more than one lane or when you need exact routing defaults.
 
@@ -94,8 +94,8 @@ For `1인칭`, let the narration sound like this specific speaker could plausibl
 For `3인칭`, decide whether the scene is close-limited or more distant, then keep the perceiver stable unless the user explicitly asks for omniscient narration.
 Do not shift POV inside the same chapter by default. Treat POV switching as a special-case move allowed only at a chapter boundary unless the user explicitly requests a different structure.
 
-Before writing dialogue-heavy scenes, calibrate each speaker's wording against age, relationship, status gap, current emotion, and what they are trying not to say.
-Treat dialogue as turn-by-turn spoken language shaped by the immediately preceding line, current tension, and the social cost of speaking too directly.
+Before writing dialogue-heavy scenes, calibrate each speaker's wording against age, relationship, status gap, current emotion, and what they are trying not to say. If the main problem is the spoken exchange itself rather than the surrounding prose, route that work to `character-voice-bible` first.
+Treat dialogue as turn-by-turn spoken language shaped by the immediately preceding line, current tension, and the social cost of speaking too directly, but keep this skill centered on how that dialogue lives inside narration and scene prose.
 
 For Korean prose control, read [references/korean-prose.md](references/korean-prose.md).
 For genre and audience-specific tone control, read [references/genre-audience-samples.md](references/genre-audience-samples.md).
@@ -135,6 +135,7 @@ When critiquing, point to concrete breaks in cause-and-effect, character logic, 
 - When the user asks for feedback only, critique first and rewrite only if requested.
 - Default to returning `원고`, but when the user explicitly requests `초고` or `개고`, return that stage after saving the full pipeline.
 - Default to natural Korean syntax over translation-like sentence structure.
+- Treat narration, exposition control, paragraph rhythm, and image clarity as primary responsibilities of this skill.
 - Keep speech level, honorific choice, and relationship-dependent address forms consistent.
 - Prefer Korean-native phrasing unless foreign diction is an intentional voice choice.
 - Make dialogue sound speakable in context, not merely grammatically correct.
@@ -143,6 +144,7 @@ When critiquing, point to concrete breaks in cause-and-effect, character logic, 
 - Make each reply react to the prior utterance instead of sounding like an isolated prepared sentence.
 - Default to colloquial Korean phrasing when characters are speaking, unless the scene clearly requires formal or stylized diction.
 - Ensure `원고` is materially cleaner than `초고` and `개고`, not just a duplicate save.
+- When the requested change is mainly about speaker differentiation, line-by-line pressure, or relationship-dependent dialogue texture, use `character-voice-bible` as the dialogue layer instead of solving it here by narration edits alone.
 
 ## Resource Map
 

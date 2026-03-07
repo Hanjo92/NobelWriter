@@ -7,15 +7,22 @@ Use this file when turning a premise, hook, or short synopsis into a scalable lo
 Expand outward in this order:
 
 1. story engine
-2. genre package selection
-3. series brief
-4. story bible
-5. series expansion map
-6. volume ladder
-7. first volume or first major arc plan
-8. chapter-range plan
+2. structure mode, if relevant
+3. genre package selection
+4. series brief
+5. story bible
+6. series expansion map
+7. volume ladder
+8. first volume or first major arc plan
+9. chapter-range plan
 
 Do not jump from premise directly to 100 chapter summaries.
+
+## Structure Mode Rule
+
+If the user wants `옴니버스`, rotating-focus, or similar architecture, lock that as structure mode before the volume ladder.
+
+This changes how focal characters rotate and how arcs close, but it does not replace genre-package choice.
 
 ## Choose One Main Expansion Logic
 

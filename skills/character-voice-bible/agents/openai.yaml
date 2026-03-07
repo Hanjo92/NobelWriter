@@ -1,4 +1,4 @@
 interface:
   display_name: "Character Voice Bible"
-  short_description: "Korean cast voice design and drift repair."
-  default_prompt: "Use -voice-bible to build Korean character voice cards, separate similar speakers, or audit dialogue drift across chapters."
+  short_description: "Dialogue-first Korean character voice design and drift repair."
+  default_prompt: "Use $character-voice-bible for dialogue-only revision, speaker differentiation, relationship-based register control, or line-by-line Korean spoken exchange design."

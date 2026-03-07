@@ -7,6 +7,7 @@ Use this file when genre-package choice is ambiguous and a stricter rule is need
 Pick the package that best explains why a reader opens the next chapter, not the package that best describes the wallpaper.
 
 Override rule: if the user directly names the genre, honor that label first and map it to the supported package set.
+If the mapped package has strong structural tension with the project, keep it anyway and record a warning instead of silently reclassifying.
 
 Examples:
 
@@ -15,6 +16,100 @@ Examples:
 - `성장형 판타지로 설계해줘` -> `progression / action fantasy`
 
 For a denser shorthand dictionary, use [genre-alias-map.md](genre-alias-map.md).
+For ambiguous label resolution examples, use the `Ambiguous Alias Resolution Samples` section in [genre-package-samples.md](genre-package-samples.md).
+For a compact working template, use [genre-selection-decision-sheet.md](genre-selection-decision-sheet.md).
+
+## Automatic Selection Checklist
+
+Run this in order. Do not skip ahead unless the user gave a direct package label.
+
+### Step 1: Capture the label state
+
+- [ ] Record the raw user label, if any
+- [ ] Mark it as one of: direct package label, ambiguous alias, setting label, or no label
+- [ ] If it is a direct package label, lock that package first, skip reclassification, and move to Step 6 only for warning checks
+- [ ] If it is an ambiguous alias, keep the raw label visible and continue
+
+### Step 2: Write the return sentence
+
+Finish this sentence in one line:
+
+- [ ] `The reader comes back next chapter to see...`
+
+Then classify the return engine:
+
+- [ ] intimacy, confession, jealousy, attachment pressure -> `romance / romance fantasy`
+- [ ] advancement, mastery, rank, challenge clear -> `progression / action fantasy`
+- [ ] truth, culprit, clue meaning, reveal -> `mystery / thriller`
+- [ ] faction movement, decrees, alliances, public consequence -> `political / war / faction drama`
+- [ ] food, shelter, infection, pursuit, survival outcome -> `survival / apocalypse / horror`
+
+### Step 3: Check the arc-ending promise
+
+Finish this sentence in one line:
+
+- [ ] `This volume should end by...`
+
+Then match the ending type:
+
+- [ ] union, separation, confession, emotional reversal -> `romance / romance fantasy`
+- [ ] breakthrough, victory over a ceiling, new tier entry -> `progression / action fantasy`
+- [ ] reveal, culprit exposure, truth inversion -> `mystery / thriller`
+- [ ] coup, succession shift, alliance break, reform lock -> `political / war / faction drama`
+- [ ] safe-zone loss, escape, containment failure, survival regroup -> `survival / apocalypse / horror`
+
+### Step 4: Check the middle-expansion engine
+
+Finish this sentence in one line:
+
+- [ ] `The middle expands through...`
+
+Then match the expansion type:
+
+- [ ] relationship escalation -> `romance / romance fantasy`
+- [ ] training ladder, enemy ladder, cost curve -> `progression / action fantasy`
+- [ ] clue chain, suspect spread, information control -> `mystery / thriller`
+- [ ] leverage exchange, institution spread, faction rebalancing -> `political / war / faction drama`
+- [ ] scarcity cycle, territory loss, trust collapse -> `survival / apocalypse / horror`
+
+### Step 5: Resolve conflicts
+
+- [ ] If return engine, ending promise, and middle expansion agree, lock that package
+- [ ] If they disagree, let return engine outrank the other two
+- [ ] If return engine is still unclear, let volume-end promise break the tie
+- [ ] If the label is ambiguous, keep the raw label in the note even after locking the package
+
+### Step 6: Run anti-misclassification checks
+
+- [ ] If all romance beats were removed, would the project still basically work
+- [ ] If all progression beats were removed, would the project still basically work
+- [ ] If all mystery beats were removed, would the project still basically work
+- [ ] If all faction beats were removed, would the project still basically work
+- [ ] If all survival pressure were removed, would the project still basically work
+- [ ] If the package came from inference, lock the package whose removal breaks the project most severely
+- [ ] If the package came from a direct user label, do not override it here; write a structural warning if another package would fit more cleanly
+
+### Step 7: Write the output line
+
+- [ ] State `Genre package:` explicitly
+- [ ] State `Package selection reason:` in one sentence
+- [ ] If the package came from a direct user label, say that directly
+- [ ] If the package came from an ambiguous alias, name both the raw label and the resolved package
+- [ ] If a direct user label causes structural tension, add a warning note instead of changing the package
+- [ ] Point to continuation pressure, not setting wallpaper
+
+## Selection Output Template
+
+```text
+Raw label:
+Label type:
+Return engine sentence:
+Volume-end sentence:
+Middle-expansion sentence:
+Locked genre package:
+Package selection reason:
+Structural warning:
+```
 
 ## Decision Ladder
 
@@ -58,6 +153,7 @@ Signals that should not decide the package by themselves:
 These matter only if they also control return pressure.
 
 Explicit user genre labels are not weak signals. They are primary selection input.
+If the explicit label maps to a package with visible structural friction, keep that package and record the friction as a warning rather than reclassifying.
 
 ## Anti-Misclassification Checks
 
@@ -78,6 +174,7 @@ Once chosen, state the package explicitly in `project frame` and explain the rea
 Also include a dedicated `Package selection reason:` line in `project frame`.
 
 If the package came from an explicit user label, say so directly in that reason line.
+If the explicit user label creates structural tension, add one warning line in risk diagnosis or design decision, but keep the package.
 
 Good:
 
@@ -89,3 +186,5 @@ Bad:
 
 - `Package selection reason: This story is in an empire.`
 - `Package selection reason: There are monsters.`
+
+For direct-label mismatch examples that still keep the chosen package, use the `Structural Warning Samples` section in [genre-package-samples.md](genre-package-samples.md).

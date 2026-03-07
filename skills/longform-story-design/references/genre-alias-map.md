@@ -211,6 +211,7 @@ These labels are not enough by themselves. Resolve by return engine:
 - 궁정물
 - 학원물
 - 사건물
+- 현대 판타지
 - 현판
 - 대체역사
 - 피카레스크
@@ -222,6 +223,27 @@ Use quick resolution:
 - if truth is the point of the return -> `mystery / thriller`
 - if leverage is the point of the return -> `political / war / faction drama`
 - if survival is the point of the return -> `survival / apocalypse / horror`
+
+Mini sample reference:
+
+- See the `Cross-Package Mini Samples` section in `genre-package-samples.md`
+
+Label-by-label sample reference:
+
+- `회귀물` -> `Mini Sample 1: 회귀물 -> Political Faction Drama`
+- `빙의물` -> `Mini Sample 2: 빙의물 -> Romance Fantasy`
+- `환생물` -> `Mini Sample 7: 환생물 -> Progression Fantasy`
+- `복수물` -> `Mini Sample 8: 복수물 -> Mystery Thriller`
+- `복수극` -> `Ambiguous Alias Sample 3: 복수극 -> Romance Fantasy`
+- `군상극` -> `Mini Sample 9: 군상극 -> Survival Apocalypse Horror`
+- `디스토피아` -> `Mini Sample 4: 디스토피아 -> Survival Apocalypse Horror`
+- `궁정물` -> `Mini Sample 5: 궁정물 -> Romance Fantasy`
+- `학원물` -> `Mini Sample 3: 학원물 -> Progression Fantasy`
+- `사건물` -> `Mini Sample 6: 사건물 -> Mystery Thriller`
+- `현대 판타지` -> `Mini Sample 10: 현대 판타지 -> Progression Fantasy`
+- `현판` -> `Ambiguous Alias Sample 1: 현판 -> Mystery Thriller`
+- `대체역사` -> `Ambiguous Alias Sample 2: 대체역사 -> Political Faction Drama`
+- `피카레스크` -> `Ambiguous Alias Sample 4: 피카레스크 -> Political Faction Drama`
 
 ## Ambiguous Label Rules
 

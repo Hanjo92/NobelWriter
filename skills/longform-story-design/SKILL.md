@@ -14,9 +14,11 @@ Default to `greenfield build` when the user is starting from an idea, hook, syno
 Lock the minimum facts before designing anything large:
 
 - format and scale
+- structure mode, if relevant: linear arc, braided ensemble, omnibus, rotating-focus serial
 - genre and audience tendency
 - user-stated genre label, if any
 - likely chapter-return engine
+- alias resolution note, if the stated label is cross-package or ambiguous
 - project state: premise only, partial outline, existing chapters, or repair request
 - known ending or ending promise
 - dominant risk: drift, escalation collapse, timeline collision, weak opposition, flat relationship motion, forgotten setup
@@ -26,8 +28,9 @@ Lock the minimum facts before designing anything large:
 If the prompt is vague, infer the smallest safe scope and state the assumption. For quick intake fields and risk triage, read [references/project-intake.md](references/project-intake.md).
 
 After intake, choose one genre package before building the planning stack. Read [references/genre-packages.md](references/genre-packages.md) when the story's growth logic depends on genre pressure.
+If the user says `옴니버스`, treat that as structure mode or format, not as a genre package. Keep it in `Format` and choose the genre package separately.
 
-If the user explicitly names a genre or package, honor it first and map it to the closest supported genre package before running inference.
+If the user explicitly names a genre or package, honor it first and map it to the closest supported genre package before running inference. If that mapped package has structural friction with the project, keep it and record a warning instead of silently switching packages.
 
 ## Choose One Primary Mode
 
@@ -66,6 +69,8 @@ Choose package by priority order:
 4. what kind of expansion the middle requires
 
 If these signals disagree, trust return engine over setting flavor.
+If you need a stepwise lock instead of a prose judgment, run the checklist in [references/genre-selection-rules.md](references/genre-selection-rules.md).
+If you need a one-page working form for that lock, use [references/genre-selection-decision-sheet.md](references/genre-selection-decision-sheet.md).
 
 Default genre packages:
 
@@ -78,8 +83,10 @@ Default genre packages:
 If the project is hybrid, choose one dominant package and one secondary package. Do not give equal weight to three or more packages.
 
 If the user explicitly says `로판`, `로맨스`, `정치극`, `성장형 판타지`, `스릴러`, `아포칼립스`, `호러` or an equivalent direct label, do not override that with setting-based inference.
+If a direct user label still produces a structural mismatch after mapping, preserve the mapped package and surface the mismatch as a warning in the output.
 
 Do not classify by costume or setting label alone. Court setting does not automatically mean political drama. Fantasy world does not automatically mean progression fantasy. Apocalypse backdrop does not automatically mean survival horror if the real engine is investigation or romance.
+Do not classify by structure label alone either. `옴니버스` does not decide the package by itself.
 
 Use hard tie-breaks:
 
@@ -139,8 +146,10 @@ For premise-to-series build order, read [references/greenfield-architecture.md](
 For story engine design, read [references/story-engine.md](references/story-engine.md).
 For genre-specific package emphasis, read [references/genre-packages.md](references/genre-packages.md).
 For strict genre-package selection rules, read [references/genre-selection-rules.md](references/genre-selection-rules.md).
+For a one-page genre lock worksheet, read [references/genre-selection-decision-sheet.md](references/genre-selection-decision-sheet.md).
 For dense genre-label alias mapping, read [references/genre-alias-map.md](references/genre-alias-map.md).
 For ambiguous alias resolution samples, read [references/genre-package-samples.md](references/genre-package-samples.md).
+For omnibus or rotating-focus structure rules, read [references/omnibus-structure.md](references/omnibus-structure.md).
 For a reusable project frame template, read [references/project-frame-template.md](references/project-frame-template.md).
 For answer packaging and output density, read [references/planning-output-format.md](references/planning-output-format.md).
 For genre-specific sample packages, read [references/genre-package-samples.md](references/genre-package-samples.md).
@@ -226,8 +235,9 @@ This skill is for planning, stabilization, and continuity control. It is not the
 When the user wants actual scenes or chapters:
 
 1. finish or update the longform planning artifacts here
-2. hand the active subset to the drafting layer
-3. after drafting, update continuity, knowledge state, and payoff status
+2. if cast voice or dialogue differentiation is a visible risk, hand the dialogue layer to `character-voice-bible`
+3. hand narration, scene execution, and chapter prose to `novel-writing`
+4. after drafting, update continuity, knowledge state, and payoff status
 
 Use this skill before drafting when the manuscript is likely to drift. Use it after drafting when accumulated chapters need coherence repair.
 
@@ -238,9 +248,10 @@ When delivering greenfield planning work, prefer a named package rather than loo
 1. project frame
 2. primary risk diagnosis
 3. design decision
-4. planning stack
-5. artifact package
-6. next design step
+4. artifact package
+5. next design step
+
+State the planning stack inside `design decision` or as a short line before `artifact package` only when the chosen depth level or document scope would otherwise be unclear.
 
 Inside `artifact package`, present documents in stable order:
 
@@ -261,6 +272,7 @@ Always include `package selection reason` in `project frame`.
 - write exactly one sentence
 - justify the package by chapter-return engine, volume-end promise, or dominant failure mode
 - if hybrid, explain why the dominant package outranks the secondary one
+- if the user directly specified the genre and the structure pulls elsewhere, keep the chosen package and note the mismatch as a warning outside this line
 
 Do not omit this line even when the package looks obvious from the setting.
 
@@ -302,4 +314,4 @@ Avoid turning the plan into an essay about the plan.
 - Read [references/longform-templates.md](references/longform-templates.md) when you need fill-in templates for bibles, arcs, timelines, or ledgers.
 - Read [references/continuity-ledger.md](references/continuity-ledger.md) when the main risk is contradiction, forgotten setup, drifting rules, or unstable knowledge state.
 - Read [references/repair-existing-draft.md](references/repair-existing-draft.md) when the user already has chapters, outlines, or conflicting canon and needs recovery before more drafting.
-- Read [references/handoff-to-drafting.md](references/handoff-to-drafting.md) when planning output needs to be reduced into drafting-ready packets for the prose layer.
+- Read [references/handoff-to-drafting.md](references/handoff-to-drafting.md) when planning output needs to be reduced into dialogue-ready and prose-ready packets for downstream drafting layers.

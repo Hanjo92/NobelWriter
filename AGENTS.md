@@ -8,24 +8,51 @@ Treat these requests as covered by the local `novel-writing` skill, even if the 
 
 - planning or outlining a Korean novel, web novel, or serialized fiction
 - drafting a scene, chapter, opening, synopsis, or character material in Korean
-- revising Korean dialogue, narration, tone, or chapter flow
-- changing genre, audience tendency, or dialogue texture for Korean fiction
+- revising Korean narration, tone, or chapter flow
+- changing genre or audience tendency for Korean fiction
+
+Treat `novel-writing` as the primary skill for narration, scene/chapter prose, exposition control, paragraph rhythm, and other description-heavy manuscript work.
+
+Treat `character-voice-bible` as the primary skill for dialogue-only revision, character voice tuning, cast-wide speaker differentiation, relationship-dependent speech/register work, and other line-by-line spoken exchange tasks.
 
 Before drafting or revising, read only the references needed for the task:
 
+For `novel-writing` tasks, use only the smallest relevant subset of:
+
 - `C:/Nobels/NobelWriter/skills/novel-writing/SKILL.md`
+- `C:/Nobels/NobelWriter/skills/novel-writing/references/task-router.md`
+- `C:/Nobels/NobelWriter/skills/novel-writing/references/templates.md`
 - `C:/Nobels/NobelWriter/skills/novel-writing/references/workflow.md`
 - `C:/Nobels/NobelWriter/skills/novel-writing/references/korean-prose.md`
 - `C:/Nobels/NobelWriter/skills/novel-writing/references/genre-audience-samples.md`
 - `C:/Nobels/NobelWriter/skills/novel-writing/references/dialogue-tone-transforms.md`
 - `C:/Nobels/NobelWriter/skills/novel-writing/references/prompt-selection-matrix.md`
 - `C:/Nobels/NobelWriter/skills/novel-writing/references/chapter-opening-selection.md`
+- `C:/Nobels/NobelWriter/skills/novel-writing/references/starter-sets.md`
 - `C:/Nobels/NobelWriter/skills/novel-writing/references/dialogue-revision-selection.md`
 - `C:/Nobels/NobelWriter/skills/novel-writing/references/narration-revision-selection.md`
 - `C:/Nobels/NobelWriter/skills/novel-writing/references/narration-tone-matrix.md`
+- `C:/Nobels/NobelWriter/skills/novel-writing/references/pov-narration-examples.md`
 - `C:/Nobels/NobelWriter/skills/novel-writing/references/meaning-first-examples.md`
 - `C:/Nobels/NobelWriter/skills/novel-writing/references/draft-pipeline.md`
+- `C:/Nobels/NobelWriter/skills/novel-writing/references/manuscript-quality-gate.md`
 - `C:/Nobels/NobelWriter/skills/novel-writing/references/lexical-normalization-examples.md`
+
+For `character-voice-bible` tasks, use only the smallest relevant subset of:
+
+- `C:/Nobels/NobelWriter/skills/character-voice-bible/SKILL.md`
+- `C:/Nobels/NobelWriter/skills/character-voice-bible/references/request-router.md`
+- `C:/Nobels/NobelWriter/skills/character-voice-bible/references/composition-guide.md`
+- `C:/Nobels/NobelWriter/skills/character-voice-bible/references/output-templates.md`
+- `C:/Nobels/NobelWriter/skills/character-voice-bible/references/script-dialogue-rules.md`
+- `C:/Nobels/NobelWriter/skills/character-voice-bible/references/script-dialogue-samples.md`
+- `C:/Nobels/NobelWriter/skills/character-voice-bible/references/voice-diagnostic-questions.md`
+- `C:/Nobels/NobelWriter/skills/character-voice-bible/references/voice-profile-template.md`
+- `C:/Nobels/NobelWriter/skills/character-voice-bible/references/relationship-register-matrix.md`
+- `C:/Nobels/NobelWriter/skills/character-voice-bible/references/dialogue-drift-checks.md`
+- `C:/Nobels/NobelWriter/skills/character-voice-bible/references/reaction-patterns.md`
+- `C:/Nobels/NobelWriter/skills/character-voice-bible/references/korean-voice-samples.md`
+- `C:/Nobels/NobelWriter/skills/character-voice-bible/references/genre-voice-samples.md`
 
 Choose the smallest relevant subset. Do not load every file if the request is narrow.
 

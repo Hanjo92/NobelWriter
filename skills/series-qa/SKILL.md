@@ -267,7 +267,8 @@ For re-audit gates, read [references/regression-checks.md](references/regression
 Use this skill for diagnosis and revision prioritization across existing long-form material.
 
 - Use `longform-story-design` to build or repair the planning layer.
-- Use `novel-writing` to execute scene, chapter, or prose rewrites after the diagnosis is clear.
+- Use `character-voice-bible` when the fix is mainly in dialogue differentiation, spoken-line pressure, or relationship-based register repair.
+- Use `novel-writing` when the fix is mainly in narration, scene prose, chapter execution, or exposition control after the diagnosis is clear.
 
 This skill should tell those layers what to fix first and why.
 
