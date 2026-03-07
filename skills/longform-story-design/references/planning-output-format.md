@@ -19,6 +19,9 @@ Do not start with a long explanatory preface.
 Use [project-frame-template.md](project-frame-template.md) for the reusable field order.
 
 `Package selection reason` is mandatory. Use one sentence that points to the actual continuation pressure, not the wallpaper.
+If the user started from an ambiguous alias label, keep that raw label visible in the reason line and state why the resolved package still wins.
+If the user directly named a genre that maps awkwardly to the structure, keep that package and place the warning in `risk diagnosis` or `core design decision` instead of changing the package.
+If the user says `옴니버스`, keep that in `Format` or `Structure mode`, not in `Genre package`.
 
 ## Risk Diagnosis
 
@@ -140,3 +143,4 @@ Examples:
 - "Next, test whether the ending promise still holds if the rivalry becomes romantic."
 
 For full sample packages using this format, read [genre-package-samples.md](genre-package-samples.md).
+For direct-label mismatch examples that still preserve the chosen package, read the `Structural Warning Samples` section in [genre-package-samples.md](genre-package-samples.md).

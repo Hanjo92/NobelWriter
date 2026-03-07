@@ -1,7 +1,4 @@
 interface:
   display_name: "Longform Story Design"
-  short_description: "Design Korean long-form fiction from premise to scalable arc and volume architecture."
-  default_prompt: "Use $longform-story-design to turn a Korean long-form fiction premise into a scalable story engine, series plan, and first-arc architecture."
-
-policy:
-  allow_implicit_invocation: true
+  short_description: "Planning and continuity architecture for Korean long-form fiction."
+  default_prompt: "Use $longform-story-design to build scalable Korean series architecture, repair long-draft drift, and prepare continuity-safe arc, volume, and chapter-range design packets."

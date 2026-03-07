@@ -1,15 +1,15 @@
 ---
 name: character-voice-bible
-description: Design, document, compare, and preserve distinct Korean character voices across fiction manuscripts by defining speech register, honorific use, address forms, reaction habits, emotional deflection, subtext behavior, and relationship-dependent dialogue shifts. Prioritize script-like back-and-forth dialogue, turn-by-turn reaction, and speaker-labeled exchanges when Codex is asked to build or repair cast-specific speaking styles, keep voices distinct across chapters, prevent dialogue from collapsing into one authorial tone, or handle requests such as "인물 말투 정리", "캐릭터별 대사 차별화", "이 캐릭터 말투가 무너짐", "대본처럼 대사만 주고받게 써", or "관계 변화에 맞춰 존댓말/반말을 조정".
+description: Design, document, compare, and preserve distinct Korean character voices across fiction manuscripts by defining speech register, honorific use, address forms, reaction habits, emotional deflection, subtext behavior, and relationship-dependent dialogue shifts. Treat this as the primary skill for dialogue-centered work: script-like back-and-forth exchange, turn-by-turn reaction, spoken-line pressure, and speaker-labeled dialogue. Use it when Codex is asked to build or repair cast-specific speaking styles, keep voices distinct across chapters, prevent dialogue from collapsing into one authorial tone, or handle requests such as "인물 말투 정리", "캐릭터별 대사 차별화", "이 캐릭터 말투가 무너짐", "대본처럼 대사만 주고받게 써", or "관계 변화에 맞춰 존댓말/반말을 조정".
 ---
 
 # Character Voice Bible
 
 ## Overview
 
-Use this skill to build and maintain a cast-wide Korean dialogue system. Focus on stable speaker differentiation across chapters, scenes, and relationship changes rather than on isolated line polishing.
+Use this skill to build and maintain a cast-wide Korean dialogue system. Focus on stable speaker differentiation across chapters, scenes, and relationship changes rather than on isolated line polishing. Treat it as the dialogue layer, not the narration layer.
 
-Default to dialogue-first execution. If the user wants active exchange, output speaker-labeled lines that read like a script before considering prose wrapping.
+Default to dialogue-first execution. If the user wants active exchange, output speaker-labeled lines that read like a script before considering prose wrapping. Keep the center of gravity on what the characters say, how they react, and how their spoken turns collide.
 
 ## Assume Script-First Mode For Dialogue Requests
 
@@ -241,7 +241,7 @@ Unless the user explicitly asks for prose, keep outputs diagnostic and operation
 - prefer speaker-labeled turns over narrated explanation
 - end with guardrails for future chapters
 
-If the user asks for scene or chapter prose, use this skill to define the voices first, then hand off execution to `novel-writing`.
+If the user asks for scene or chapter prose, use this skill to define the voices first, then hand off narration, scene blocking, and prose execution to `novel-writing`.
 
 ## Operating Rules
 
@@ -253,12 +253,13 @@ If the user asks for scene or chapter prose, use this skill to define the voices
 - In dialogue-first requests, make each turn do work against the previous turn.
 - When revising, preserve scene intent and information flow before beautifying the line.
 - If a line sounds distinct only because of a gimmick phrase, rebuild the underlying reaction pattern.
+- Do not drift into narration-heavy scene polish when the user's real need is spoken-line control.
 
 ## Relationship To Other Skills
 
-Use this skill for cast voice architecture and drift repair.
+Use this skill for cast voice architecture, spoken-line design, and dialogue drift repair.
 
-- Use `novel-writing` for scene drafting, prose revision, and chapter execution.
+- Use `novel-writing` for narration, scene drafting, prose revision, and chapter execution.
 - Use `longform-story-design` for series bibles, continuity ledgers, and chapter-range planning.
 
 This skill should feed those layers by giving them stable speaking behavior and register rules.
