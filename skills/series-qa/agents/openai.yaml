@@ -1,0 +1,7 @@
+interface:
+  display_name: "Series QA"
+  short_description: "Audit Korean long-form fiction runs."
+  default_prompt: "Use $series-qa to diagnose continuity breaks, pacing problems, payoff failures, or character drift in a Korean long-form manuscript or web novel arc."
+
+policy:
+  allow_implicit_invocation: true

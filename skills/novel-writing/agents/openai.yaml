@@ -1,0 +1,7 @@
+interface:
+  display_name: "Novel Writing"
+  short_description: "Draft and revise Korean fiction manuscripts with strong scene, narration, and continuity control, including 기획, 초고, 개고, 원고, and 문장 수정."
+  default_prompt: "Use $novel-writing to plan a Korean novel, draft 초고 or 원고, write a chapter opening, or handle 개고 and 문장 수정 for Korean fiction."
+
+policy:
+  allow_implicit_invocation: true
