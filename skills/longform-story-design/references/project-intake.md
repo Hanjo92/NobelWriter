@@ -8,7 +8,7 @@ Extract or infer these fields first:
 
 - format: long novel, web novel, trilogy, saga, season-based serial
 - structure mode, if relevant: linear arc, braided ensemble, omnibus, rotating-focus serial
-- scale: expected chapter count, arc count, or volume count
+- scale: expected chapter count (default 150-200 chapters), arc count, or volume count
 - genre and audience tendency
 - user-stated genre label, if any
 - likely chapter-return engine

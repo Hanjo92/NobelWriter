@@ -11,7 +11,7 @@ Capture the minimum brief:
 - POV and tense
 - if POV is important, decide `1인칭`, `3인칭 제한`, or a more distant third-person stance before drafting
 - Korean register target: literary, commercial, web novel, YA, etc.
-- desired length
+- desired length (default 5000~6000 characters per chapter unless otherwise specified)
 - must-include and must-avoid elements
 - current manuscript state
 

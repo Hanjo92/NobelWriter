@@ -20,7 +20,7 @@ Primary risk:
 
 - `Format`: long novel, web novel, trilogy, saga, season-based serial, or equivalent
 - `Structure mode`: linear arc, braided ensemble, omnibus, rotating-focus serial, or equivalent when structurally relevant
-- `Scale`: chapter count, arc count, volume count, or the cleanest available scale marker
+- `Scale`: chapter count (default to 150-200 chapters if unspecified), arc count, volume count, or the cleanest available scale marker
 - `Genre / audience`: combine genre and likely readership tendency in one line
 - `Genre package`: one dominant package, with a secondary package only when hybrid is structurally relevant
 - `Package selection reason`: mandatory one-sentence justification tied to chapter-return engine, volume-end promise, or dominant failure mode

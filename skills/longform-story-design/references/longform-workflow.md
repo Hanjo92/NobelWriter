@@ -45,7 +45,7 @@ The exact ending can stay open, but the category of promise should be visible ea
 Lock early:
 
 - target format: long novel, saga, serialized web novel, trilogy, etc.
-- planned scale: approximate chapter count, volume count, or arc count
+- planned scale: approximate chapter count (default 150-200 chapters for web novels unless specified otherwise), volume count, or arc count
 - genre and audience
 - growth model: static cast, expanding ensemble, factional expansion, power progression, romance escalation, mystery layering
 - drafting mode: preplanned, rolling outline, or hybrid
