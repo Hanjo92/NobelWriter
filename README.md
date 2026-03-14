@@ -1,113 +1,72 @@
-# Korean Fiction Skill Workspace
+![NobelWriter Hero](hero.png)
 
-한국어 소설 작업을 위한 로컬 스킬 워크스페이스입니다.
-기존 Codex 기준의 설정은 디폴트 세팅일 뿐이며, 실제 환경 구성과 사용 방법은 `Platform/` 폴더 내부의 가이드를 참고하여 진행해 주시기 바랍니다.
+# NobelWriter ✍️✨
 
-이 저장소는 장편 설계, 대사 설계, 원고 작성, 연재 QA를 분리해서 다루도록 구성되어 있습니다.
+**NobelWriter**는 전문 소설가와 웹소설 작가를 위한 프리미엄 AI 집필 워크스페이스입니다. 소설 창작의 복잡한 과정을 **대사(Dialogue)**, **서술(Narration)**, **설계(Structure)**, **진단(Diagnosis)**의 4가지 계층으로 분리하여 체계적인 집필 환경을 제공합니다.
 
-## 구성
+---
 
-이 저장소의 핵심은 `skills/` 아래의 4개 스킬입니다.
+## 🚀 주요 특징 (Key Features)
 
-- `character-voice-bible`
-  - 대사 중심 스킬
-  - 캐릭터별 말투 분리, 화자 차별화, 관계별 존대/반말, 대사 드리프트 점검에 사용
-- `novel-writing`
-  - 서술 중심 스킬
-  - 나레이션, 장면 본문, 챕터 초고/개고/원고, 문장 흐름, 설명 문장 정리에 사용
-- `longform-story-design`
-  - 설계 중심 스킬
-  - 장편/시리즈 구조, 장르 패키지 선택, 볼륨/아크 설계, 연속성 문서화에 사용
-- `series-qa`
-  - 진단 중심 스킬
-  - 연재 원고나 장편 원고의 연속성, 페이싱, payoff, 캐릭터 드리프트 문제 점검에 사용
+- **4계층 모듈형 시스템**: 소설의 모든 요소를 전문적으로 처리하는 특화된 AI 스킬 제공.
+- **체계적인 핸드오프**: 구조 설계부터 본문 집필까지 끊김 없는 작업 흐름.
+- **3단계 집필 프로세스**: `초고` → `개고` → `원고`로 이어지는 엄격한 품질 관리.
+- **플랫폼 독립성**: Antigravity, Codex, Claude 등 다양한 AI 환경에 최적화.
+- **프로급 한국어 문체**: 번역투 제거 및 서사적 리듬감을 극대화한 한국어 문장 자동 교정.
 
-## 작업 원칙
+---
 
-이 워크스페이스는 `AGENTS.md`를 기준으로 동작합니다.
+## 🏗️ 4계층 아키텍처 (The 4-Tier Architecture)
 
-- 한국어 소설 작업은 일반적인 답변 대신 로컬 스킬을 우선 사용합니다.
-- 실제 산문 생성 시 `초고`, `개고`, `원고` 3단계 파일 저장 정책을 따릅니다.
-- 대사 중심 문제는 `character-voice-bible`, 서술 중심 문제는 `novel-writing`으로 분리합니다.
-- 장편 구조 설계는 `longform-story-design`, 문제 진단은 `series-qa`로 분리합니다.
+NobelWriter는 `skills/` 디렉토리에 위치한 4개의 전문 스킬을 통해 창작 과정을 분담합니다.
 
-## 디렉터리 구조
+| 스킬 (Skill) | 역할 (Role) | 주요 집중 분야 (Focus Areas) |
+| :--- | :--- | :--- |
+| **🗣️ Character Voice Bible** | **대사 (Dialogue)** | 캐릭터별 말투 차별화, 관계별 존대/반말, 대사 드리프트 방지. |
+| **📖 Novel Writing** | **서술 (Narration)** | 장면 묘사, 나레이션 흐름, 문체 및 톤 컨트롤. |
+| **🗺️ Longform Design** | **설계 (Structure)** | 시리즈 구조, 권차/아크 설계, 설정 및 개연성 관리. |
+| **🔍 Series QA** | **진단 (Diagnosis)** | 전개 속도(Pacing), 복선 회수, 캐릭터 일관성 및 플롯 진단. |
 
-```text
-workspace/
-├─ AGENTS.md
-├─ Platform/
-├─ README.md
-├─ drafts/
-│  ├─ 초고/
-│  ├─ 개고/
-│  └─ 원고/
-└─ skills/
-   ├─ character-voice-bible/
-   ├─ longform-story-design/
-   ├─ novel-writing/
-   └─ series-qa/
-```
+---
 
-## Platform 구조
+## 🛠️ 워크스페이스 구조 (Workspace Structure)
 
-이 저장소는 플랫폼별 운영 파일을 [Platform](./Platform) 아래에 분리해서 관리할 수 있도록 확장 중입니다.
+작가가 오직 이야기에만 집중할 수 있도록 정리된 환경을 제공합니다.
 
-- [Platform/README.md](./Platform/README.md)
-  - 플랫폼 팩 전체 구조 설명
-- [Platform/OpenAI/README.md](./Platform/OpenAI/README.md)
-  - OpenAI 계열 환경 선택 가이드
-- [Platform/OpenAI/Codex/README.md](./Platform/OpenAI/Codex/README.md)
-  - Codex 적용용 메모
-- [Platform/OpenAI/GPT-OSS/README.md](./Platform/OpenAI/GPT-OSS/README.md)
-  - GPT-OSS 적용용 메모
+- **`AGENTS.md`**: 핵심 운영 규칙 및 품질 표준 가이드.
+- **`Platform/`**: 다양한 AI 서비스용 배포 팩 모음.
+- **`skills/`**: 모든 전문 지식이 담긴 NobelWriter의 '두뇌'.
+- **`drafts/`**: 단계별로 정리된 작가의 원고 저장소.
 
-공용 스킬 자산은 가능한 유지하고, 플랫폼별로 달라지는 운영 파일만 `Platform/` 아래에서 분리 관리하는 방식입니다.
+---
 
-플랫폼별 구체적인 사용 방법과 설정은 `Platform/` 폴더 내 가이드 문서를 참고하여 구성하세요.
+## 💻 지원 플랫폼 (Supported Platforms)
 
-## 사용 예시
+NobelWriter는 이동성과 적응성을 고려하여 설계되었습니다. 여러 AI 플랫폼에서 동일한 로직을 사용하세요.
 
-다음처럼 작업을 나눠 쓰는 것을 기준으로 설계되어 있습니다.
+- [x] **Google Antigravity** (Native Optimization)
+- [x] **OpenAI Codex / GPT-4**
+- [x] **Anthropic Claude Code**
+- [x] **Local Models** (Platform Packs를 통한 커스텀 구현)
 
-- 캐릭터 둘의 말투가 비슷해서 대사를 분리하고 싶다
-  - `character-voice-bible`
-- 장면 서술이 번역투 같고 나레이션이 무겁다
-  - `novel-writing`
-- 웹소설 초반 30화를 장편 구조로 다시 정리하고 싶다
-  - `longform-story-design`
-- 40화 이후 전개가 늘어지고 복선 회수가 약한지 진단하고 싶다
-  - `series-qa`
+자세한 설정 방법은 [Platform/README.md](./Platform/README.md)를 참고하세요.
 
-## 다른 컴퓨터에서 사용하기
+---
 
-가장 쉬운 방법은 이 저장소를 그대로 클론해서 같은 워크스페이스로 여는 것입니다.
+## 🎯 빠른 시작 (Quick Start)
 
-1. 저장소를 다른 컴퓨터에 클론합니다.
-2. 워크스페이스를 설정합니다. (Codex 환경은 디폴트 설정이며, 다른 플랫폼은 `Platform/` 가이드를 따르세요)
-3. 필요하면 `drafts/` 디렉터리까지 함께 유지합니다.
+1. 저장소를 **클론(Clone)** 합니다.
+2. [Platform 가이드](./Platform/README.md)에 따라 환경을 **설정(Setup)** 합니다.
+3. 이제 글을 쓰세요! `skills/`를 당신의 전문 집필 어시스턴트로 활용하세요.
 
-주의:
+---
 
-- 현재 설정은 저장소 루트 기준 상대경로를 사용합니다.
-- 다른 컴퓨터에서도 저장소 구조만 유지하면 같은 방식으로 사용할 수 있습니다.
-- 다른 레포로 옮길 때도 `AGENTS.md`, `skills/`, `drafts/` 구조를 함께 유지하는 것이 가장 안전합니다.
+## 🪪 라이선스 및 원칙 (License & Principles)
 
-## 포함 파일
+이 프로젝트는 **"인간이 주도하고 AI가 증폭하는(Human-Led, AI-Augmented)"** 창의성을 원칙으로 합니다. NobelWriter는 단순히 대신 써주는 도구가 아니라, 당신이 더 좋은 글을 쓸 수 있도록 돕는 **시스템**을 제공합니다.
 
-실제로 옮길 때는 아래 항목이 필요합니다.
+---
 
-- `AGENTS.md`
-- `skills/` 전체
-- `drafts/` 디렉터리
-
-## 목적
-
-이 저장소는 한국어 소설 작업을 다음 4층으로 분리하기 위해 만들어졌습니다.
-
-1. 대사
-2. 서술
-3. 구조
-4. 진단
-
-한 스킬이 모든 문제를 처리하는 대신, 역할이 다른 스킬들이 서로 handoff 하도록 설계되어 있습니다.
+<p align="center">
+  <i>한국어 창작자들이 자신만의 세계를 더 완벽하게 구축할 수 있도록 돕습니다.</i>
+</p>
