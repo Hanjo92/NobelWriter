@@ -26,7 +26,7 @@ Identify the immediate output before writing:
 If the user asks for prose, treat the task as manuscript production unless they explicitly want notes only.
 Default to returning `원고`. If the user explicitly asks for `초고`, `개고`, or another intermediate stage, return that requested stage instead while still saving the full stage set unless the user says not to.
 
-Lock the operating constraints early: genre, target audience, point of view, tense, tone, target length, completion state, and any banned content or required themes. If the user omits these, make the smallest useful assumption set explicit before drafting.
+Lock the operating constraints early: genre, target audience, point of view, tense, tone, target length (default to 5000~6000 characters per chapter unless specified otherwise), completion state, and any banned content or required themes. If the user omits these, make the smallest useful assumption set explicit before drafting.
 When POV matters, decide not only `1인칭` or `3인칭`, but also narration distance, knowledge limit, and whether the voice is character-colored or relatively neutral.
 
 Assume the output language is Korean unless the user explicitly requests bilingual or translated material.

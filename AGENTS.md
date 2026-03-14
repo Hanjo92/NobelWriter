@@ -4,6 +4,10 @@
 
 When the user asks for Korean fiction work in this workspace, do not answer from generic writing instincts alone.
 
+When planning or drafting, apply these default scale constraints unless the user explicitly specifies otherwise:
+- **Project Scale:** Plan longform projects and web novels for a total of 150~200 chapters (화).
+- **Chapter Length:** Draft each chapter to reach 5000~6000 characters (공백 포함 5000~6000자) for a standard manuscript.
+
 Treat these requests as covered by the local `novel-writing` skill, even if the user does not explicitly invoke a skill name:
 
 - planning or outlining a Korean novel, web novel, or serialized fiction
