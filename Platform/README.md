@@ -35,6 +35,9 @@
 - [Anthropic](./Anthropic)
   - Anthropic Claude Code 런타임용 파일
   - 하위에 `Claude` 환경별 폴더를 둠 (`CLAUDE.md` + 슬래시 커맨드 기반)
+- [Local](./Local)
+  - Ollama 같은 로컬 LLM 호스트용 파일
+  - 하위에 호스트별 시스템 프롬프트와 no-tools fallback 문서를 둠
 
 ## 사용 방식
 
@@ -42,6 +45,8 @@
 2. 해당 플랫폼 폴더의 README를 읽습니다.
 3. 필요한 운영 파일만 워크스페이스 또는 대상 환경으로 반영합니다.
 4. 공용 자산인 `skills/`, `skills/*/references/`, `drafts/` 구조는 가능한 유지합니다.
+
+전용 CLI가 있는지, 자연어 요청으로 어떻게 챕터를 쓰는지 같은 공통 질문은 [USAGE_FAQ.md](../USAGE_FAQ.md)를 먼저 보면 빠릅니다.
 
 ## 확장 방식
 
@@ -61,6 +66,8 @@ Platform/
 │  ├─ README.md
 │  └─ Claude/         ← CLAUDE.md + .claude/commands/ 슬래시 커맨드
 └─ Local/
+   ├─ README.md
+   └─ Ollama/         ← SYSTEM_PROMPT + no-tools fallback docs
 ```
 
 ## 운영 원칙

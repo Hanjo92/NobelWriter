@@ -15,6 +15,8 @@
 - `SYSTEM_PROMPT.md`
 - `ROUTER.md`
 - `MIGRATION_MAP.md`
+- `NO_TOOLS_FALLBACK_TEMPLATE.md`
+- `SHORT_NO_TOOLS_POLICY.md`
 - `skills/character-voice-bible/SKILL.md`
 - `skills/longform-story-design/SKILL.md`
 - `skills/novel-writing/SKILL.md`
@@ -31,6 +33,9 @@
 3. 4개 `skills/*/SKILL.md`를 GPT-OSS용 문구로 다듬는다.
 4. 공용 자산인 루트 `skills/*/references/`와 연결한다.
 5. 초고/개고/원고 저장 규칙은 별도 스크립트나 운영 절차로 보완한다.
+
+로컬 LLM 호스트가 파일 저장, 도구 호출, 메타데이터 기반 스킬 선택을 지원하지 않아도 한국어 원고 작성 자체는 계속 수행해야 한다. 이런 경우에는 [NO_TOOLS_FALLBACK_TEMPLATE.md](./NO_TOOLS_FALLBACK_TEMPLATE.md)를 사용해, 저장 불가와 집필 불가를 분리한 응답을 기본값으로 둔다.
+더 짧은 규칙만 시스템 프롬프트에 넣고 싶으면 [SHORT_NO_TOOLS_POLICY.md](./SHORT_NO_TOOLS_POLICY.md)를 사용한다.
 
 ## 플랫폼 전환 가이드
 
@@ -99,3 +104,4 @@
 - `agents/openai.yaml`은 GPT-OSS 구조에 맞게 대체하거나 제거 대상입니다.
 - `skills/*/references/`는 공용 자산으로 보고 기본적으로 루트 `skills/`를 그대로 사용합니다.
 - GPT-OSS는 Codex나 Antigravity처럼 고정 메타데이터 파일 하나로 끝나는 구조가 아니므로, 실제 호스트 환경에 맞춘 주입 방식이 별도로 필요합니다.
+- 따라서 로컬 LLM 환경에서는 도구 제한이 자주 생길 수 있으며, 그 경우에도 직접 본문을 작성하는 fallback 문구를 함께 주입하는 편이 안전합니다.

@@ -5,6 +5,42 @@ description: Plan, draft, revise, and critique Korean-language fiction with emph
 
 # Novel Writing
 
+## Immediate Execution Protocol
+
+Treat this file as an action manual, not background reading.
+If the user asks for Korean fiction work, do not answer that you are unsure how to use the skill. Start by routing the task, load only the minimum needed references, and produce the requested deliverable.
+
+Execute in this order:
+
+1. Identify the deliverable.
+2. Route the request into one primary lane.
+3. State only the smallest necessary assumption set.
+4. Load only the references required for that lane.
+5. Produce the planning packet or manuscript.
+6. If prose is requested, run `초고 -> 개고 -> 원고`.
+7. Return the requested stage, or `원고` by default.
+
+If the request says `써줘`, `초고`, `개고`, `원고`, `장면`, `챕터`, `오프닝`, `도입부`, or `이어 써줘`, treat it as writing work, not as a request for explanation.
+
+Do not stop to ask broad process questions if a narrow assumption will let you proceed safely.
+If information is missing, make one-line assumptions and continue.
+
+## Default Assumptions When The User Omits Details
+
+Use these defaults so the skill remains executable for lightweight models:
+
+- language: Korean
+- primary lane: `fresh drafting` for direct writing requests, `planning` for outline requests, `stage revision` for rewrite requests, `critique-only` for feedback requests
+- return stage: `원고`
+- chapter target length: 5000~6000 characters including spaces
+- project scale for longform/web novels: 150~200 chapters
+- POV: keep the user's POV if given; otherwise default to `3인칭 제한시점`
+- tone: contemporary commercial Korean fiction matched to the requested genre
+- assumption policy: prefer the smallest assumption set that does not distort the user's premise
+
+If the environment supports file writing, save stage files.
+If the environment does not support file writing, still perform the same internal stage pipeline and return the final stage text.
+
 ## Overview
 
 Use this skill to turn a rough fiction idea into a workable Korean-language story package, produce chapter-ready scene plans, draft narration-led manuscript prose with controlled assumptions, and revise it in deliberate passes.
@@ -30,6 +66,20 @@ Lock the operating constraints early: genre, target audience, point of view, ten
 When POV matters, decide not only `1인칭` or `3인칭`, but also narration distance, knowledge limit, and whether the voice is character-colored or relatively neutral.
 
 Assume the output language is Korean unless the user explicitly requests bilingual or translated material.
+
+## Quick Lane Map
+
+Use this fast map before opening deeper references:
+
+- asks for synopsis, outline, setting, cast, chapter list: `planning`
+- asks to write a scene, opening, chapter, or first episode: `fresh drafting`
+- asks to continue existing prose: `continuation`
+- asks to turn rough text into better manuscript stages: `stage revision`
+- asks to fix only dialogue or speaker voice: delegate to `character-voice-bible`
+- asks to fix only narration or sentence flow: `narration-only revision`
+- asks for diagnosis without rewrite: `critique-only`
+
+If two lanes appear possible, choose the one closest to the user's requested final deliverable.
 
 ## Route The Task Before Writing
 
@@ -79,6 +129,13 @@ If the user asks for multiple chapters, outline each chapter first, then draft i
 When the request is actual prose rather than advice only, read [references/draft-pipeline.md](references/draft-pipeline.md) and [references/manuscript-quality-gate.md](references/manuscript-quality-gate.md).
 If the user explicitly names a stage such as `초고`, `개고`, or `원고`, honor that as the return target. Otherwise, return `원고`.
 
+For lightweight models, use this minimum manuscript loop:
+
+1. write a usable `초고`
+2. remove obvious scaffolding and awkward Korean in `개고`
+3. polish rhythm, POV stability, and readability in `원고`
+4. return `원고` unless another stage was requested
+
 ## Draft Scene-First
 
 During drafting:
@@ -103,6 +160,7 @@ For dialogue tone conversion, delegate to `character-voice-bible` first and read
 For reusable drafting instructions, read [references/prompt-selection-matrix.md](references/prompt-selection-matrix.md).
 For chapter starts, read [references/chapter-opening-selection.md](references/chapter-opening-selection.md).
 For chapter 1 launch packages by genre and subgenre, read [references/starter-sets.md](references/starter-sets.md) first, then open the matching genre starter file.
+For concrete start patterns when a lightweight model hesitates, read [references/lightweight-execution-examples.md](references/lightweight-execution-examples.md).
 For meaning-first scaffolding examples, read [references/meaning-first-examples.md](references/meaning-first-examples.md).
 For diction normalization examples, read [references/lexical-normalization-examples.md](references/lexical-normalization-examples.md).
 
@@ -159,9 +217,22 @@ When critiquing, point to concrete breaks in cause-and-effect, character logic, 
 - Read [references/dialogue-tone-transforms.md](references/dialogue-tone-transforms.md) only as fallback guidance when `character-voice-bible` is unavailable and dialogue work cannot be delegated.
 - Read [references/prompt-selection-matrix.md](references/prompt-selection-matrix.md) when you need a compact prompt formula for a given genre, audience, scene intent, or dialogue task.
 - Read [references/chapter-opening-selection.md](references/chapter-opening-selection.md) when you need a focused prompt for the first lines of a chapter.
+- Read [references/lightweight-execution-examples.md](references/lightweight-execution-examples.md) when the model still hesitates about how to begin after routing the task.
 - Read [references/dialogue-revision-selection.md](references/dialogue-revision-selection.md) only as fallback guidance when `character-voice-bible` is unavailable and dialogue work cannot be delegated.
 - Read [references/narration-revision-selection.md](references/narration-revision-selection.md) when narration is meaningful but awkward, heavy, tangled, or rhythmically weak.
 - Read [references/narration-tone-matrix.md](references/narration-tone-matrix.md) when you need a quick rule table for fixing awkward narration by problem type, target effect, genre, or audience tendency.
 - Read [references/meaning-first-examples.md](references/meaning-first-examples.md) when dialogue or narration still sounds like abstract meaning was arranged first and only afterward phrased in Korean.
 - Read [references/lexical-normalization-examples.md](references/lexical-normalization-examples.md) when wording sounds awkward because common literary or Sino-Korean vocabulary was replaced by forced native-only diction.
 - Read [references/starter-sets.md](references/starter-sets.md) when the user asks for a chapter 1 start, first-scene launch, or a genre/subgenre-specific opening package, then follow its link to the matching genre starter file.
+
+## Minimum Response Shapes
+
+When replying, keep the structure aligned to the lane:
+
+- planning: brief assumption line, then the requested planning artifact
+- drafting: brief assumption line, then the final prose stage
+- continuation: brief assumption line, then continued prose matching the existing voice
+- stage revision: brief assumption line, then the requested revised stage
+- critique-only: concrete issue list first, rewrite only if asked
+
+When prose was generated in a writable environment, mention where `초고`, `개고`, and `원고` were saved.

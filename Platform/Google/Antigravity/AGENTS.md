@@ -45,6 +45,10 @@ For Korean fiction writing requests in this workspace:
 
 Do not skip stage files unless the user explicitly says not to save files.
 
+If external APIs, helper tools, or file writers are unavailable in the current host environment, do not treat that as a reason to stop Korean fiction work.
+In that case, continue by reading the local skill instructions directly, run the `초고 -> 개고 -> 원고` refinement in memory, and return the final `원고` text in-chat.
+Mention the missing file save only briefly instead of refusing the writing task.
+
 ## Mandatory Quality Pass
 
 For Korean fiction generation in this workspace, always run a final self-check before answering:

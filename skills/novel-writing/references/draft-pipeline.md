@@ -7,6 +7,7 @@ Use this file when Korean fiction prose should be produced through explicit stag
 Make `초고 -> 개고 -> 원고` the default internal pipeline for fiction writing in this workspace.
 
 The user should be able to open and edit every stage file directly.
+If file writing is unavailable in the current environment, still run the same three-stage pipeline internally and return the requested stage text instead of stopping.
 
 ## Folder Structure
 
@@ -95,6 +96,7 @@ For any fiction generation task that produces real prose:
 6. Tell the user where the files were saved.
 
 Do not skip file creation unless the user explicitly asks for a one-off answer without saving.
+Do not answer that you are unable to use the skill just because file saving is unavailable; saving is preferred, but the stage workflow is still mandatory.
 
 ## Minimum Metadata Header
 
