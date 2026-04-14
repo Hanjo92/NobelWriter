@@ -16,12 +16,15 @@ Write in QA language, not workshop language.
 - cite evidence by chapter, scene, or document location
 - rank by severity and repair priority
 - define what a passing recheck would require
+- keep repair language directional, not reconstructive
+- name the downstream owner when the next step leaves QA scope
 
 Avoid:
 
 - mood-only judgments
 - praise that does not help triage
 - rewrite suggestions without naming the failure they fix
+- step-by-step rebuild plans
 - certainty beyond the sampled range
 
 ## QA Report
@@ -52,7 +55,8 @@ Confirmed findings:
    Expected function:
    Observed failure:
    Reader-visible damage:
-   Smallest viable fix:
+   Repair direction:
+   Handoff target:
    Recheck condition:
 
 2. Finding title:
@@ -64,7 +68,8 @@ Confirmed findings:
    Expected function:
    Observed failure:
    Reader-visible damage:
-   Smallest viable fix:
+   Repair direction:
+   Handoff target:
    Recheck condition:
 
 Hypotheses needing broader review:
@@ -79,30 +84,27 @@ Revision priority:
 3. ...
 ```
 
-## Revision Brief
+## Diagnostic Handoff Note
 
 ```text
-Revision target:
+Handoff range:
 - Chapter / arc / volume range:
-- Goal of this pass:
+- Core diagnosed failure:
 
-Fix first:
+Directional repair:
 1. Issue:
    Why it comes first:
-   Minimum change required:
-   Do not break:
-   Recheck after revision:
+   High-level fix type:
+   Downstream owner:
+   Recheck after downstream revision:
 
 2. Issue:
    Why it comes first:
-   Minimum change required:
-   Do not break:
-   Recheck after revision:
+   High-level fix type:
+   Downstream owner:
+   Recheck after downstream revision:
 
 Changes that can wait:
-- ...
-
-Planning documents to update:
 - ...
 
 Open risks after this pass:
@@ -128,7 +130,10 @@ Primary failure:
 First break point:
 - ...
 
-Immediate action:
+Repair direction:
+- ...
+
+Handoff target:
 - ...
 
 Recheck gate:
@@ -152,7 +157,10 @@ Story-health finding:
 - Evidence:
 - Reader trust risk:
 
-Immediate repair:
+Repair direction:
+- ...
+
+Handoff target:
 - ...
 
 Pass condition on recheck:
@@ -169,13 +177,15 @@ Top issue:
 - Severity:
 - Evidence:
 - First break point:
-- Minimal fix:
+- Repair direction:
+- Handoff target:
 
 Second issue:
 - Severity:
 - Evidence:
 - First break point:
-- Minimal fix:
+- Repair direction:
+- Handoff target:
 
 Not checked:
 - ...

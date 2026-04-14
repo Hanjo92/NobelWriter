@@ -14,7 +14,18 @@ Use this file when the user needs the full order for auditing an existing long-f
 8. Audit payoff density and return quality.
 9. Add serialization checks if the work is installment-driven.
 10. Rank issues by reader impact and repair cost.
-11. Deliver a revision brief.
+11. Deliver a diagnostic handoff note.
+
+## End At Diagnostic Handoff
+
+This workflow ends when the failure is isolated clearly enough that the next owner can take over.
+
+- stop at diagnosis, repair direction, and recheck criteria
+- hand structural recovery and reconstruction to `longform-story-design`
+- hand prose or scene rewrite to `novel-writing`
+- hand dialogue-layer repair to `character-voice-bible`
+
+Do not continue into rebuild planning from inside this workflow.
 
 ## Start From Reader Symptom
 
@@ -39,6 +50,7 @@ Do not stop at the chapter where the reader complaint becomes loud. Try to locat
 - the first motivation slip that makes later scenes feel false
 
 The first break point is usually the best repair entry.
+Treat it as the point where handoff guidance begins, not as permission to redesign the whole project here.
 
 ## Rank By Damage
 
@@ -58,3 +70,11 @@ Mark findings as:
 - low confidence: plausible hypothesis that needs broader reading
 
 Do not present a low-confidence inference as a settled flaw.
+
+## Handoff Rule
+
+End the audit with three clear lines:
+
+- `repair direction`: what kind of fix is needed at a high level
+- `handoff target`: which downstream skill owns that kind of fix
+- `re-audit gate`: what would count as proof that the original failure is gone

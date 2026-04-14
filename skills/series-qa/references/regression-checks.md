@@ -6,6 +6,14 @@ Use this file when the user wants to know whether a revision actually fixed the 
 
 Do not ask only whether the rewritten chapter reads better. Check whether the original failure mode is gone.
 
+## Outcome Classes
+
+Classify the recheck outcome before adding commentary:
+
+- `QA pass`: the original failure mode is removed and no new blocking contradiction appears
+- `needs longform recovery`: the local symptom moved, but the upstream structural break still requires `longform-story-design`
+- `needs local rewrite`: the diagnosis still points to prose, scene, or dialogue work before the issue can clear
+
 ## Pass / Fail Questions
 
 ### Structural
@@ -37,10 +45,13 @@ For each fixed issue, report:
 
 - original failure
 - revision checked
-- pass or fail
+- outcome class
 - residual risk
 - next action if still unstable
+- handoff target if the issue stays outside QA scope
 
 ## Stop Rule
 
 If a revision removes the local symptom but preserves the upstream root cause, mark it as partial only. Cosmetic relief is not a full pass.
+
+If the recheck shows that the manuscript now needs reconstruction planning rather than another local rewrite, stop the QA loop and hand the work to `longform-story-design`.

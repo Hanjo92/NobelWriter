@@ -32,7 +32,7 @@ High severity with low confidence should trigger broader checking, not instant c
 
 ## Ranking Rule
 
-Prefer this order when preparing a revision brief:
+Prefer this order when preparing a QA report or diagnostic handoff note:
 
 1. high-severity root cause
 2. high-severity contradiction

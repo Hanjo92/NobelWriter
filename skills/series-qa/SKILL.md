@@ -9,6 +9,14 @@ description: Audit long-form Korean fiction manuscripts, chapter batches, story 
 
 Use this skill to inspect accumulated Korean fiction materials and identify the smallest set of failures causing reader-visible weakness. Focus on diagnosis, evidence, and repair priority rather than on fresh drafting.
 
+This skill is diagnosis-only. Do not rebuild chapters, scenes, arcs, cast sheets, or story systems here.
+Do not take ownership of downstream repair execution, rewrite architecture, or prose reconstruction.
+If the request needs a design pass, drafting pass, or character rewrite pass, hand it off instead of expanding scope.
+
+If the user needs the output to become a reusable reconstruction package rather than a ranked diagnosis, hand the work to `longform-story-design`.
+If the problem is primarily chapter prose, narration, scene flow, or longform drafting shape, hand the work to `novel-writing`.
+If the problem is primarily speaker voice, dialogue register, or cast interaction behavior, hand the work to `character-voice-bible`.
+
 ## Choose The Audit Mode
 
 Match the depth of the audit to the user's real need:
@@ -18,6 +26,22 @@ Match the depth of the audit to the user's real need:
 - full diagnosis: map structural, continuity, pacing, and payoff failures across a long range
 
 Default to the smallest mode that can answer the complaint cleanly.
+
+## Canonical Diagnostic Order
+
+Use this order unless the user's complaint makes a narrower slice sufficient:
+
+1. identify the visible failure
+2. gather the minimum audit packet
+3. read the smallest valid slice
+4. sample only if the range is too large to inspect directly
+5. run the required diagnostic passes
+6. rank the root cause and downstream symptoms
+7. state the directional repair needed
+8. hand off reconstruction work to the correct downstream skill
+9. apply the re-audit gate after revision
+
+Stop at diagnosis, repair direction, and handoff. Do not cross the line into rebuilding the material inside this skill.
 
 ## Start From The Visible Failure
 
@@ -41,7 +65,7 @@ Before diagnosing, collect:
 - planning docs available: bible, timeline, outline, ledger
 - intended genre and audience
 - user complaint or suspected weak point
-- desired output: report, ranked issue list, or revision brief
+- desired output: QA report, ranked issue list, triage note, arc snapshot, or serialization checkpoint
 
 If the user has both a manuscript and planning documents, treat mismatches between them as evidence instead of assuming the plan is correct.
 
@@ -180,10 +204,12 @@ Default to this structure unless the user requests a different format:
 3. severity and confidence
 4. chapter or scene evidence
 5. likely reader-visible symptom
-6. smallest viable fix
-7. optional deep fix
+6. smallest viable repair direction
+7. downstream handoff target
+8. optional re-audit note
 
 For reusable report layouts, read [references/report-templates.md](references/report-templates.md).
+Keep the output QA-first: it should support decision-making, not imply that this skill is responsible for reconstruction.
 
 ## Evidence Standard
 
@@ -211,6 +237,7 @@ Examples:
 - continuity ledger failure -> knowledge mistakes, object drift, unstable consequences
 
 The report should make clear what to repair first to collapse the largest number of downstream failures.
+Describe the repair only as a direction, dependency, or constraint. Do not turn it into a rebuild plan or step-by-step reconstruction inside this skill.
 
 ## Severity Rule
 
@@ -236,6 +263,7 @@ Treat this as quality assurance, not taste ranking. A finding is strongest when 
 - minimal repair path
 
 Avoid vague judgments such as "weak" or "boring" without attaching them to a broken story function.
+Do not phrase the output as if this skill will execute the fix; phrase it as a diagnostic recommendation that points to the next owner.
 
 ## Recheck Rule
 
@@ -248,12 +276,13 @@ After proposing fixes, define what would count as success on a second pass:
 - episode hook leads to changed next-episode value instead of recap
 
 For re-audit gates, read [references/regression-checks.md](references/regression-checks.md).
+Use the re-audit gate as the end of the diagnostic loop: once the issue is repaired downstream, recheck whether the original failure and its collateral symptoms actually cleared.
 
 ## Operating Rules
 
 - Diagnose with evidence tied to chapters, scenes, or planning artifacts.
 - Prefer the earliest break point over the loudest downstream symptom.
-- Suggest the smallest revision that can restore function before proposing full rewrites.
+- Suggest the smallest revision direction that can restore function before proposing broader downstream work.
 - Distinguish between genre-appropriate repetition and accidental beat reuse.
 - If the user's complaint is vague, convert it into testable failure hypotheses.
 - Keep diagnosis separate from rewriting unless the user asks for proof-of-fix examples.
@@ -261,16 +290,18 @@ For re-audit gates, read [references/regression-checks.md](references/regression
 - When several failures share one root cause, report the root cause first and list downstream symptoms under it.
 - If the manuscript is too large for full confidence, mark the scope limit instead of overstating certainty.
 - Prefer a narrower but defensible finding over a broad but weak conclusion.
+- Name the downstream owner when the next step is structural recovery, prose rewrite, or dialogue-layer repair.
+- Do not produce reconstruction packages, re-entry drafting packets, or rewrite plans in this skill.
 
 ## Relationship To Other Skills
 
 Use this skill for diagnosis and revision prioritization across existing long-form material.
 
-- Use `longform-story-design` to build or repair the planning layer.
+- Use `longform-story-design` to build or repair the planning layer when the diagnosis points to structural recovery.
 - Use `character-voice-bible` when the fix is mainly in dialogue differentiation, spoken-line pressure, or relationship-based register repair.
 - Use `novel-writing` when the fix is mainly in narration, scene prose, chapter execution, or exposition control after the diagnosis is clear.
 
-This skill should tell those layers what to fix first and why.
+This skill should tell those layers what to fix first and why, but it should not do their planning for them.
 
 ## Resource Map
 
@@ -280,7 +311,7 @@ This skill should tell those layers what to fix first and why.
 - Read [references/mystery-failures.md](references/mystery-failures.md) when clues, deduction, reveal force, or investigative logic are the main risk.
 - Read [references/progression-fantasy-failures.md](references/progression-fantasy-failures.md) when training arcs, rank-ups, power costs, or growth momentum are underperforming.
 - Read [references/political-intrigue-failures.md](references/political-intrigue-failures.md) when faction clarity, betrayal logic, leverage flow, or institutional power is the main failure.
-- Read [references/report-templates.md](references/report-templates.md) when the user needs a reusable QA report or revision brief.
+- Read [references/report-templates.md](references/report-templates.md) when the user needs a reusable QA report, triage artifact, or directional handoff note.
 - Read [references/character-drift-checks.md](references/character-drift-checks.md) when motivation reset, agency loss, relationship residue, or side-character flattening is the main risk.
 - Read [references/continuity-checks.md](references/continuity-checks.md) when contradictions, knowledge drift, or rule inconsistency are the main risk.
 - Read [references/planning-sync-checks.md](references/planning-sync-checks.md) when the manuscript and planning documents may no longer describe the same active story state.
