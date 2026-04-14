@@ -16,6 +16,66 @@ Use this file when the user needs the full planning order for a long novel or se
 10. Hand off only the active subset to drafting.
 11. After each drafting batch, update the trackers.
 
+## Stage Exit Criteria
+
+Do not move to the next layer until the current one can survive a quick retell without contradiction.
+
+### Story Engine
+
+Exit only when you can state, in one pass, all of the following:
+
+- what the protagonist wants for the long run
+- what keeps pushing back in changing forms
+- which escalation lanes can move independently
+- what makes the reader return after the next chapter
+- what kind of ending promise this engine is aiming at
+
+If any of those answers still feel decorative instead of structural, stay on the engine layer.
+
+### Growth Model
+
+Exit only when the project has one primary growth model and one clear reason it is the main one.
+
+- the growth model names the long-run expansion logic
+- the model matches the genre package and the ending promise
+- the model explains how volume one changes shape in volume two or the next arc
+- any secondary growth is explicitly subordinate
+
+If the project can be described by three or more equal growth models, the stack is still too vague.
+
+### Cast
+
+Exit only when the core cast can be read as a working pressure map.
+
+- each major character has a role in the long run
+- each major character has a distinct want, pressure point, or leverage source
+- relationship tension is visible without prose explanation
+- no major cast member exists only to repeat another member's function
+
+If two major characters can be swapped without changing the longform pressure, the cast layer is not finished.
+
+### History
+
+Exit only when the history spine changes the present.
+
+- the backstory entries are limited to facts that affect current conflict
+- the chronology is clear enough to stop timeline collisions
+- reveal timing is visible where it matters
+- the history does not compete with the story engine for attention
+
+If the history reads like lore instead of pressure, trim it before moving on.
+
+### Arc
+
+Exit only when the volume or major-arc plan can hand off to drafting.
+
+- the arc has a start condition, midpoint shift, and exit condition
+- the arc states what changes by the end of the run
+- chapter-range objectives are clear enough to draft from
+- the arc does not depend on undefined future fixes
+
+If the arc only says "something happens" without a pressure change, it is not ready.
+
 ## Greenfield Default
 
 If the user starts from a premise, hook, or synopsis rather than existing chapters, do this before any continuity work:
@@ -26,6 +86,27 @@ If the user starts from a premise, hook, or synopsis rather than existing chapte
 - map the first volume or first major arc
 
 Continuity documents come later unless the user already has drafted material.
+
+## Recovery Flow For Damaged Longform Drafts
+
+If the user brings broken chapters, conflicting outlines, or a draft that no longer agrees with itself, do not restart from premise.
+
+1. index the existing material by chapter, arc, or document chunk
+2. extract hard canon before suggesting changes
+3. separate timeline damage from motivation damage, knowledge damage, and payoff damage
+4. choose the smallest recovery bundle that clears the first blocking contradiction
+5. repair the active slice before expanding anything else
+
+Use this recovery bundle order:
+
+- canon extraction sheet
+- continuity audit report
+- history spine if chronology is broken
+- revised active arc plan if the middle has lost direction
+- knowledge-state tracker if secrets or misunderstandings are failing
+- payoff tracker if setup debt is the main problem
+
+Only after the repaired slice is stable should you hand off a drafting packet.
 
 ## Lock The Ending Promise First
 
@@ -90,6 +171,8 @@ Use the minimum stable set:
 - continuity ledger: when chapters accumulate
 - knowledge-state tracker: when secrets, mysteries, lies, or factional asymmetry matter
 - payoff tracker: when setup and delayed return are central to reader satisfaction
+
+Use the smallest bundle that covers the next failure point. Bigger stacks are only justified when the next layer of work would otherwise contradict current canon.
 
 ## Update Rhythm
 

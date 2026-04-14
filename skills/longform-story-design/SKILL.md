@@ -1,18 +1,43 @@
 ---
 name: longform-story-design
-description: Design and stabilize long-form Korean fiction at series, volume, and chapter-batch level by building story engines, bibles, world rules, cast matrices, history timelines, arc plans, continuity ledgers, knowledge trackers, and payoff maps. Use when Codex is asked to plan a Korean long novel, web novel, saga, or multi-arc serial; turn a premise into a scalable longform structure; expand a short hook into volume architecture; repair an existing long draft that is drifting; or prepare continuity-safe drafting packets across many chapters.
+description: Design, audit, and recover long-form Korean fiction at series, volume, and chapter-batch level by building story engines, bibles, world rules, cast matrices, history timelines, arc plans, continuity ledgers, knowledge trackers, payoff maps, recovery plans, and re-entry drafting packets. Use when Codex is asked to plan a Korean long novel, web novel, saga, or multi-arc serial; turn a premise into a scalable longform structure; expand a short hook into volume architecture; audit an existing long draft that is drifting; or recover canon and continuity into a reusable planning package.
 ---
 
 # Longform Story Design
 
-Build only the planning layer needed to keep a long Korean fiction project coherent across many chapters. Prefer reusable working documents over lore essays.
+Build only the planning layer needed to keep a long Korean fiction project coherent across many chapters. Prefer reusable working documents over lore essays, and prefer recovery packages over bare issue lists when the project already exists.
 
-Default to `greenfield build` when the user is starting from an idea, hook, synopsis, or loose cast concept. Treat repair and audit as secondary modes unless the request clearly starts from existing chapters.
+## Hard Routing And Ownership
+
+Use this skill for series-level architecture, canon recovery, continuity control, and reusable planning packages.
+
+- Use `series-qa` when the user wants diagnosis only: ranked findings, severity, regression checking, or a report that should not rebuild the project.
+- Use `novel-writing` when the user wants scenes, chapters, prose, or stage-file drafting after the plan is stable.
+- Use `character-voice-bible` when the main problem is dialogue-only repair, register tuning, or cast-wide voice separation.
+- Keep canon extraction, recovery planning, and re-entry packet design here when the goal is to restore the longform structure rather than only describe the break.
+
+## Canonical Execution Order
+
+Lock decisions in this order: `mode -> package -> dominant risk -> stack -> depth -> drafting slice`.
+
+Reference authority follows the same order:
+
+- [references/project-intake.md](references/project-intake.md) governs intake and first routing clues
+- [references/planning-stack-selection.md](references/planning-stack-selection.md) governs stack choice
+- [references/longform-workflow.md](references/longform-workflow.md) governs phase order and stage exits
+- [references/planning-output-format.md](references/planning-output-format.md) governs package shape
+- [references/handoff-to-drafting.md](references/handoff-to-drafting.md) governs the active drafting slice
 
 ## Start With Intake
 
-Lock the minimum facts before designing anything large:
+Lock the minimum facts before designing anything large, in canonical order:
 
+- mode
+- package selection reason
+- dominant risk
+- planning stack
+- depth
+- drafting slice
 - format and scale
 - structure mode, if relevant: linear arc, braided ensemble, omnibus, rotating-focus serial
 - genre and audience tendency
@@ -21,8 +46,6 @@ Lock the minimum facts before designing anything large:
 - alias resolution note, if the stated label is cross-package or ambiguous
 - project state: premise only, partial outline, existing chapters, or repair request
 - known ending or ending promise
-- dominant risk: drift, escalation collapse, timeline collision, weak opposition, flat relationship motion, forgotten setup
-- likely package selection reason
 - requested output: bible, arc plan, chapter architecture, repair pass, drafting packet
 
 If the prompt is vague, infer the smallest safe scope and state the assumption. For quick intake fields and risk triage, read [references/project-intake.md](references/project-intake.md).
@@ -38,10 +61,13 @@ Choose the main job first. Do not mix all modes unless the user clearly needs th
 
 - `greenfield build`: turn a premise into a scalable longform planning stack
 - `rolling outline`: support active drafting with the next arc or chapter-range packet
-- `drift repair`: recover canon and structure from an existing, unstable draft
-- `continuity audit`: check timeline, knowledge, rules, and payoff consistency without rebuilding the whole project
+- `recovery audit`: extract canon, localize breakpoints, and produce a reusable recovery package
+- `recovery rebuild`: recover canon and structure from an existing, unstable draft, then produce a re-entry drafting packet
+- `continuity audit`: check timeline, knowledge, rules, and payoff consistency without rebuilding the whole project; use `series-qa` if the user only wants findings
 
-If the project is not yet drafted, stay in `greenfield build` long enough to lock the story engine, growth model, and first major architecture layer before producing chapter-by-chapter plans.
+`drift repair` is the legacy label for `recovery rebuild`, and `continuity audit` remains the narrow audit-only lane when the user wants diagnosis more than reconstruction.
+
+If the project is not yet drafted, stay in `greenfield build` long enough to lock the story engine, growth model, and first major architecture layer before producing chapter-by-chapter plans. If the project already exists, default to `recovery audit` or `recovery rebuild` before anything else.
 
 ## Prioritize The Story Engine
 
@@ -120,7 +146,8 @@ Default stacks:
 
 - `greenfield build`: story engine sheet, series brief, story bible, core cast matrix, first arc or volume plan
 - `rolling outline`: active arc plan, chapter-range plan, continuity ledger, payoff tracker
-- `drift repair`: canon extraction sheet, history spine, continuity ledger, knowledge-state tracker
+- `recovery audit`: canon extraction sheet, continuity ledger, knowledge-state tracker, recovery plan, continuity audit report
+- `recovery rebuild`: canon extraction sheet, continuity ledger, knowledge-state tracker, recovery plan, re-entry drafting packet
 - `continuity audit`: continuity ledger, knowledge-state tracker, payoff tracker, drafting packet
 
 Available deliverables:
@@ -140,6 +167,8 @@ Available deliverables:
 - promise/payoff tracker
 - canon extraction sheet
 - continuity audit report
+- recovery plan
+- re-entry drafting packet
 
 For longform workflow defaults, read [references/longform-workflow.md](references/longform-workflow.md).
 For premise-to-series build order, read [references/greenfield-architecture.md](references/greenfield-architecture.md).
@@ -148,7 +177,6 @@ For genre-specific package emphasis, read [references/genre-packages.md](referen
 For strict genre-package selection rules, read [references/genre-selection-rules.md](references/genre-selection-rules.md).
 For a one-page genre lock worksheet, read [references/genre-selection-decision-sheet.md](references/genre-selection-decision-sheet.md).
 For dense genre-label alias mapping, read [references/genre-alias-map.md](references/genre-alias-map.md).
-For ambiguous alias resolution samples, read [references/genre-package-samples.md](references/genre-package-samples.md).
 For omnibus or rotating-focus structure rules, read [references/omnibus-structure.md](references/omnibus-structure.md).
 For a reusable project frame template, read [references/project-frame-template.md](references/project-frame-template.md).
 For answer packaging and output density, read [references/planning-output-format.md](references/planning-output-format.md).
@@ -157,6 +185,41 @@ For reusable planning formats, read [references/longform-templates.md](reference
 For continuity and state tracking, read [references/continuity-ledger.md](references/continuity-ledger.md).
 For handoff into chapter drafting, read [references/handoff-to-drafting.md](references/handoff-to-drafting.md).
 For existing-manuscript rescue, read [references/repair-existing-draft.md](references/repair-existing-draft.md).
+
+## Recovery Artifacts
+
+For `recovery audit` and `recovery rebuild`, always end with a reusable planning package. The minimum recovery bundle is:
+
+- canon extraction sheet
+- continuity ledger
+- knowledge-state tracker
+- recovery plan
+- re-entry drafting packet
+
+Minimum recovery rules:
+
+- the canon extraction sheet records confirmed facts, source ranges, and uncertainty
+- the continuity ledger records contradictions, state changes, and open collisions
+- the knowledge-state tracker records who knows what, and from when
+- the recovery plan records the root cause, repair order, and the smallest safe next move
+- the re-entry drafting packet records the exact chapter, arc, or volume slice to draft next and the continuity guardrails that must hold
+
+Complete enough to hand off means:
+
+- the canon extraction sheet identifies what is confirmed, what is disputed, and which source range anchors each important fact
+- the continuity ledger makes the first blocking contradiction visible enough that a downstream drafter cannot miss it
+- the knowledge-state tracker separates at least the active POV, key counterpart, and reader-visible reveal state
+- the recovery plan names the first repair move, the next safe packet, and what must not be rewritten blindly
+- the re-entry drafting packet points to one active repaired slice rather than the whole damaged run
+
+Omit only what does not govern the next safe move:
+
+- omit the knowledge-state tracker only when secrets, misunderstanding, and asymmetrical information do not change the repair order
+- omit history reset work when chronology is not part of the break
+- omit a revised active arc plan when the current arc shape still works after the blocking contradiction is removed
+- keep the re-entry drafting packet whenever prose drafting is expected next
+
+Do not return a bare issue list for a recovery job when this skill owns the response.
 
 ## Work In Layers
 
@@ -204,7 +267,7 @@ Every longform design artifact should answer one question cleanly:
 - `story bible`: what is true in the setting and cast
 - `timeline`: what happened when
 - `continuity ledger`: what changed and what must stay consistent
-- `knowledge tracker`: who knows what, and from when
+- `knowledge-state tracker`: who knows what, and from when
 - `payoff tracker`: what was promised, delayed, or cashed
 
 Prefer revisable tables and bullet structures over lore essays.
@@ -276,6 +339,24 @@ Always include `package selection reason` in `project frame`.
 
 Do not omit this line even when the package looks obvious from the setting.
 
+When delivering `recovery audit` or `recovery rebuild`, prefer a named recovery package rather than loose notes or a raw issue list. Default order:
+
+1. project frame
+2. recovery diagnosis
+3. recovery package
+4. next safe step
+
+Inside `recovery package`, present documents in stable order:
+
+1. canon extraction sheet
+2. continuity ledger
+3. knowledge-state tracker
+4. recovery plan
+5. re-entry drafting packet
+6. revised history spine or active arc plan only if the chronology or arc shape must be reset
+
+Do not end a recovery request on findings alone when the user needs the project restored into reusable form.
+
 ## Match Output Density To Scope
 
 Choose one depth level:
@@ -283,6 +364,7 @@ Choose one depth level:
 - `concept pass`: engine sheet, series brief, and one first-arc sketch
 - `development pass`: add story bible, cast matrix, and volume ladder
 - `production pass`: add chapter-range plan, trackers, and drafting handoff
+- `recovery pass`: add canon extraction sheet, continuity ledger, knowledge-state tracker, recovery plan, and re-entry drafting packet
 
 Do not jump to production-pass density unless the user asked for detailed structure or the project is already stabilized.
 
@@ -309,7 +391,6 @@ Avoid turning the plan into an essay about the plan.
 - Read [references/genre-alias-map.md](references/genre-alias-map.md) when the user uses shorthand, platform slang, or mixed Korean/English genre labels that need to map to a supported package.
 - Read [references/project-frame-template.md](references/project-frame-template.md) when you need the reusable top block for planning output and do not want `project frame` fields to drift.
 - Read [references/planning-output-format.md](references/planning-output-format.md) when you need a denser, repeatable output package for longform design work.
-- Read [references/genre-package-samples.md](references/genre-package-samples.md) when you need concrete examples of how the same planning format changes by genre package.
 - Read [references/planning-stack-selection.md](references/planning-stack-selection.md) when you need to choose the minimum viable document set for a given scale, risk, or manuscript state.
 - Read [references/longform-templates.md](references/longform-templates.md) when you need fill-in templates for bibles, arcs, timelines, or ledgers.
 - Read [references/continuity-ledger.md](references/continuity-ledger.md) when the main risk is contradiction, forgotten setup, drifting rules, or unstable knowledge state.

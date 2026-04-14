@@ -33,6 +33,17 @@ Match the dominant problem to the first artifact:
 - secrets or misunderstandings breaking -> knowledge-state tracker
 - setup not landing -> payoff tracker
 - existing contradictory draft -> canon extraction sheet and continuity audit report
+- damaged longform draft with multiple broken chapters -> repair bundle first, then chapter-safe drafting packet
+
+If the request is already a repair request, do not route it through a fresh greenfield stack. Start with the smallest recovery bundle that removes the first blocking contradiction.
+
+First recovery bundle rules:
+
+- chronology or cause-and-effect damage -> canon extraction sheet, continuity audit report, history spine
+- middle drift or stalled momentum -> canon extraction sheet, continuity audit report, revised active arc plan
+- knowledge or secret-state damage -> canon extraction sheet, knowledge-state tracker, continuity audit report
+- payoff debt or dropped setup -> canon extraction sheet, payoff tracker, continuity audit report
+- long damaged draft with no clear safe chapter boundary -> canon extraction sheet, continuity audit report, then isolate the active repaired slice before any prose drafting
 
 ## Genre Package Intake
 
@@ -91,6 +102,7 @@ Alias resolution note:
 Structural warning:
 Known ending status:
 Dominant longform risk:
+First recovery bundle:
 Requested output:
 Assumptions used:
 ```
