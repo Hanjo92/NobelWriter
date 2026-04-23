@@ -67,6 +67,7 @@ Main transitions:
 - `recovery_planning -> slice_planning`
 - `ready_next_slice -> approval_waiting`
 - `ready_next_slice -> slice_planning`
+- final accepted batch -> `completed`
 - any state -> `blocked` when the runtime is contradictory, missing, or repeatedly failing
 
 ## Mode Rules
@@ -86,7 +87,13 @@ Keep every run tightly bounded:
 - Stop once the next valid transition is complete and the handoff files are updated
 
 ## Failure And Re-entry
-Before each run, snapshot the current runtime state so re-entry is possible. Preserve manuscript output even when state changes or recovery is needed.
+Before each run, snapshot the current runtime state so re-entry is possible. At minimum, archive:
+
+- `state/runtime.yaml`
+- `state/active-slice.yaml`
+- `state/handoff.md`
+
+Preserve manuscript output even when state changes or recovery is needed.
 
 Block the run when:
 
