@@ -38,10 +38,13 @@ Read and update the project runtime files that govern the loop:
 - `state/runtime.yaml`
 - `state/active-slice.yaml`
 - `state/handoff.md`
-- ledgers
-- QA/recovery files
+- `ledger/continuity.md`
+- `ledger/knowledge-state.md`
+- `ledger/payoff-tracker.md`
+- `qa/latest-report.md`
+- `recovery/latest-recovery.md`
 
-Treat manuscript output as separate from runtime state. Keep the draft in manuscript storage and keep orchestration decisions in the runtime files.
+Treat manuscript output as separate from runtime state. Keep the draft in manuscript storage and keep orchestration decisions in the runtime files. Do not touch other project artifacts unless `project.md` or `state/runtime.yaml` explicitly names them as part of the current transition.
 
 ## States And Transitions
 Use these states as the canonical loop states:
@@ -81,6 +84,7 @@ Mode choice affects when the loop stops, not the specialist work delegated withi
 ## Run Boundary Rules
 Keep every run tightly bounded:
 
+- A run means one state-machine transition for one active `3~5화` batch, or one explicitly safe adjacent pair such as `slice_planning -> drafting` or `qa_review -> ready_next_slice`.
 - Do one bounded action or one safe adjacent pair only
 - Never attempt the entire series in one run
 - Never replace specialist skills with a full manual rewrite
@@ -99,8 +103,8 @@ Block the run when:
 
 - the state files contradict each other
 - a required runtime file is missing
-- QA fails repeatedly on the same slice
-- recovery repeats without progress
+- QA fails twice on the same slice without a changed repair direction
+- recovery runs twice in a row without changing `state/active-slice.yaml` or `recovery/latest-recovery.md`
 - approval is bypassed in `approval-gated` mode
 
 On re-entry, set the next state explicitly, keep the manuscript intact, and continue only from the last valid boundary.
