@@ -8,6 +8,7 @@ Snapshot before each run:
 
 Block conditions:
 
+- missing or ambiguous selected project runtime
 - missing state
 - contradictory state
 - same slice QA fails twice without a changed repair direction
@@ -18,6 +19,8 @@ Block conditions:
 
 Operational checks:
 
+- missing selected runtime means no explicit, pre-existing `projects/<series-slug>/` path was supplied by the user, automation prompt, or current runtime files
+- ambiguous selected runtime means more than one `projects/<series-slug>/` path could plausibly match the request; do not choose from chat context
 - missing state means any required file is absent, or a required key is absent from the file that owns it
 - required `project.md` fields are Title, Slug, Target scale, Completion mode, Default batch size, and Ending promise
 - required `state/runtime.yaml` keys are `mode`, `state`, `next_action`, `approval_pending`, `last_approval_at`, `last_approval_batch_start`, `last_approval_batch_end`, `last_approval_note`, `current_batch_start`, `current_batch_end`, `latest_manuscript_batch`, `last_run_at`, `failure_count`, `blocked_reason`, and `last_completed_stage`
@@ -28,6 +31,7 @@ Operational checks:
 - repeated recovery means two consecutive runs have `state: recovery_planning` without changing `state/active-slice.yaml` or `recovery/latest-recovery.md`
 - active-slice divergence means `state/active-slice.yaml` chapter range does not match the newest saved manuscript batch named in `state/runtime.yaml`
 - undefined completion means `project.md` has no ending promise, target scale, or completion condition while `next_action` is `slice_planning`
+- unproven stop means `state/runtime.yaml` or `state/handoff.md` lacks the artifact path or predicate that proves `completed`, `blocked`, or the completed transition; stay in the prior valid state or mark `blocked`
 
 Recovery rules:
 
