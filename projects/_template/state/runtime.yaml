@@ -1,0 +1,10 @@
+mode: approval-gated
+state: bootstrap_pending
+next_action: bootstrap
+approval_pending: false
+current_batch_start: null
+current_batch_end: null
+last_run_at: null
+failure_count: 0
+blocked_reason: null
+last_completed_stage: null
