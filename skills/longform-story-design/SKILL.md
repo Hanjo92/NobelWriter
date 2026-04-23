@@ -16,6 +16,19 @@ Use this skill for series-level architecture, canon recovery, continuity control
 - Use `character-voice-bible` when the main problem is dialogue-only repair, register tuning, or cast-wide voice separation.
 - Keep canon extraction, recovery planning, and re-entry packet design here when the goal is to restore the longform structure rather than only describe the break.
 
+This skill owns planning and recovery artifacts only. Do not draft or rewrite scene/chapter prose here, and do not mutate `series-completion-loop` runtime files such as `state/runtime.yaml`, `state/active-slice.yaml`, or `state/handoff.md`. When called by an orchestrator, return artifacts and proof paths for the orchestrator to persist.
+
+## Orchestrator Handoff Intake
+
+When invoked by `series-completion-loop`, obey the current state boundary before choosing a general planning mode.
+
+- `slice_planning`: scope output to `current_batch_start` through `current_batch_end` only, normally the next `3~5화`.
+- `slice_planning`: create only the active-slice planning artifact needed for the next drafting handoff.
+- `slice_planning`: do not create or expand series architecture, future arcs, volume ladders, or later batches unless the handoff explicitly authorizes a broader planning mode.
+- `recovery_planning`: return a single recovery artifact suitable for `recovery/latest-recovery.md`.
+- `recovery_planning`: include root cause, repair order, next safe move, handoff target, must-not-break constraints, proof artifact path(s), and one exact re-entry slice.
+- `recovery_planning`: do not rewrite manuscript chapters, runtime state, or ledger files directly; name what must be updated and who owns it.
+
 ## Canonical Execution Order
 
 Lock decisions in this order: `mode -> package -> dominant risk -> stack -> depth -> drafting slice`.
@@ -150,6 +163,8 @@ Default stacks:
 - `recovery rebuild`: canon extraction sheet, continuity ledger, knowledge-state tracker, recovery plan, re-entry drafting packet
 - `continuity audit`: continuity ledger, knowledge-state tracker, payoff tracker, drafting packet
 
+When invoked for `series-completion-loop` `slice_planning`, override these general stacks with a current-batch slice packet only.
+
 Available deliverables:
 
 - series brief
@@ -195,6 +210,16 @@ For `recovery audit` and `recovery rebuild`, always end with a reusable planning
 - knowledge-state tracker
 - recovery plan
 - re-entry drafting packet
+
+When invoked for `series-completion-loop` `recovery_planning`, surface the recovery bundle as one top-level artifact for `recovery/latest-recovery.md`:
+
+- root cause
+- repair order
+- next safe move
+- handoff target
+- must-not-break constraints
+- proof artifact path(s)
+- re-entry slice with exact chapter, arc, or volume range
 
 Minimum recovery rules:
 
@@ -300,7 +325,7 @@ When the user wants actual scenes or chapters:
 1. finish or update the longform planning artifacts here
 2. if cast voice or dialogue differentiation is a visible risk, hand the dialogue layer to `character-voice-bible`
 3. hand narration, scene execution, and chapter prose to `novel-writing`
-4. after drafting, update continuity, knowledge state, and payoff status
+4. after drafting, record which continuity, knowledge-state, and payoff trackers must be updated; do not mutate orchestrator runtime state
 
 Use this skill before drafting when the manuscript is likely to drift. Use it after drafting when accumulated chapters need coherence repair.
 

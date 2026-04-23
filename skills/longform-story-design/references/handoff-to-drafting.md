@@ -8,6 +8,8 @@ Do not pass the whole bible into every chapter draft. Reduce the planning layer 
 
 The active repaired slice should usually be one chapter or one short chapter range, one focal pressure, and one clear emotional or practical turn. If the next safe unit is larger than that, define why it must stay contiguous.
 
+If the caller is `series-completion-loop` `slice_planning`, the active repaired slice is exactly `current_batch_start` through `current_batch_end`, normally the next `3~5화`, and nothing beyond it.
+
 Reduce the planning layer to:
 
 - current arc purpose
@@ -42,6 +44,16 @@ Continuity constraints:
 Do not contradict:
 ```
 
+For orchestrated handoff, also include:
+
+```text
+Current batch:
+Proof artifact path(s):
+Handoff target:
+Next state suggestion:
+Must not plan beyond:
+```
+
 ## After Drafting
 
 After a draft batch exists, update:
@@ -51,6 +63,8 @@ After a draft batch exists, update:
 - revealed or newly suspected information
 - injuries, items, or travel state
 - payoff tracker status
+
+When called as an orchestrated specialist, return these tracker update requirements in the packet instead of directly editing runtime state or manuscript files.
 
 If the packet covered multiple chapters or multiple POVs, update each affected chapter or POV state separately so the next packet does not flatten them into one generic follow-up.
 

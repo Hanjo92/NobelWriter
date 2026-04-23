@@ -104,6 +104,8 @@ Include:
 - drafting packet
 - continuity or payoff trackers if relevant
 
+If the caller supplies an active batch boundary, treat that boundary as the outer limit. The chapter-range plan must cover only the current batch and must not pre-plan later ranges beyond what is needed to maintain continuity.
+
 ## Density Rules
 
 Keep artifact density high but not bloated:
@@ -114,6 +116,8 @@ Keep artifact density high but not bloated:
 - core cast matrix: 1 block per major cast member
 - volume ladder: 3 to 7 entries for planned scale
 - chapter-range plan: one row or block per range, not per chapter unless requested
+
+For `series-completion-loop` `slice_planning`, density is capped by the current `3~5화` batch even when the whole project is 150~200 chapters.
 
 Genre-specific density shifts:
 
