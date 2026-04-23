@@ -307,9 +307,9 @@ Bad pattern:
 
 Before each run, archive the current orchestrator state:
 
-- `runtime.yaml`
-- `active-slice.yaml`
-- `handoff.md`
+- `state/runtime.yaml`
+- `state/active-slice.yaml`
+- `state/handoff.md`
 
 Store snapshots in:
 
