@@ -2,6 +2,10 @@ mode: approval-gated
 state: bootstrap_pending
 next_action: bootstrap
 approval_pending: false
+last_approval_at: null
+last_approval_batch_start: null
+last_approval_batch_end: null
+last_approval_note: null
 current_batch_start: null
 current_batch_end: null
 latest_manuscript_batch: null

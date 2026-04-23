@@ -73,11 +73,13 @@ Main transitions:
 - final accepted batch -> `completed`
 - any state -> `blocked` when the runtime is contradictory, missing, or repeatedly failing
 
+Enter `completed` only when the final arc or ending segment is finished, payoff tracker items are closed, `longform-story-design` yields no valid next slice, and final batch QA has no critical unresolved failure.
+
 ## Mode Rules
 Support two operating modes:
 
 - `autonomous`: continue automatically after accepted QA, then update state and move to the next valid slice
-- `approval-gated`: stop in `approval_waiting` after a valid slice is ready, and wait for explicit approval before continuing
+- `approval-gated`: stop in `approval_waiting` after a valid slice is ready, and wait for explicit approval recorded in `state/runtime.yaml` before continuing
 
 Mode choice affects when the loop stops, not the specialist work delegated within the run.
 

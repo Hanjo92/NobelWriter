@@ -28,6 +28,13 @@ Transitions:
 
 Use the canonical wildcard form `* -> blocked` for every safety stop. Do not rewrite it as `any state -> blocked` in runtime or handoff notes.
 
+Completed-entry guards:
+
+- final arc or ending segment is finished
+- required payoff tracker items are closed
+- `longform-story-design` yields no valid next slice
+- final batch QA has no critical unresolved failure
+
 Run boundary:
 
 - one run covers one state-machine transition for one active `3~5화` batch
@@ -39,5 +46,5 @@ Mode-specific transition authority:
 
 - `autonomous` may use `ready_next_slice -> slice_planning` after runtime and handoff files are updated
 - `approval-gated` must use `ready_next_slice -> approval_waiting` and stop
-- `approval-gated` may leave `approval_waiting` only after explicit approval is recorded in `state/runtime.yaml`
+- `approval-gated` may leave `approval_waiting` only after `last_approval_at` is recorded in `state/runtime.yaml` for the current batch and `approval_pending` is set to `false`
 - neither mode may skip `qa_review` after drafting
