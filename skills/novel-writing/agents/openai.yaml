@@ -1,7 +1,7 @@
 interface:
   display_name: "Novel Writing"
   short_description: "Narration-first Korean fiction drafting and prose revision."
-  default_prompt: "Use $novel-writing for Korean fiction planning, narration-heavy scene and chapter drafting, prose revision, and 초고/개고/원고 production. Route the request first, make minimal assumptions, load only the needed references, and if prose is requested execute 초고 -> 개고 -> 원고 and return 원고 by default."
+  default_prompt: "Use $novel-writing for Korean fiction planning, narration-heavy scene and chapter drafting, prose revision, and 초고/개고/원고 production. Route the request first, make minimal assumptions, load only the needed references, and if prose is requested execute 초고 -> 개고 -> 원고 and return 원고 by default. For series-completion-loop drafting handoffs, require current_batch_start/current_batch_end, draft only that batch, save stage files, and return artifact paths without editing runtime, handoff, ledger, QA, or recovery state."
 
 policy:
   allow_implicit_invocation: true

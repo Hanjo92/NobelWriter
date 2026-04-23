@@ -25,6 +25,38 @@ If the request says `써줘`, `초고`, `개고`, `원고`, `장면`, `챕터`, 
 Do not stop to ask broad process questions if a narrow assumption will let you proceed safely.
 If information is missing, make one-line assumptions and continue.
 
+## Orchestrator Drafting Intake
+
+When invoked by `series-completion-loop` for a `drafting` state, act only as the manuscript specialist for the current batch.
+
+Before drafting, require these handoff fields or stop with a blocker for the orchestrator:
+
+- selected `projects/<series-slug>/` runtime path
+- `current_batch_start`
+- `current_batch_end`
+- matching active-slice range, goal, POV, active cast, `must_keep`, and `must_not_break`
+- relevant current ledgers or prior manuscript excerpt needed to draft this batch safely
+
+For orchestrated drafting, hard-limit scope to `current_batch_start` through `current_batch_end`.
+
+- Draft only the active `3~5화` batch unless the handoff explicitly names a smaller current repair range.
+- Do not continue into future chapters, next slices, epilogues, or whole-series completion.
+- Do not invent missing runtime, slice, ledger, or project identity from chat context.
+- If the requested batch needs new macro planning, recovery direction, continuity repair, or QA judgment before prose can be safely written, stop and return a directional blocker instead of drafting around it.
+- Use `longform-story-design` for slice or recovery planning, `series-qa` for QA/continuity review, and `character-voice-bible` for dialogue-only voice repair.
+
+Write manuscript artifacts only. Do not edit `state/runtime.yaml`, `state/active-slice.yaml`, `state/handoff.md`, `ledger/continuity.md`, `ledger/knowledge-state.md`, `ledger/payoff-tracker.md`, `qa/latest-report.md`, or `recovery/latest-recovery.md`. The orchestrator records state after this skill returns.
+
+For a successful orchestrated batch, return `원고` by default and include a compact handoff summary with:
+
+- `batch_range`
+- `stage_files` for `초고`, `개고`, and `원고`
+- `latest_manuscript_batch` pointing to the final `원고` artifact for this batch
+- chapters actually drafted
+- assumptions used
+- continuity notes limited to current-batch exit state and unresolved items, not future-batch plotting
+- next handoff target, usually `series-qa`
+
 ## Default Assumptions When The User Omits Details
 
 Use these defaults so the skill remains executable for lightweight models:
@@ -38,8 +70,11 @@ Use these defaults so the skill remains executable for lightweight models:
 - tone: contemporary commercial Korean fiction matched to the requested genre
 - assumption policy: prefer the smallest assumption set that does not distort the user's premise
 
+Do not use these defaults to fill missing orchestrator batch fields. In a `series-completion-loop` drafting handoff, missing runtime path or batch range is a blocker, not an invitation to infer scope.
+
 If the environment supports file writing, save stage files.
 If the environment does not support file writing, still perform the same internal stage pipeline and return the final stage text.
+Exception: orchestrated drafting requires saved artifacts for state evidence. If stage files cannot be written during a `series-completion-loop` drafting handoff, return a blocker instead of reporting success.
 
 ## Overview
 
@@ -125,6 +160,7 @@ When the user asks for a scene, opening, chapter, or direct prose revision:
 6. Run a final manuscript quality gate before replying.
 
 If the user asks for multiple chapters, outline each chapter first, then draft in sequence so continuity does not drift.
+If the multi-chapter request is an orchestrated drafting handoff, the outline may cover only the active batch and must not seed future-batch prose.
 
 When the request is actual prose rather than advice only, read [references/draft-pipeline.md](references/draft-pipeline.md) and [references/manuscript-quality-gate.md](references/manuscript-quality-gate.md).
 If the user explicitly names a stage such as `초고`, `개고`, or `원고`, honor that as the return target. Otherwise, return `원고`.
@@ -185,6 +221,8 @@ When critiquing, point to concrete breaks in cause-and-effect, character logic, 
 
 - Prefer production-usable output over lecture-style explanation.
 - Summarize assumptions before long-form drafting.
+- For orchestrated drafting, treat `current_batch_start` and `current_batch_end` as a hard fence, not as a suggestion.
+- For orchestrated drafting, write only manuscript stage files and return paths; leave runtime, handoff, ledger, QA, and recovery files to their owning skills.
 - Preserve the user's chosen genre conventions unless they ask to subvert them.
 - Track named entities, timeline markers, unresolved promises, and scene exits while drafting.
 - When continuing an existing manuscript, mirror established POV, tense, diction, and paragraph density before introducing changes.
@@ -236,3 +274,4 @@ When replying, keep the structure aligned to the lane:
 - critique-only: concrete issue list first, rewrite only if asked
 
 When prose was generated in a writable environment, mention where `초고`, `개고`, and `원고` were saved.
+When prose was generated from an orchestrated drafting handoff, also mention the exact batch range and the `latest_manuscript_batch` path the orchestrator should record.

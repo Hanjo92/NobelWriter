@@ -16,6 +16,7 @@ Capture the minimum brief:
 - current manuscript state
 
 If critical information is missing, state a narrow assumption set and proceed.
+Exception: for a `series-completion-loop` drafting handoff, missing selected runtime path, `current_batch_start`, `current_batch_end`, or active-slice range is a blocker. Do not infer those fields from chat context.
 
 Before loading deeper references, classify the request with [task-router.md](task-router.md) if the lane is not obvious.
 Pick one primary lane: planning, fresh drafting, continuation, stage revision, dialogue-only revision, narration-only revision, or critique-only.
@@ -47,6 +48,17 @@ If you need concrete diction replacements for this issue, load [lexical-normaliz
 - dialogue-only revision: delegate to `character-voice-bible`; only use [dialogue-revision-selection.md](dialogue-revision-selection.md) as fallback if that skill is unavailable
 - narration-only revision: load [narration-revision-selection.md](narration-revision-selection.md) and only load manuscript-mode references if the user wants full prose output
 - critique-only: diagnose concrete issues first; do not rewrite unless the user asks
+
+### Orchestrated Drafting Handoff
+
+Use this wrapper when `series-completion-loop` hands off a `drafting` state.
+
+- Treat the primary lane as fresh drafting or stage revision, but hard-limit it to `current_batch_start` through `current_batch_end`.
+- Draft only the active `3~5화` batch or explicitly smaller repair range named by the handoff.
+- Load [draft-pipeline.md](draft-pipeline.md) and [manuscript-quality-gate.md](manuscript-quality-gate.md) before prose work.
+- Save `초고`, `개고`, and `원고` with one shared ASCII stem and batch-range metadata.
+- Return stage file paths and manuscript notes; do not edit `state/runtime.yaml`, `state/handoff.md`, ledgers, QA reports, or recovery plans.
+- Stop instead of drafting when the handoff actually needs slice planning, recovery planning, QA, or dialogue-only voice repair.
 
 ## 2. Stabilize The Story Engine
 
@@ -97,6 +109,11 @@ When writing prose in this workspace, default to:
 5. run the final manuscript quality gate
 6. save all three files
 7. return the `원고` version by default, or the explicitly requested stage if the user named one
+
+For orchestrated drafting, add two release checks before returning:
+
+- no chapter outside the active batch was drafted or previewed
+- the response names `latest_manuscript_batch` as the final `원고` artifact path the orchestrator should record
 
 ## 5. Revise In Separate Passes
 

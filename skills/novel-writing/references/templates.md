@@ -82,6 +82,8 @@ Exit condition / cliff:
 Continuity notes for next chapter:
 ```
 
+When filling this template for an orchestrated `series-completion-loop` drafting handoff, use the continuity note line only for current-batch exit state and unresolved items. Do not add next-batch plot beats or future-slice plans.
+
 ## Scene Card
 
 ```text

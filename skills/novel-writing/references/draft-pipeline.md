@@ -8,6 +8,7 @@ Make `초고 -> 개고 -> 원고` the default internal pipeline for fiction writ
 
 The user should be able to open and edit every stage file directly.
 If file writing is unavailable in the current environment, still run the same three-stage pipeline internally and return the requested stage text instead of stopping.
+Exception: for `series-completion-loop` drafting handoffs, file writing is required because the orchestrator needs artifact paths. If stage files cannot be saved, return a blocker instead of a successful draft handoff.
 
 ## Folder Structure
 
@@ -37,6 +38,30 @@ Examples:
 
 If the user gives a title or chapter id, reflect it in the slug.
 If revising an existing set, keep the stem and add a short revision suffix only when necessary, such as `-r2`.
+For orchestrated batch drafting, include the batch range in the slug when possible, such as `ch012-014-current-batch.md`.
+
+## Orchestrated Batch Scope
+
+When `series-completion-loop` sends a drafting handoff, the stage pipeline is still mandatory, but the scope is narrower and stricter.
+
+Required before writing:
+
+- selected `projects/<series-slug>/` runtime path
+- `current_batch_start`
+- `current_batch_end`
+- matching active-slice range, goal, POV, active cast, `must_keep`, and `must_not_break`
+
+If any required field is missing or contradictory, do not invent it. Return a blocker for the orchestrator.
+
+Scope rules:
+
+- write only chapters inside `current_batch_start` through `current_batch_end`
+- do not draft future chapters, next batches, epilogues, or whole-series continuation
+- keep continuity notes limited to current-batch exit state and unresolved items; do not plan next-batch beats
+- do not update runtime, handoff, ledger, QA, or recovery files directly
+- if planning, continuity repair, recovery direction, or QA is needed first, stop and name the correct handoff target
+
+The saved stage files are the evidence the orchestrator records afterward.
 
 ## Stage Rules
 
@@ -113,6 +138,7 @@ At the top of each saved stage file, include a short header:
 ```
 
 Keep the header short. The prose should start immediately after it.
+For orchestrated batches, the `scope` line must include the exact batch range, for example `scope: ch012-ch014 current batch`.
 
 ## When Revising Existing User Text
 
@@ -131,3 +157,4 @@ In the final response:
 - mention that the files were saved
 - provide the saved stage file path and, when helpful, the `초고`, `개고`, and `원고` file paths
 - summarize the main difference between stages in one short sentence
+- for orchestrated drafting, include `batch_range`, `chapters_drafted`, `stage_files`, `latest_manuscript_batch`, assumptions, continuity notes, and next handoff target for the orchestrator
