@@ -1,0 +1,4 @@
+interface:
+  display_name: "Series Completion Loop"
+  short_description: "State-based orchestration for long-running Korean fiction completion."
+  default_prompt: "Use $series-completion-loop to move a Korean long-form project through the next valid 3~5화 batch by reading runtime state, dispatching the correct specialist skill, updating handoff files, and stopping after a bounded transition."
