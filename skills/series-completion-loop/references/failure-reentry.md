@@ -13,6 +13,8 @@ Block conditions:
 - same slice QA fails twice without a changed repair direction
 - recovery runs twice without changing `active-slice.yaml` or the recovery artifact
 - approval bypass in `approval-gated` mode
+- active slice and actual manuscript range diverge
+- completion conditions are undefined while next-slice generation continues
 
 Recovery rules:
 

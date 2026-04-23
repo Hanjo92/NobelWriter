@@ -26,6 +26,8 @@ Transitions:
 - `final accepted batch -> completed`
 - `* -> blocked`
 
+Use the canonical wildcard form `* -> blocked` for every safety stop. Do not rewrite it as `any state -> blocked` in runtime or handoff notes.
+
 Run boundary:
 
 - one run covers one state-machine transition for one active `3~5화` batch, or one safe adjacent pair that stays within the same bounded batch
