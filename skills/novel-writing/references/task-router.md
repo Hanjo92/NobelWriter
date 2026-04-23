@@ -61,6 +61,12 @@ Optional:
 - [chapter-opening-selection.md](chapter-opening-selection.md) for opener requests
 - [starter-sets.md](starter-sets.md) for chapter 1 or subgenre-specific launch requests
 
+Orchestrated handoff rule:
+
+- if `series-completion-loop` hands off `drafting`, treat it as fresh drafting only inside `current_batch_start` through `current_batch_end`
+- do not infer missing runtime or batch range
+- do not draft future chapters or update runtime, handoff, ledger, QA, or recovery artifacts
+
 ### 3. Continuation
 
 Use when the user asks for:
