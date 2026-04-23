@@ -1,12 +1,21 @@
 ---
 name: series-completion-loop
-description: Use when a Korean long-form project must keep progressing toward completion across many sessions or automation runs by moving the next valid 3~5화 batch through planning, drafting, QA, recovery, and state updates.
+description: Use when a Korean long-form project already has an explicit projects/<series-slug>/ runtime and must progress safely across sessions, automation runs, approval gates, QA recovery, or bounded 3~5화 batches.
 ---
 
 # Series Completion Loop
 
 ## Overview
 Use this skill as a state-based orchestrator for Korean long-form fiction completion. It reads runtime state, chooses the next valid transition, and delegates the actual work to specialist skills instead of replacing them.
+
+## Entry Gate
+Operate only on one explicit, pre-existing `projects/<series-slug>/` runtime selected by the user, automation prompt, or current runtime files.
+
+- If no runtime is selected, stop and report the missing project runtime.
+- If multiple runtimes are plausible, stop and report the ambiguity.
+- Never infer project identity, batch scope, or story intent from chat context.
+- Never draft, bootstrap, or create `projects/<series-slug>/` from implicit conversation context.
+- Bootstrap means enriching an existing runtime, not inventing one.
 
 ## Hard Ownership
 Use this skill when the task is to keep a series moving through a bounded loop across sessions, runs, or automation. Hand work off immediately when the current step belongs to a specialist:
@@ -17,6 +26,20 @@ Use this skill when the task is to keep a series moving through a bounded loop a
 - `character-voice-bible` for dialogue and cast voice control
 
 Do not use this skill to write the whole series in one pass, redesign the story world, or perform specialist QA inline when the specialist skill should own the step.
+
+## Specialist Handoff Contract
+When delegating, pass only the current batch context:
+
+- `project.md`
+- `state/runtime.yaml`
+- `state/active-slice.yaml`
+- `state/handoff.md`
+- relevant ledgers for the active transition
+- the minimum current artifact required by the state, such as the latest manuscript batch for `qa_review`
+
+The specialist owns the domain work product for the current state. The orchestrator may update only runtime, handoff, and artifact pointers afterward; it must not rewrite specialist output except to persist the returned artifact as-is.
+
+Scope every delegated task to `current_batch_start` through `current_batch_end`. Do not include future-slice material. Before and after each handoff, verify that `state/active-slice.yaml` still matches the current manuscript batch. If the batch boundary moved or next-slice work was pulled forward, stop at `blocked` or re-enter from the last valid boundary.
 
 ## Canonical Loop Order
 Follow this order unless runtime state says a different valid transition is needed:
@@ -91,6 +114,19 @@ Keep every run tightly bounded:
 - Never attempt the entire series in one run
 - Never replace specialist skills with a full manual rewrite
 - Stop once the next valid transition is complete and the handoff files are updated
+
+## Stop Evidence
+Do not stop a production run until `state/runtime.yaml` and `state/handoff.md` show:
+
+- the completed transition
+- `state`
+- `next_action`
+- `current_batch_start` and `current_batch_end`
+- artifact paths created, reviewed, or accepted in the run
+- `last_run_at`
+- `last_completed_stage` or `blocked_reason`
+
+When marking `completed` or `blocked`, name the exact predicate satisfied and the artifact path that proves it. If no proof exists, stay in the prior valid state or mark `blocked` rather than pretending the transition completed.
 
 ## Failure And Re-entry
 Before each run, snapshot the current runtime state so re-entry is possible. At minimum, archive:

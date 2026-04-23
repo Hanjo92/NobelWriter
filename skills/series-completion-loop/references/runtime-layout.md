@@ -13,6 +13,12 @@ Runtime files live under `projects/<series-slug>/` and are the only project-scop
 - `projects/<series-slug>/recovery/latest-recovery.md`
 - `projects/<series-slug>/archive/runs/`
 
+Selection rule:
+
+- operate only on one explicit, pre-existing `projects/<series-slug>/` runtime
+- do not infer the slug, project identity, or batch scope from chat context
+- do not create project runtime folders, state files, or ledgers unless the user explicitly requested project setup outside this loop
+
 Separation rule:
 
 - manuscript stays in `drafts/`
@@ -26,6 +32,13 @@ Touching rule:
 ## Transition Ownership Matrix
 
 Use this as the default read/write boundary. Specialist skills may write their own outputs, but the orchestrator should only touch these runtime files directly.
+
+Delegation rule:
+
+- pass only current-batch runtime context to specialist skills
+- specialists own prose, QA, dialogue, design, and recovery artifacts
+- after a specialist returns, the orchestrator updates only runtime, handoff, and artifact pointers
+- if specialist work would require the next batch, stop and hand off instead of extending scope
 
 | State | Read | Write |
 | --- | --- | --- |
