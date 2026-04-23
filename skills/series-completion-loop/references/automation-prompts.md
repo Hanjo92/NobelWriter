@@ -2,8 +2,12 @@
 
 ## Production Run
 
-- read `runtime.yaml`
+- resolve exactly one selected `projects/<series-slug>/` runtime
+- if no runtime is selected, report missing runtime only
+- if multiple runtimes are plausible, report ambiguity only
+- read `state/runtime.yaml`
 - perform the next valid bounded action only
+- never draft, bootstrap, or reconstruct state from chat context
 - update `state/runtime.yaml`
 - update `state/handoff.md`
 - stop
@@ -12,7 +16,10 @@ Required closing fields:
 
 - `state`
 - `next_action`
+- `current_batch_start`
+- `current_batch_end`
 - `last_run_at`
+- artifact path or reviewed artifact path
 - `last_completed_stage` or `blocked_reason`
 
 ## Safety Run

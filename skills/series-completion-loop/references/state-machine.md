@@ -41,6 +41,13 @@ Run boundary:
 - the only allowed adjacent pairs are `slice_planning -> drafting` and `qa_review -> ready_next_slice`
 - do not expand a run beyond the current batch boundary
 - if the next valid step would cross into a new batch, stop and hand off instead of continuing
+- before and after specialist handoff, verify that `state/active-slice.yaml` matches `current_batch_start` and `current_batch_end`
+
+Stop evidence:
+
+- `state/runtime.yaml` records the completed transition, batch range, next state, next action, timestamp, and artifact pointer
+- `state/handoff.md` records what finished, what artifact proves it, and where the next run resumes
+- `completed` and `blocked` require the exact predicate and proof artifact path before the run may stop
 
 Mode-specific transition authority:
 
