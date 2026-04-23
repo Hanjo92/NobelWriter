@@ -2,6 +2,32 @@
 
 Use this file when you need compact, reusable output shapes.
 
+## Orchestrated Voice Handoff
+
+```text
+voice_handoff
+
+source_artifact:
+batch_range:
+excerpt_range:
+affected_speakers:
+relationship_state:
+voice_failure:
+repair_rules:
+- rule
+proof_rewrites:
+- original_ref:
+  before:
+  after:
+  reason:
+register_notes:
+assumptions:
+unresolved_voice_risks:
+next_handoff_target:
+```
+
+Use this only for orchestrated handoffs from `series-completion-loop`, `novel-writing`, or `series-qa`. Keep it limited to dialogue and voice repair. The block is the handoff artifact; the caller may persist it. Do not include future-batch plot beats, narration-heavy prose, manuscript stage-file edits, runtime updates, QA acceptance, or recovery planning.
+
 ## Cast Voice Bible
 
 ```text
@@ -77,6 +103,8 @@ Minimal repair:
 One proof rewrite:
 Future guardrail:
 ```
+
+For orchestrated handoffs, `Future guardrail` means a reusable voice rule only, not a future chapter or plot instruction.
 
 ## Dialogue Exchange Sheet
 

@@ -185,3 +185,4 @@ Stop loading files once you can answer these five questions:
 - What setting texture must stay audible?
 
 If all five are answerable, write the dialogue.
+For orchestrated voice handoffs, this means write only bounded proof rewrites or sample turns for the named excerpt. Do not add new scene beats, continue the chapter, or expand beyond the supplied range.
