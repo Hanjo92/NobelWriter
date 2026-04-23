@@ -1,4 +1,4 @@
 interface:
   display_name: "Longform Story Design"
   short_description: "Planning and continuity architecture for Korean long-form fiction."
-  default_prompt: "Use $longform-story-design to build scalable Korean series architecture, repair long-draft drift, and prepare continuity-safe arc, volume, and chapter-range design packets."
+  default_prompt: "Use $longform-story-design to build bounded Korean longform planning or recovery artifacts, including series-completion-loop slice/recovery handoffs, without drafting prose or mutating runtime state."

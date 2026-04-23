@@ -14,6 +14,10 @@ Project state wins when it clearly says the work is greenfield, rolling, repair,
 
 When there is still a tie, choose the smaller stack that covers the first blocking problem. Do not add a document just because the project is large if a smaller recovery or drafting bundle already covers the next safe step.
 
+## Orchestrated Slice Rule
+
+When the caller is `series-completion-loop` in `slice_planning`, ignore scale-based expansion stacks beyond the active batch. Select only the smallest packet needed to plan `current_batch_start` through `current_batch_end`, normally the next `3~5화`, and carry forward no future-batch commitments.
+
 ## By Project State
 
 - premise only: story engine sheet, series brief, story bible
@@ -40,6 +44,8 @@ If more than one risk applies, choose the one that would break the next handoff 
 - under 40 chapters: story engine sheet, series brief, story bible, first arc plan
 - 40 to 120 chapters: story engine sheet, story bible, cast matrix, volume or arc plan, continuity ledger
 - 120 plus chapters or open serialization: story engine sheet, story bible, cast matrix, series expansion map, volume plan, chapter-range plan, continuity ledger, knowledge-state tracker, payoff tracker
+
+Do not apply the scale expansion rule to an orchestrated `slice_planning` handoff unless the handoff explicitly re-authorizes series-level planning.
 
 If scale points to a larger stack but the project state is still greenfield, do not start with continuity tools. If scale points to a smaller stack but the project is already in active drafting or repair, keep the drafting or recovery tools that match the current state.
 

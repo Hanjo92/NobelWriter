@@ -14,7 +14,7 @@ Use this file when the user needs the full planning order for a long novel or se
 8. Break each major arc into chapter-range objectives.
 9. Create continuity, knowledge, and payoff trackers.
 10. Hand off only the active subset to drafting.
-11. After each drafting batch, update the trackers.
+11. After each drafting batch, record tracker update requirements or update only planning artifacts you own; never mutate orchestrator runtime state.
 
 ## Stage Exit Criteria
 
@@ -96,6 +96,8 @@ If the user brings broken chapters, conflicting outlines, or a draft that no lon
 3. separate timeline damage from motivation damage, knowledge damage, and payoff damage
 4. choose the smallest recovery bundle that clears the first blocking contradiction
 5. repair the active slice before expanding anything else
+
+When this flow is invoked by `series-completion-loop`, keep recovery inside the current failed slice unless proof shows the first break point predates it. Do not expand into future batches while building the recovery package.
 
 Use this recovery bundle order:
 

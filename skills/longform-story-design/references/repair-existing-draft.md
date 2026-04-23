@@ -42,6 +42,18 @@ When repairing, prefer this bundle:
 - revised active arc plan if the middle has lost direction
 - drafting packet for the next safe chapter range
 
+For `series-completion-loop` `recovery_planning`, compress the bundle into one `recovery/latest-recovery.md` artifact with:
+
+- root cause
+- repair order
+- next safe move
+- handoff target
+- must-not-break constraints
+- proof artifact path(s)
+- re-entry slice with exact chapter, arc, or volume range
+
+Do not directly rewrite manuscript chapters, runtime state, or ledger entries. Return canon, continuity, and re-entry artifacts for the orchestrator and downstream owners.
+
 ## Decision Rule
 
 If two existing documents disagree, prefer the manuscript over notes unless the user explicitly says the notes supersede the draft.
