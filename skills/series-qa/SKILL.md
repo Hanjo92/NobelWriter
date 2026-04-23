@@ -10,12 +10,24 @@ description: Audit long-form Korean fiction manuscripts, chapter batches, story 
 Use this skill to inspect accumulated Korean fiction materials and identify the smallest set of failures causing reader-visible weakness. Focus on diagnosis, evidence, and repair priority rather than on fresh drafting.
 
 This skill is diagnosis-only. Do not rebuild chapters, scenes, arcs, cast sheets, or story systems here.
-Do not take ownership of downstream repair execution, rewrite architecture, or prose reconstruction.
+Do not take ownership of downstream repair execution, rewrite architecture, prose reconstruction, runtime updates, ledger edits, or planning-file edits.
 If the request needs a design pass, drafting pass, or character rewrite pass, hand it off instead of expanding scope.
 
 If the user needs the output to become a reusable reconstruction package rather than a ranked diagnosis, hand the work to `longform-story-design`.
 If the problem is primarily chapter prose, narration, scene flow, or longform drafting shape, hand the work to `novel-writing`.
 If the problem is primarily speaker voice, dialogue register, or cast interaction behavior, hand the work to `character-voice-bible`.
+
+## Orchestrator Handoff Intake
+
+When invoked by `series-completion-loop` in `qa_review`, treat `current_batch_start` through `current_batch_end` as the hard audit window.
+
+- Name the active batch before any finding.
+- Audit only the active batch unless evidence inside that batch points backward to a prior break.
+- Expand only backward to locate the first break point, and only as far as the evidence requires.
+- Never inspect future batches or the whole project unless the handoff explicitly re-authorizes that scope.
+- Keep prior-batch material as supporting context, not as a new audit range.
+
+Do not update `state/runtime.yaml`, `state/handoff.md`, ledgers, planning artifacts, or manuscripts. Return a QA artifact the orchestrator can use to update state.
 
 ## Choose The Audit Mode
 
@@ -25,7 +37,7 @@ Match the depth of the audit to the user's real need:
 - arc checkpoint: audit one arc, season, or volume segment for drift before drafting continues
 - full diagnosis: map structural, continuity, pacing, and payoff failures across a long range
 
-Default to the smallest mode that can answer the complaint cleanly.
+Default to the smallest mode that can answer the complaint cleanly. In an orchestrated `qa_review`, do not choose full diagnosis unless the handoff explicitly authorizes a range beyond the active batch.
 
 ## Canonical Diagnostic Order
 
@@ -78,7 +90,7 @@ Do not read a 200-chapter run by default. Start from:
 - the chapter immediately before the symptom if drift is suspected
 - the planning artifact that should have prevented the failure
 
-Expand the range only if the local evidence points backward.
+Expand the range only if the local evidence points backward. Do not expand forward into future batches while answering an active-batch QA handoff.
 
 ## Sample Intelligently
 
@@ -199,14 +211,18 @@ For installment-specific checks, read [references/serialization-checks.md](refer
 
 Default to this structure unless the user requests a different format:
 
-1. what is working
-2. highest-risk failures
-3. severity and confidence
-4. chapter or scene evidence
-5. likely reader-visible symptom
-6. smallest viable repair direction
-7. downstream handoff target
-8. optional re-audit note
+1. active batch or audit range
+2. outcome: `ready_next_slice`, `needs_recovery`, or `blocked`
+3. what is working
+4. highest-risk failures
+5. severity and confidence
+6. root cause or downstream symptom classification
+7. chapter or scene evidence
+8. artifact evidence
+9. likely reader-visible symptom
+10. smallest viable repair direction
+11. downstream handoff target
+12. re-audit gate
 
 For reusable report layouts, read [references/report-templates.md](references/report-templates.md).
 Keep the output QA-first: it should support decision-making, not imply that this skill is responsible for reconstruction.
@@ -238,6 +254,7 @@ Examples:
 
 The report should make clear what to repair first to collapse the largest number of downstream failures.
 Describe the repair only as a direction, dependency, or constraint. Do not turn it into a rebuild plan or step-by-step reconstruction inside this skill.
+Classify each confirmed finding explicitly as `root cause` or `downstream symptom`. Do not leave the top issue as symptom-only.
 
 ## Severity Rule
 
@@ -292,6 +309,8 @@ Use the re-audit gate as the end of the diagnostic loop: once the issue is repai
 - Prefer a narrower but defensible finding over a broad but weak conclusion.
 - Name the downstream owner when the next step is structural recovery, prose rewrite, or dialogue-layer repair.
 - Do not produce reconstruction packages, re-entry drafting packets, or rewrite plans in this skill.
+- When a repair direction changes after re-audit, mark it as `unchanged`, `narrowed`, or `changed` and explain why.
+- When the output will feed `series-completion-loop`, include artifact paths or state pointers that prove the diagnosis, recheck, or blocked result.
 
 ## Relationship To Other Skills
 

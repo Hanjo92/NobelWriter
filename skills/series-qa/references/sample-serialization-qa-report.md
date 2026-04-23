@@ -24,7 +24,7 @@ Confirmed findings:
 1. End hooks are varying in wording but not in promise shape
    Severity: High
    Confidence: High
-   Root cause or symptom: Root cause
+   Classification: Root cause
    First break point: Episode 88
    Evidence: Episodes 88, 90, 92, and 94 all end on a reveal-tease pattern, but the following episodes resolve into partial explanation or repositioning instead of a changed decision, loss, or confrontation.
    Expected function: End hooks should create a distinct next-episode obligation that produces new story value, not just more anticipation.
@@ -36,7 +36,7 @@ Confirmed findings:
 2. Recap burden is crowding out early-scene movement
    Severity: Medium
    Confidence: High
-   Root cause or symptom: Downstream symptom
+   Classification: Downstream symptom
    First break point: Episode 87
    Evidence: Episodes 87-91 spend the first third of the runtime restating prior danger, current faction positions, or emotional hesitation before any fresh pressure arrives.
    Expected function: Serial recaps should reorient quickly and hand off to new pressure.
@@ -48,7 +48,7 @@ Confirmed findings:
 3. Promised reward cadence is slipping behind the delay pattern
    Severity: High
    Confidence: Medium
-   Root cause or symptom: Root cause
+   Classification: Root cause
    First break point: Episode 86
    Evidence: Major teased threads across Episodes 86-95 mostly defer payoff, while the only resolved thread in Episode 93 returns as information without emotional or tactical gain.
    Expected function: A delayed serial arc should still return meaningful reward at regular intervals through wins, reversals, reveals with force, or relationship changes.

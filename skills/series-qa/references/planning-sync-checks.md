@@ -97,16 +97,17 @@ When reporting planning sync failure, name:
 
 Do not report "out of sync" without naming both sides of the mismatch.
 
-## Repair Rule
+## Repair Direction Rule
 
-Repair planning sync failures by restoring one active source of truth. Prefer:
+Report planning sync repair as a handoff direction, not as QA-owned file editing. Prefer:
 
 1. choose the authoritative version
-2. update or retire stale planning artifacts
-3. align trackers with current manuscript state
-4. define which document must be updated after each drafting batch
+2. name the stale or conflicting planning artifact
+3. name which tracker should be aligned with current manuscript state
+4. define which downstream owner should update the document after each drafting batch
 
 Do not preserve multiple competing versions of the same fact just to avoid choosing.
+Do not update, retire, rewrite, or align planning files inside QA.
 
 ## Recheck Questions
 

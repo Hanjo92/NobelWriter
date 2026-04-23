@@ -24,7 +24,7 @@ Confirmed findings:
 1. Mid-arc clues add information but do not change investigative behavior
    Severity: High
    Confidence: High
-   Root cause or symptom: Root cause
+   Classification: Root cause
    First break point: Chapter 11
    Evidence: Chapters 11, 13, and 15 each deliver new case details, but the protagonist's theory, suspect priority, and risk profile remain effectively unchanged after each discovery.
    Expected function: Each significant clue should alter suspicion, decision-making, or pressure.
@@ -36,7 +36,7 @@ Confirmed findings:
 2. The Chapter 18 reveal answers the question without reframing prior scenes
    Severity: High
    Confidence: High
-   Root cause or symptom: Root cause
+   Classification: Root cause
    First break point: Chapter 18
    Evidence: The solution identifies the culprit and explains motive, but earlier clue scenes read the same after the reveal and no previously ambiguous behavior gains new meaning.
    Expected function: A mystery reveal should answer and recontextualize.
@@ -48,7 +48,7 @@ Confirmed findings:
 3. Investigator agency drops during the mid-case run
    Severity: Medium
    Confidence: Medium
-   Root cause or symptom: Downstream symptom
+   Classification: Downstream symptom
    First break point: Chapter 12
    Evidence: The investigation advances through witness convenience and villain disclosure more often than through deliberate probing by the protagonist.
    Expected function: The investigator should generate pressure by choosing tests, risks, and lines of inquiry.
