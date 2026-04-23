@@ -18,6 +18,11 @@ Block conditions:
 
 Operational checks:
 
+- missing state means any required file is absent, or a required key is absent from the file that owns it
+- required `project.md` fields are Title, Slug, Target scale, Completion mode, Default batch size, and Ending promise
+- required `state/runtime.yaml` keys are `mode`, `state`, `next_action`, `approval_pending`, `current_batch_start`, `current_batch_end`, `last_run_at`, `failure_count`, `blocked_reason`, and `last_completed_stage`
+- required `state/active-slice.yaml` keys are `chapter_start`, `chapter_end`, `batch_goal`, `success_conditions`, `active_pov`, `active_cast`, `must_keep`, `must_not_break`, and `handoff_target`
+- contradictory state means the runtime `state` is not one of the approved states, `mode` is not `autonomous` or `approval-gated`, `current_batch_start` is greater than `current_batch_end`, `approval_pending: true` appears outside `approval_waiting`, or `state: completed` still has a non-empty `next_action`
 - `failure_count >= 2` on the same `current_batch_start` and `current_batch_end` means the same slice has failed twice
 - a changed repair direction means `qa/latest-report.md` or `recovery/latest-recovery.md` names a different root cause, handoff target, or next safe move from the previous failed run
 - repeated recovery means two consecutive runs have `state: recovery_planning` without changing `state/active-slice.yaml` or `recovery/latest-recovery.md`
