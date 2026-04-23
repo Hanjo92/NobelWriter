@@ -37,6 +37,16 @@ nobelwriter run novel-writing
 회귀 무협 장편을 150~200화 기준으로 기획해줘.
 ```
 
+## 작품 하나를 끝날 때까지 계속 돌릴 수 있나요?
+
+가능합니다. 단, 한 번의 무한 생성 런이 아니라 `series-completion-loop`가
+`3~5화` 배치 단위로 상태를 읽고 다음 액션만 수행하는 방식입니다.
+
+- `autonomous`
+- `approval-gated`
+- runtime state in `projects/<series-slug>/`
+- manuscript output remains in `drafts/`
+
 ## 스킬 이름을 직접 호출해야 하나요?
 
 환경에 따라 다를 수 있지만, NobelWriter의 기본 설계는 암시적 호출을 허용하는 쪽입니다.
