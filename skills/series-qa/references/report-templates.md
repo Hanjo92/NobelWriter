@@ -12,12 +12,15 @@ For genre-specific completed examples, read [sample-romance-qa-report.md](sample
 Write in QA language, not workshop language.
 
 - state scope before judgment
+- name the active batch first when invoked by `series-completion-loop`
 - separate confirmed findings from hypotheses
 - cite evidence by chapter, scene, or document location
+- cite artifact evidence by file path or state pointer when the output feeds an orchestrator
 - rank by severity and repair priority
 - define what a passing recheck would require
 - keep repair language directional, not reconstructive
 - name the downstream owner when the next step leaves QA scope
+- include an outcome: `ready_next_slice`, `needs_recovery`, or `blocked`
 
 Avoid:
 
@@ -31,14 +34,23 @@ Avoid:
 
 ```text
 Audit scope:
+- Active batch:
 - Manuscript range:
 - Planning documents checked:
 - Audit mode:
 - Sampling limit:
+- Earlier material sampled:
 
 Complaint under test:
 - Reported symptom:
 - Working hypothesis:
+
+Orchestrator outcome:
+- Outcome: ready_next_slice | needs_recovery | blocked
+- Artifact evidence:
+- Repair direction status: unchanged | narrowed | changed | first pass
+- Handoff target:
+- Re-audit gate:
 
 Scope note:
 - What was checked:
@@ -49,26 +61,30 @@ Confirmed findings:
 1. Finding title:
    Severity:
    Confidence:
-   Root cause or symptom:
+   Classification: root cause | downstream symptom:
    First break point:
    Evidence:
+   Artifact evidence:
    Expected function:
    Observed failure:
    Reader-visible damage:
    Repair direction:
+   Repair direction status:
    Handoff target:
    Recheck condition:
 
 2. Finding title:
    Severity:
    Confidence:
-   Root cause or symptom:
+   Classification: root cause | downstream symptom:
    First break point:
    Evidence:
+   Artifact evidence:
    Expected function:
    Observed failure:
    Reader-visible damage:
    Repair direction:
+   Repair direction status:
    Handoff target:
    Recheck condition:
 
@@ -88,19 +104,26 @@ Revision priority:
 
 ```text
 Handoff range:
+- Active batch:
 - Chapter / arc / volume range:
 - Core diagnosed failure:
+- Outcome: ready_next_slice | needs_recovery | blocked
+- Artifact evidence:
 
 Directional repair:
 1. Issue:
+   Classification: root cause | downstream symptom:
    Why it comes first:
    High-level fix type:
+   Repair direction status:
    Downstream owner:
    Recheck after downstream revision:
 
 2. Issue:
+   Classification: root cause | downstream symptom:
    Why it comes first:
    High-level fix type:
+   Repair direction status:
    Downstream owner:
    Recheck after downstream revision:
 
@@ -115,6 +138,7 @@ Open risks after this pass:
 
 ```text
 Arc checked:
+Active batch:
 Audit basis:
 
 Status:
@@ -128,6 +152,12 @@ Primary failure:
 - ...
 
 First break point:
+- ...
+
+Outcome:
+- ready_next_slice | needs_recovery | blocked
+
+Artifact evidence:
 - ...
 
 Repair direction:
@@ -144,6 +174,7 @@ Recheck gate:
 
 ```text
 Episode range checked:
+Active batch:
 Sampling basis:
 
 Retention-facing finding:
@@ -156,6 +187,12 @@ Story-health finding:
 - Core failure:
 - Evidence:
 - Reader trust risk:
+
+Outcome:
+- ready_next_slice | needs_recovery | blocked
+
+Artifact evidence:
+- ...
 
 Repair direction:
 - ...
@@ -171,20 +208,27 @@ Pass condition on recheck:
 
 ```text
 Range checked:
+Active batch:
 Complaint:
 
 Top issue:
 - Severity:
+- Classification: root cause | downstream symptom:
 - Evidence:
+- Artifact evidence:
 - First break point:
 - Repair direction:
+- Repair direction status:
 - Handoff target:
 
 Second issue:
 - Severity:
+- Classification: root cause | downstream symptom:
 - Evidence:
+- Artifact evidence:
 - First break point:
 - Repair direction:
+- Repair direction status:
 - Handoff target:
 
 Not checked:

@@ -24,7 +24,7 @@ Confirmed findings:
 1. The pair is circling the same near-confession beat without new emotional price
    Severity: High
    Confidence: High
-   Root cause or symptom: Root cause
+   Classification: Root cause
    First break point: Chapter 24
    Evidence: Chapters 24, 27, and 30 each stage an almost-confession followed by withdrawal, but the withdrawals do not cost trust, status, or opportunity in a way that changes the next interaction.
    Expected function: Repeated delay beats should either deepen vulnerability or alter the relationship state.
@@ -36,7 +36,7 @@ Confirmed findings:
 2. Emotional risk is unevenly distributed
    Severity: Medium
    Confidence: High
-   Root cause or symptom: Root cause
+   Classification: Root cause
    First break point: Chapter 25
    Evidence: One lead repeatedly admits fear, asks for clarification, and changes behavior, while the other retains mystery without paying comparable emotional cost.
    Expected function: Both sides of the central pair should carry visible romantic risk.
@@ -48,7 +48,7 @@ Confirmed findings:
 3. The breakthrough at Chapter 21 is not being carried forward
    Severity: Medium
    Confidence: Medium
-   Root cause or symptom: Downstream symptom
+   Classification: Downstream symptom
    First break point: Chapter 22
    Evidence: The late-Chapter 21 intimacy shift is treated as meaningful in the moment, but Chapters 22-26 revert to pre-breakthrough caution patterns with little behavioral residue.
    Expected function: A breakthrough should change later address, access, jealousy logic, or emotional threshold.

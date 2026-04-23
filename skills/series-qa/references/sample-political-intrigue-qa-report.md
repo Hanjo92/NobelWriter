@@ -24,7 +24,7 @@ Confirmed findings:
 1. Faction goals are no longer distinct enough to produce sharp conflict
    Severity: High
    Confidence: High
-   Root cause or symptom: Root cause
+   Classification: Root cause
    First break point: Chapter 50
    Evidence: By Chapters 50-54, three court factions are all effectively pushing for generic stability language, while their risk tolerance, preferred methods, and succession preferences stop producing clearly different strategic moves.
    Expected function: Each major faction should create pressure through distinct incentives, acceptable costs, and preferred tools.
@@ -36,7 +36,7 @@ Confirmed findings:
 2. The Chapter 56 betrayal lands as surprise rather than as earned strategic outcome
    Severity: High
    Confidence: High
-   Root cause or symptom: Root cause
+   Classification: Root cause
    First break point: Chapter 56
    Evidence: The betraying minister has presence in earlier chapters, but the sampled range does not build enough visible pressure, leverage, or narrowing options to make the turn feel inevitable in retrospect.
    Expected function: A political betrayal should read as both surprising in the moment and legible after review.
@@ -48,7 +48,7 @@ Confirmed findings:
 3. Institutional rules stop constraining elite action
    Severity: Medium
    Confidence: Medium
-   Root cause or symptom: Downstream symptom
+   Classification: Downstream symptom
    First break point: Chapter 53
    Evidence: Council procedure, succession protocol, and guard authority matter heavily in earlier chapters, but Chapters 53-58 allow high-ranking characters to bypass formal limits whenever speed is needed.
    Expected function: Institutions in political fiction should shape what can be attempted and at what cost.

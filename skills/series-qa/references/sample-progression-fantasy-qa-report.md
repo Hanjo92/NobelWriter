@@ -24,7 +24,7 @@ Confirmed findings:
 1. Rank-up gains are not changing challenge type
    Severity: High
    Confidence: High
-   Root cause or symptom: Root cause
+   Classification: Root cause
    First break point: Episode 45
    Evidence: After the mid-arc breakthrough, the protagonist keeps facing stronger versions of the same combat problem rather than needing new tactics, tradeoffs, or strategic thinking.
    Expected function: Progression should unlock qualitatively different obstacles, not only higher numbers.
@@ -36,7 +36,7 @@ Confirmed findings:
 2. Training loop repetition is dulling the arc
    Severity: High
    Confidence: High
-   Root cause or symptom: Root cause
+   Classification: Root cause
    First break point: Episode 43
    Evidence: Episodes 43, 46, and 49 repeat a similar train-fail-adjust-improve sequence with only superficial changes in terminology and environment.
    Expected function: Each training stage should alter stakes, method, or consequence.
@@ -48,7 +48,7 @@ Confirmed findings:
 3. Breakthrough cost is fading too quickly
    Severity: Medium
    Confidence: Medium
-   Root cause or symptom: Downstream symptom
+   Classification: Downstream symptom
    First break point: Episode 47
    Evidence: The breakthrough initially imposes bodily strain and resource drain, but those burdens stop constraining action within two episodes.
    Expected function: A major gain should carry visible price long enough to shape subsequent choices.

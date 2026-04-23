@@ -24,7 +24,7 @@ Confirmed findings:
 1. Repeated hesitation beat is flattening the middle of the arc
    Severity: High
    Confidence: High
-   Root cause or symptom: Root cause
+   Classification: Root cause
    First break point: Chapter 34
    Evidence: Chapters 34, 36, and 38 all end with the protagonist delaying the same commitment without a new cost, reversal, or information shift.
    Expected function: Each chapter should escalate the commitment problem or alter the cost of refusal.
@@ -36,7 +36,7 @@ Confirmed findings:
 2. Early setup around the sealed archive pays off too late and too weakly
    Severity: High
    Confidence: Medium
-   Root cause or symptom: Root cause
+   Classification: Root cause
    First break point: Chapter 33
    Evidence: The archive is framed as a major risk in Chapters 31-33, but the return in Chapter 41 provides information only and does not alter trust, strategy, or faction balance.
    Expected function: A promised high-risk reveal should materially shift character decisions or power relations.
@@ -48,7 +48,7 @@ Confirmed findings:
 3. Continuity tracking around injury state is drifting
    Severity: Medium
    Confidence: High
-   Root cause or symptom: Downstream symptom
+   Classification: Downstream symptom
    First break point: Chapter 37
    Evidence: The shoulder injury limits combat movement in Chapter 37, is ignored during the pursuit sequence in Chapter 39, and returns as active pain in Chapter 40 without explanation.
    Expected function: Injury state should either persist consistently or be explicitly reset.
@@ -68,7 +68,7 @@ What is still working:
 Revision priority:
 1. Remove the repeated hesitation loop in Chapters 34-38.
 2. Strengthen the archive payoff in Chapter 41 so it changes action, trust, or stakes.
-3. Repair injury-state continuity in Chapters 37-40 and update the ledger.
+3. Repair injury-state continuity in Chapters 37-40 and hand off ledger alignment to the continuity owner.
 ```
 
 ## Why This Example Works
