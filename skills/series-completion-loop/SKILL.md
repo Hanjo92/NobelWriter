@@ -46,7 +46,7 @@ Before updating `state/runtime.yaml`, `state/handoff.md`, or any artifact pointe
 
 Expected return evidence:
 
-- `longform-story-design` for `slice_planning`: active-slice content or artifact with `chapter_start`, `chapter_end`, `batch_goal`, `success_conditions`, `active_pov`, `active_cast`, `must_keep`, `must_not_break`, and `handoff_target`, with `chapter_start` and `chapter_end` matching `current_batch_start` and `current_batch_end`.
+- `longform-story-design` for `slice_planning`: active-slice content or artifact with `chapter_start`, `chapter_end`, `batch_goal`, `success_conditions`, `active_pov`, `active_cast`, `must_keep`, `must_not_break`, `handoff_target`, `planning_artifact`, and `proof_artifact_paths`, with `chapter_start` and `chapter_end` matching `current_batch_start` and `current_batch_end`.
 - `longform-story-design` for `recovery_planning`: one recovery artifact suitable for `recovery/latest-recovery.md`, including root cause, repair order, next safe move, handoff target, must-not-break constraints, proof artifact path(s), and exact re-entry slice.
 - `novel-writing` for `drafting`: `batch_range`, `chapters_drafted`, `stage_files`, `latest_manuscript_batch`, assumptions, continuity notes, and next handoff target.
 - `series-qa` for `qa_review`: `qa/latest-report.md` or equivalent QA artifact with the reviewed batch range, outcome `ready_next_slice`, `needs_recovery`, or `blocked`, evidence, root cause when applicable, repair direction when applicable, re-audit gate, and handoff target.
@@ -82,6 +82,15 @@ Read and update the project runtime files that govern the loop:
 
 Treat manuscript output as separate from runtime state. Keep the draft in manuscript storage and keep orchestration decisions in the runtime files. Do not touch other project artifacts unless `project.md` or `state/runtime.yaml` explicitly names them as part of the current transition.
 
+## Template Drift Check
+After editing runtime contract fields, project templates, handoff evidence, QA/recovery templates, or this skill's stop-evidence rules, run:
+
+```bash
+python3 skills/series-completion-loop/scripts/validate_runtime_template.py
+```
+
+Do not treat template/runtime contract edits as complete until the check passes.
+
 ## States And Transitions
 Use these states as the canonical loop states:
 
@@ -107,7 +116,7 @@ Main transitions:
 - `ready_next_slice -> approval_waiting`
 - `ready_next_slice -> slice_planning`
 - final accepted batch -> `completed`
-- any state -> `blocked` when the runtime is contradictory, missing, or repeatedly failing
+- `* -> blocked` when the runtime is contradictory, missing, or repeatedly failing
 
 Enter `completed` only when the final arc or ending segment is finished, payoff tracker items are closed, `longform-story-design` yields no valid next slice, and final batch QA has no critical unresolved failure.
 

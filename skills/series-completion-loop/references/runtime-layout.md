@@ -44,7 +44,7 @@ Specialist return validation:
 
 | Specialist | State | Required return evidence before update |
 | --- | --- | --- |
-| `longform-story-design` | `slice_planning` | active-slice content or artifact with matching `chapter_start`/`chapter_end`, `batch_goal`, `success_conditions`, `active_pov`, `active_cast`, `must_keep`, `must_not_break`, and `handoff_target` |
+| `longform-story-design` | `slice_planning` | active-slice content or artifact with matching `chapter_start`/`chapter_end`, `batch_goal`, `success_conditions`, `active_pov`, `active_cast`, `must_keep`, `must_not_break`, `handoff_target`, `planning_artifact`, and `proof_artifact_paths` |
 | `longform-story-design` | `recovery_planning` | one recovery artifact for `recovery/latest-recovery.md` with root cause, repair order, next safe move, handoff target, must-not-break constraints, proof artifact path(s), and exact re-entry slice |
 | `novel-writing` | `drafting` | `batch_range`, `chapters_drafted`, `stage_files`, `latest_manuscript_batch`, assumptions, continuity notes, and next handoff target |
 | `series-qa` | `qa_review` | QA artifact with reviewed batch range, outcome `ready_next_slice`/`needs_recovery`/`blocked`, evidence, root cause or repair direction when applicable, re-audit gate, and handoff target |
@@ -61,6 +61,16 @@ Runtime stop evidence fields:
 - `last_valid_boundary`
 - `last_snapshot_paths`
 - `last_mismatch_evidence`
+
+## Template Drift Check
+
+After changing runtime contract keys, project templates, handoff fields, QA/recovery templates, or stop-evidence rules, run:
+
+```bash
+python3 skills/series-completion-loop/scripts/validate_runtime_template.py
+```
+
+If the check fails, update the missing template field or the validation script in the same change. Do not let runtime docs and `projects/_template/` drift apart.
 
 | State | Read | Write |
 | --- | --- | --- |
