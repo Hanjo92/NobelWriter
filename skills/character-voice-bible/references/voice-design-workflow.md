@@ -13,6 +13,8 @@ Use this file when the user needs the full order for designing or repairing a ca
 7. Audit sample dialogue and repair drift.
 8. Deliver reusable rules for future drafting.
 
+For orchestrated handoffs, "future drafting" means voice rules for the caller to apply, not future-batch plot or manuscript continuation.
+
 ## Start From The Smallest Useful Cast
 
 Do not profile the whole ensemble by default. Prioritize:
@@ -54,3 +56,5 @@ When revising accumulated chapters:
 3. separate overlapping reaction styles
 4. restore pressure-based line movement
 5. update voice rules for future chapters
+
+For orchestrated handoffs, stop at voice rules and proof rewrites. Do not edit accumulated manuscript files, runtime state, continuity ledgers, QA reports, or recovery plans directly.

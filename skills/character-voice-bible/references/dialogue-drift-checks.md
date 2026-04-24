@@ -26,6 +26,9 @@ For each issue, note:
 - minimal repair
 - future guardrail
 
+For orchestrated handoffs, include the active batch or excerpt range and keep `future guardrail` to reusable voice behavior. Do not add future-batch plot beats, scene continuation, QA acceptance, or recovery direction.
+Proof rewrites in orchestrated handoffs should include original line references or a before/after mapping so the caller can apply them without guessing.
+
 ## Minimal Repair Strategy
 
 Fix in this order:

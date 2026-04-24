@@ -2,6 +2,38 @@
 
 Use this file to choose the smallest useful deliverable and the smallest reference set.
 
+## Orchestrated Handoff Route
+
+When `series-completion-loop`, `novel-writing`, or `series-qa` sends a dialogue or voice repair handoff, route to `orchestrated voice_handoff`.
+
+Required scope:
+
+- current batch range or explicit excerpt/range
+- affected speakers or pair/group
+- current relationship state
+- scene pressure or visible voice failure
+
+If any required scope is missing, return a blocker. Do not infer batch range, relationship progression, or plot context.
+
+Allowed output:
+
+- source artifact or excerpt reference
+- batch range and excerpt range as separate fields when available
+- repair rules
+- proof rewrites with original-to-rewrite mapping
+- register notes
+- assumptions
+- unresolved voice risks
+- next handoff target
+
+Forbidden output:
+
+- future-batch plot beats
+- narration-heavy prose
+- chapter continuation
+- direct manuscript or stage-file mutation
+- runtime, ledger, QA, recovery, or stage-file edits
+
 ## Route By User Intent
 
 Start with `composition-guide.md` whenever the request clearly combines more than one axis.
@@ -80,3 +112,4 @@ Do not build a full cast bible when the user only needs:
 - one pair separated
 
 Expand scope only if the localized failure clearly comes from missing cast-wide rules.
+For orchestrated voice handoffs, expansion can only widen voice rules inside the active batch or excerpt. Broader planning, recovery, or prose execution belongs to the caller or another specialist.

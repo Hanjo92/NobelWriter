@@ -11,6 +11,46 @@ Use this skill to build and maintain a cast-wide Korean dialogue system. Focus o
 
 Default to dialogue-first execution. If the user wants active exchange, output speaker-labeled lines that read like a script before considering prose wrapping. Keep the center of gravity on what the characters say, how they react, and how their spoken turns collide.
 
+## Orchestrated Voice Handoff Intake
+
+When invoked by `series-completion-loop`, `novel-writing`, or `series-qa` for dialogue repair, act only as the voice specialist for the current batch or excerpt.
+
+Before voice work, require the handoff to name:
+
+- selected `projects/<series-slug>/` runtime path or explicit manuscript artifact path
+- `current_batch_start` and `current_batch_end`, or a smaller explicit excerpt/range inside that batch
+- affected speakers or pair/group
+- current relationship state and register expectation
+- scene pressure or voice failure being repaired
+- existing dialogue lines, or a clear request for sample proof lines only
+
+If the orchestrated handoff lacks batch/excerpt scope, affected speakers, or current relationship state, return a blocker. Do not infer project identity, batch range, future relationship state, or missing plot context from chat history.
+
+Hard-limit orchestrated voice work to the named batch or excerpt.
+
+- Repair only dialogue, speaker differentiation, register, address forms, and voice rules.
+- Do not continue the chapter, write narration-heavy prose, draft new scenes, plan future chapters, or redesign plot beats.
+- Do not mutate manuscript stage files directly; return proof rewrites for the caller to apply.
+- Do not edit `state/runtime.yaml`, `state/active-slice.yaml`, `state/handoff.md`, ledgers, QA reports, recovery plans, or `초고`/`개고`/`원고` files.
+- If the handoff needs plot planning, recovery direction, QA acceptance, continuity ledger repair, or full prose integration, stop and name the correct owner: `longform-story-design`, `series-qa`, or `novel-writing`.
+
+For successful orchestrated voice work, return a compact `voice_handoff` block with:
+
+- `source_artifact`
+- `batch_range`
+- `excerpt_range`
+- `affected_speakers`
+- `relationship_state`
+- `voice_failure`
+- `repair_rules`
+- `proof_rewrites` with original line references or before/after mapping
+- `register_notes`
+- `assumptions`
+- `unresolved_voice_risks`
+- `next_handoff_target`, usually `novel-writing` for prose integration or `series-qa` for review
+
+The `voice_handoff` block is the handoff artifact. If it must be persisted, the caller or orchestrator saves it; this skill should not write runtime or manuscript files during an orchestrated handoff.
+
 ## Assume Script-First Mode For Dialogue Requests
 
 When the user asks for lines that feel like actors are trading dialogue, treat that as the default mode for this skill.
@@ -66,6 +106,7 @@ Lock the minimum evidence before designing voice:
 - the scene pressure that reveals the voice failure
 
 If the user does not provide enough information, infer only what is structurally safe and label the assumption. Do not invent ornamental quirks to fill gaps.
+Exception: for orchestrated voice handoffs, missing batch/excerpt scope, affected speakers, or current relationship state is a blocker, not a safe assumption.
 
 For fast diagnostic prompts, read [references/voice-diagnostic-questions.md](references/voice-diagnostic-questions.md).
 
@@ -229,11 +270,12 @@ Choose the output that matches the request:
 - micro voice sheet
 - composition recipe
 - rewrite rules for future chapters
+- orchestrated `voice_handoff`
 
 Prefer compact tables and bullet rules over abstract theory.
 Always include enough concrete proof that another Codex instance could apply the result without re-deriving the logic.
 
-Unless the user explicitly asks for prose, keep outputs diagnostic and operational:
+Unless the user explicitly asks for prose outside an orchestrated handoff, keep outputs diagnostic and operational:
 
 - identify the failure
 - state the repair rule
@@ -241,7 +283,10 @@ Unless the user explicitly asks for prose, keep outputs diagnostic and operation
 - prefer speaker-labeled turns over narrated explanation
 - end with guardrails for future chapters
 
+For orchestrated voice work, keep future guardrails limited to reusable voice rules. Do not include future-batch plot beats, next-scene instructions, or unresolved-story planning.
+
 If the user asks for scene or chapter prose, use this skill to define the voices first, then hand off narration, scene blocking, and prose execution to `novel-writing`.
+In orchestrated handoffs, even explicit prose pressure should be reduced to voice rules and proof rewrites, then handed to `novel-writing` for integration.
 
 ## Operating Rules
 
@@ -254,6 +299,7 @@ If the user asks for scene or chapter prose, use this skill to define the voices
 - When revising, preserve scene intent and information flow before beautifying the line.
 - If a line sounds distinct only because of a gimmick phrase, rebuild the underlying reaction pattern.
 - Do not drift into narration-heavy scene polish when the user's real need is spoken-line control.
+- For orchestrated voice handoffs, return repair guidance and proof rewrites only; leave manuscript editing, runtime updates, QA acceptance, and recovery planning to their owning skills.
 
 ## Relationship To Other Skills
 
