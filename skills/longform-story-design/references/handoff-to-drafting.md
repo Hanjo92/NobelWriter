@@ -48,8 +48,16 @@ For orchestrated handoff, also include:
 
 ```text
 Current batch:
+chapter_start:
+chapter_end:
+batch_goal:
+success_conditions:
+active_pov:
+active_cast:
+must_keep:
+must_not_break:
+handoff_target:
 Proof artifact path(s):
-Handoff target:
 Next state suggestion:
 Must not plan beyond:
 ```

@@ -17,3 +17,6 @@ last_completed_transition: null
 last_artifact_pointer: null
 last_proof_predicate: null
 specialist_return_accepted: null
+last_valid_boundary: null
+last_snapshot_paths: []
+last_mismatch_evidence: null

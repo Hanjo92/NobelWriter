@@ -7,3 +7,5 @@ active_cast: []
 must_keep: []
 must_not_break: []
 handoff_target: null
+planning_artifact: null
+proof_artifact_paths: []

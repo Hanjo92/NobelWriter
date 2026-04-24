@@ -142,6 +142,9 @@ Do not stop a production run until `state/runtime.yaml` and `state/handoff.md` s
 - `last_artifact_pointer`
 - `last_proof_predicate`
 - `specialist_return_accepted`
+- `last_valid_boundary`
+- `last_snapshot_paths`
+- `last_mismatch_evidence`
 
 When marking `completed` or `blocked`, name the exact predicate satisfied and the artifact path that proves it. If no proof exists, stay in the prior valid state or mark `blocked` rather than pretending the transition completed.
 
