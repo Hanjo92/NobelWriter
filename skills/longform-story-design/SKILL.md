@@ -24,6 +24,7 @@ When invoked by `series-completion-loop`, obey the current state boundary before
 
 - `slice_planning`: scope output to `current_batch_start` through `current_batch_end` only, normally the next `3~5화`.
 - `slice_planning`: create only the active-slice planning artifact needed for the next drafting handoff.
+- `slice_planning`: return the exact active-slice schema the orchestrator validates: `chapter_start`, `chapter_end`, `batch_goal`, `success_conditions`, `active_pov`, `active_cast`, `must_keep`, `must_not_break`, and `handoff_target`.
 - `slice_planning`: do not create or expand series architecture, future arcs, volume ladders, or later batches unless the handoff explicitly authorizes a broader planning mode.
 - `recovery_planning`: return a single recovery artifact suitable for `recovery/latest-recovery.md`.
 - `recovery_planning`: include root cause, repair order, next safe move, handoff target, must-not-break constraints, proof artifact path(s), and one exact re-entry slice.
