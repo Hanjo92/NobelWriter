@@ -13,3 +13,7 @@ last_run_at: null
 failure_count: 0
 blocked_reason: null
 last_completed_stage: null
+last_completed_transition: null
+last_artifact_pointer: null
+last_proof_predicate: null
+specialist_return_accepted: null

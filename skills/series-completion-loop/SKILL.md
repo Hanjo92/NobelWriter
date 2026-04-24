@@ -41,6 +41,19 @@ The specialist owns the domain work product for the current state. The orchestra
 
 Scope every delegated task to `current_batch_start` through `current_batch_end`. Do not include future-slice material. Before and after each handoff, verify that `state/active-slice.yaml` still matches the current manuscript batch. If the batch boundary moved or next-slice work was pulled forward, stop at `blocked` or re-enter from the last valid boundary.
 
+## Specialist Return Validation
+Before updating `state/runtime.yaml`, `state/handoff.md`, or any artifact pointer after a specialist handoff, verify the returned evidence matches the current state and batch.
+
+Expected return evidence:
+
+- `longform-story-design` for `slice_planning`: active-slice content or artifact with `chapter_start`, `chapter_end`, `batch_goal`, `success_conditions`, `active_pov`, `active_cast`, `must_keep`, `must_not_break`, and `handoff_target`, with `chapter_start` and `chapter_end` matching `current_batch_start` and `current_batch_end`.
+- `longform-story-design` for `recovery_planning`: one recovery artifact suitable for `recovery/latest-recovery.md`, including root cause, repair order, next safe move, handoff target, must-not-break constraints, proof artifact path(s), and exact re-entry slice.
+- `novel-writing` for `drafting`: `batch_range`, `chapters_drafted`, `stage_files`, `latest_manuscript_batch`, assumptions, continuity notes, and next handoff target.
+- `series-qa` for `qa_review`: `qa/latest-report.md` or equivalent QA artifact with the reviewed batch range, outcome `ready_next_slice`, `needs_recovery`, or `blocked`, evidence, root cause when applicable, repair direction when applicable, re-audit gate, and handoff target.
+- `character-voice-bible` for dialogue repair: `voice_handoff` with `source_artifact`, `batch_range`, `excerpt_range`, `affected_speakers`, `relationship_state`, `voice_failure`, `repair_rules`, `proof_rewrites`, `register_notes`, assumptions, unresolved voice risks, and next handoff target.
+
+Treat validation failure as a transition blocker. If a specialist return is missing required fields, has present-but-empty or semantically invalid values, names chapters outside the current batch, includes future-batch work, lacks proof artifact paths, is schema-mismatched, or contradicts `state/active-slice.yaml`, do not normalize or repair it inline. Record the mismatch in `state/handoff.md`, keep or set `state: blocked` with `blocked_reason`, and re-enter from the last valid boundary.
+
 ## Canonical Loop Order
 Follow this order unless runtime state says a different valid transition is needed:
 
@@ -125,6 +138,10 @@ Do not stop a production run until `state/runtime.yaml` and `state/handoff.md` s
 - artifact paths created, reviewed, or accepted in the run
 - `last_run_at`
 - `last_completed_stage` or `blocked_reason`
+- `last_completed_transition`
+- `last_artifact_pointer`
+- `last_proof_predicate`
+- `specialist_return_accepted`
 
 When marking `completed` or `blocked`, name the exact predicate satisfied and the artifact path that proves it. If no proof exists, stay in the prior valid state or mark `blocked` rather than pretending the transition completed.
 
@@ -144,5 +161,6 @@ Block the run when:
 - QA fails twice on the same slice without a changed repair direction
 - recovery runs twice in a row without changing `state/active-slice.yaml` or `recovery/latest-recovery.md`
 - approval is bypassed in `approval-gated` mode
+- specialist return evidence is missing, out of batch, future-batch, schema-mismatched, semantically invalid, or contradicts the active slice
 
 On re-entry, set the next state explicitly, keep the manuscript intact, and continue only from the last valid boundary.

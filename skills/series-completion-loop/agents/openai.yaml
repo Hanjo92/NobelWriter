@@ -1,4 +1,4 @@
 interface:
   display_name: "Series Completion Loop"
   short_description: "State-based orchestration for long-running Korean fiction completion."
-  default_prompt: "Use $series-completion-loop only for an explicit projects/<series-slug>/ runtime. Move the project through the next valid 3~5화 bounded transition, delegate specialist work, update runtime and handoff evidence, and stop."
+  default_prompt: "Use $series-completion-loop only for an explicit projects/<series-slug>/ runtime. Move the project through the next valid 3~5화 bounded transition, delegate specialist work, validate required return evidence, update runtime and handoff evidence only after validation, and stop."

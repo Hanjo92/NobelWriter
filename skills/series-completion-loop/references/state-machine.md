@@ -47,7 +47,10 @@ Stop evidence:
 
 - `state/runtime.yaml` records the completed transition, batch range, next state, next action, timestamp, and artifact pointer
 - `state/handoff.md` records what finished, what artifact proves it, and where the next run resumes
+- machine-checkable runtime fields are `last_completed_transition`, `last_artifact_pointer`, `last_proof_predicate`, and `specialist_return_accepted`
 - `completed` and `blocked` require the exact predicate and proof artifact path before the run may stop
+- after every specialist handoff, the state may advance only if required return evidence is present and matches the active batch
+- missing, out-of-batch, future-batch, or schema-mismatched specialist returns must use `* -> blocked`
 
 Mode-specific transition authority:
 

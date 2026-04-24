@@ -37,8 +37,27 @@ Delegation rule:
 
 - pass only current-batch runtime context to specialist skills
 - specialists own prose, QA, dialogue, design, and recovery artifacts
-- after a specialist returns, the orchestrator updates only runtime, handoff, and artifact pointers
+- after a specialist returns, validate required return evidence before updating runtime, handoff, and artifact pointers
 - if specialist work would require the next batch, stop and hand off instead of extending scope
+
+Specialist return validation:
+
+| Specialist | State | Required return evidence before update |
+| --- | --- | --- |
+| `longform-story-design` | `slice_planning` | active-slice content or artifact with matching `chapter_start`/`chapter_end`, `batch_goal`, `success_conditions`, `active_pov`, `active_cast`, `must_keep`, `must_not_break`, and `handoff_target` |
+| `longform-story-design` | `recovery_planning` | one recovery artifact for `recovery/latest-recovery.md` with root cause, repair order, next safe move, handoff target, must-not-break constraints, proof artifact path(s), and exact re-entry slice |
+| `novel-writing` | `drafting` | `batch_range`, `chapters_drafted`, `stage_files`, `latest_manuscript_batch`, assumptions, continuity notes, and next handoff target |
+| `series-qa` | `qa_review` | QA artifact with reviewed batch range, outcome `ready_next_slice`/`needs_recovery`/`blocked`, evidence, root cause or repair direction when applicable, re-audit gate, and handoff target |
+| `character-voice-bible` | dialogue repair | `voice_handoff` with source artifact, batch/excerpt range, affected speakers, relationship state, voice failure, repair rules, proof rewrites, register notes, assumptions, risks, and next handoff target |
+
+If required evidence is missing, present but semantically invalid, out of batch, future-batch, schema-mismatched, or contradictory, write only the blocked reason and proof of mismatch to runtime/handoff. Do not advance to the next state.
+
+Runtime stop evidence fields:
+
+- `last_completed_transition`
+- `last_artifact_pointer`
+- `last_proof_predicate`
+- `specialist_return_accepted`
 
 | State | Read | Write |
 | --- | --- | --- |
