@@ -8,18 +8,15 @@ When planning or drafting, apply these default scale constraints unless the user
 - **Project Scale:** Plan longform projects and web novels for a total of 150~200 chapters (화).
 - **Chapter Length:** Draft each chapter to reach 5000~6000 characters (공백 포함 5000~6000자) for a standard manuscript.
 
-Treat these requests as covered by the local `novel-writing` skill, even if the user does not explicitly invoke a skill name:
+Treat Korean fiction requests as covered by the local NobelWriter skill layer, even if the user does not explicitly invoke a skill name:
 
-- planning or outlining a Korean novel, web novel, or serialized fiction
-- drafting a scene, chapter, opening, synopsis, or character material in Korean
-- revising Korean narration, tone, or chapter flow
-- changing genre or audience tendency for Korean fiction
+- Use `longform-story-design` for project planning, longform/web novel structure, continuity architecture, volume or arc design, character arc management, world-building structure, and recovery of existing draft plans.
+- Use `novel-writing` for drafting scenes, chapters, openings, synopses, or character material in Korean; revising Korean narration, tone, chapter flow, exposition control, paragraph rhythm, and other description-heavy manuscript work.
+- Use `character-voice-bible` for dialogue-only revision, character voice tuning, cast-wide speaker differentiation, relationship-dependent speech/register work, and other line-by-line spoken exchange tasks.
+- Use `series-qa` for diagnosing continuity breaks, pacing problems, payoff failures, narration instability, dialogue drift, or planning-sync regressions across a long-form manuscript or web novel arc.
+- Use `series-completion-loop` only when an explicit `projects/<series-slug>/` runtime already exists and the task is to advance the next bounded 3~5화 transition, approval gate, QA recovery, or cross-session completion run.
 
-Treat `novel-writing` as the primary skill for narration, scene/chapter prose, exposition control, paragraph rhythm, and other description-heavy manuscript work.
-
-Treat `character-voice-bible` as the primary skill for dialogue-only revision, character voice tuning, cast-wide speaker differentiation, relationship-dependent speech/register work, and other line-by-line spoken exchange tasks.
-
-Before drafting or revising, read only the references needed for the task:
+Before planning, drafting, revising, diagnosing, or advancing a runtime, read only the references needed for the task:
 
 For `novel-writing` tasks, use only the smallest relevant subset of:
 
@@ -57,6 +54,8 @@ For `character-voice-bible` tasks, use only the smallest relevant subset of:
 - `skills/character-voice-bible/references/reaction-patterns.md`
 - `skills/character-voice-bible/references/korean-voice-samples.md`
 - `skills/character-voice-bible/references/genre-voice-samples.md`
+
+For `longform-story-design`, `series-qa`, and `series-completion-loop`, start from `skills/<skill>/SKILL.md` and load only the references required by the routed mode; do not copy full reference inventories into this file.
 
 Choose the smallest relevant subset. Do not load every file if the request is narrow.
 
