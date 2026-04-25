@@ -18,6 +18,7 @@
 - `skills/character-voice-bible/agents/antigravity.yaml`
 - `skills/longform-story-design/agents/antigravity.yaml`
 - `skills/novel-writing/agents/antigravity.yaml`
+- `skills/series-completion-loop/agents/antigravity.yaml`
 - `skills/series-qa/agents/antigravity.yaml`
 
 이 파일들은 루트 워크스페이스에서 사용하는 Antigravity용 운영 파일을 플랫폼 패키지로 따로 모아둔 것입니다.

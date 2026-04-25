@@ -15,6 +15,8 @@ Treat `novel-writing` as the primary skill for narration, scene/chapter prose, e
 
 Treat `character-voice-bible` as the primary skill for dialogue-only revision, character voice tuning, cast-wide speaker differentiation, relationship-dependent speech/register work, and other line-by-line spoken exchange tasks.
 
+Treat `series-completion-loop` as the primary skill only when an explicit `projects/<series-slug>/` runtime already exists and the task is to advance the next bounded 3~5화 transition, approval gate, QA recovery, or cross-session completion run.
+
 Before drafting or revising, read only the references needed for the task:
 
 For `novel-writing` tasks, use only the smallest relevant subset of:

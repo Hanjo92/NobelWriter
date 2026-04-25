@@ -19,6 +19,8 @@ Treat `longform-story-design` as the primary skill for continuity architecture, 
 
 Treat `series-qa` as the primary skill for diagnosing continuity breaks, pacing problems, payoff failures, narration instability, or dialogue drift across a long-form manuscript or web novel arc.
 
+Treat `series-completion-loop` as the primary skill only when an explicit `projects/<series-slug>/` runtime already exists and the task is to advance the next bounded 3~5화 transition, approval gate, QA recovery, or cross-session completion run.
+
 Before drafting or revising, read only the references you need. Use the Read tool to inspect only the minimum relevant files from `skills/`. Do not read every reference file if the request is narrow.
 
 For `novel-writing` tasks, use only the smallest relevant subset of:
