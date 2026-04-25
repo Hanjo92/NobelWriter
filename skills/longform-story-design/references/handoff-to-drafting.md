@@ -30,8 +30,10 @@ For multi-POV packets, include only the POVs that actually act inside the active
 ```text
 Project:
 Current arc:
+Recovery package source:
 Active repaired slice:
 Chapter or range:
+Re-entry reason:
 POV:
 Current emotional state:
 Current practical goal:
@@ -42,6 +44,7 @@ What this chapter must set up:
 What this chapter may pay off:
 Continuity constraints:
 Do not contradict:
+First safe draft objective:
 ```
 
 For orchestrated handoff, also include:

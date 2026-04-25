@@ -6,9 +6,12 @@
 
 ## Overview
 
-Build only the planning layer needed to keep a long Korean fiction project coherent across many chapters. Prefer reusable working documents over lore essays.
+Build only the planning layer needed to keep a long Korean fiction project coherent across many chapters. Prefer reusable working documents over lore essays, and prefer recovery packages over bare issue lists when the project already exists.
 
-Default to `greenfield build` when the user is starting from an idea, hook, synopsis, or loose cast concept. Treat repair and audit as secondary modes unless the request clearly starts from existing chapters.
+Use `series-qa` when the user wants report-only QA: ranked findings, severity, regression checking, or a diagnostic report that should not rebuild the project.
+Use `novel-writing` for scenes, chapters, prose, or stage-file drafting after the plan is stable.
+Use `character-voice-bible` for dialogue-only repair, register tuning, or cast-wide voice separation.
+Keep canon extraction, recovery planning, and re-entry packet design here when the goal is to restore the longform structure.
 
 ## Start With Intake
 
@@ -24,7 +27,7 @@ Lock the minimum facts before designing anything large:
 - known ending or ending promise
 - dominant risk: drift, escalation collapse, timeline collision, weak opposition, flat relationship motion, forgotten setup
 - likely package selection reason
-- requested output: bible, arc plan, chapter architecture, repair pass, drafting packet
+- requested output: bible, arc plan, chapter architecture, recovery pass, drafting packet
 
 If the prompt is vague, infer the smallest safe scope and state the assumption. For quick intake fields and risk triage, read [references/project-intake.md](references/project-intake.md).
 
@@ -39,10 +42,11 @@ Choose the main job first. Do not mix all modes unless the user clearly needs th
 
 - `greenfield build`
 - `rolling outline`
-- `drift repair`
-- `continuity audit`
+- `recovery audit`: extract canon, localize breakpoints, and produce a reusable recovery package
+- `recovery rebuild`: recover canon and structure from an existing, unstable draft, then produce a re-entry drafting packet
+- `continuity audit`: check timeline, knowledge, rules, and payoff consistency without rebuilding the whole project; use `series-qa` if the user only wants findings
 
-If the project is not yet drafted, stay in `greenfield build` long enough to lock the story engine, growth model, and first major architecture layer before producing chapter-by-chapter plans.
+If the user uses older drift-repair wording, normalize it to `recovery rebuild`. If the project is not yet drafted, stay in `greenfield build` long enough to lock the story engine, growth model, and first major architecture layer before producing chapter-by-chapter plans. If the project already exists, default to `recovery audit` or `recovery rebuild` before anything else.
 
 ## Prioritize The Story Engine
 
@@ -107,8 +111,9 @@ Default stacks:
 
 - `greenfield build`: story engine sheet, series brief, story bible, core cast matrix, first arc or volume plan
 - `rolling outline`: active arc plan, chapter-range plan, continuity ledger, payoff tracker
-- `drift repair`: canon extraction sheet, history spine, continuity ledger, knowledge-state tracker
-- `continuity audit`: continuity ledger, knowledge-state tracker, payoff tracker, drafting packet
+- `recovery audit`: canon extraction sheet, continuity ledger, knowledge-state tracker, recovery plan, re-entry drafting packet, continuity audit report
+- `recovery rebuild`: canon extraction sheet, continuity ledger, knowledge-state tracker, recovery plan, re-entry drafting packet
+- `continuity audit`: continuity ledger, knowledge-state tracker, payoff tracker; use `series-qa` if the user only wants findings
 
 Available deliverables:
 
@@ -127,6 +132,18 @@ Available deliverables:
 - promise/payoff tracker
 - canon extraction sheet
 - continuity audit report
+- recovery plan
+- re-entry drafting packet
+
+For `recovery audit` and `recovery rebuild`, always end with a reusable planning package:
+
+1. canon extraction sheet
+2. continuity ledger
+3. knowledge-state tracker
+4. recovery plan
+5. re-entry drafting packet
+
+The re-entry drafting packet must name one active repaired slice rather than the whole damaged run.
 
 ## Work In Layers
 
@@ -198,7 +215,7 @@ When the user wants actual scenes or chapters:
 1. finish or update the longform planning artifacts here
 2. if cast voice or dialogue differentiation is a visible risk, hand the dialogue layer to `character-voice-bible`
 3. hand narration, scene execution, and chapter prose to `novel-writing`
-4. after drafting, update continuity, knowledge state, and payoff status
+4. after drafting, record tracker update requirements; do not mutate orchestrator runtime state
 
 ## Default Answer Shape
 
@@ -219,6 +236,7 @@ Choose one depth level:
 - `concept pass`
 - `development pass`
 - `production pass`
+- `recovery pass`: add canon extraction sheet, continuity ledger, knowledge-state tracker, recovery plan, and re-entry drafting packet
 
 Do not jump to production-pass density unless the user asked for detailed structure or the project is already stabilized.
 

@@ -1,14 +1,14 @@
-# Repair Existing Draft
+# Recover Existing Draft
 
 Use this file when the user already has chapters, notes, or multiple outline versions that no longer agree.
 
-## Repair Order
+## Recovery Order
 
 1. index the existing material by chapter, arc, or document chunk
 2. extract hard canon before suggesting changes
 3. list contradictions without hiding them
 4. separate structural problems from prose problems
-5. decide the smallest repair set that lets drafting continue safely
+5. decide the smallest recovery package that lets drafting continue safely
 
 ## Hard Canon Extraction
 
@@ -22,7 +22,7 @@ Treat these as extract-first items:
 - promises made to the reader
 - dates, elapsed time, travel duration, training duration
 
-## Repair Triage
+## Recovery Triage
 
 Handle contradictions in this order:
 
@@ -34,18 +34,20 @@ Handle contradictions in this order:
 
 ## Output Pattern
 
-When repairing, prefer this bundle:
+When recovering an existing draft, prefer this reusable recovery package:
 
 - canon extraction sheet
-- continuity audit report
+- continuity ledger
+- recovery plan
+- re-entry drafting packet naming the active repaired slice
+- continuity audit report only as supporting evidence
 - revised history spine if chronology is broken
 - revised active arc plan if the middle has lost direction
-- drafting packet for the next safe chapter range
 
 For `series-completion-loop` `recovery_planning`, compress the bundle into one `recovery/latest-recovery.md` artifact with:
 
 - root cause
-- repair order
+- recovery order
 - next safe move
 - handoff target
 - must-not-break constraints
