@@ -30,7 +30,8 @@ Confirmed findings:
    Expected function: Each significant clue should alter suspicion, decision-making, or pressure.
    Observed failure: The clue chain expands the file but not the investigation.
    Reader-visible damage: The case feels busy rather than sharper, and mid-arc movement loses force.
-   Smallest viable fix: Rebuild at least one clue beat so it forces a wrong turn, narrowed suspect field, or riskier investigative move.
+   Repair direction: At least one clue beat needs leverage that forces a wrong turn, narrowed suspect field, or riskier investigative move.
+   Handoff target: `longform-story-design`
    Recheck condition: Revised clue chapters must each produce a visible theory change, suspect shift, or tactical consequence.
 
 2. The Chapter 18 reveal answers the question without reframing prior scenes
@@ -42,7 +43,8 @@ Confirmed findings:
    Expected function: A mystery reveal should answer and recontextualize.
    Observed failure: The reveal closes the plot mechanically without deepening the reader's understanding of earlier material.
    Reader-visible damage: Readers can follow the logic but do not feel the payoff snap into place.
-   Smallest viable fix: Plant or reframe at least one earlier clue so the Chapter 18 reveal retrospectively changes its meaning.
+   Repair direction: At least one earlier clue needs planted or reframed meaning so the Chapter 18 reveal changes how prior scenes read.
+   Handoff target: `longform-story-design`
    Recheck condition: After revision, at least two prior scenes should read differently once the reveal is known.
 
 3. Investigator agency drops during the mid-case run
@@ -54,7 +56,8 @@ Confirmed findings:
    Expected function: The investigator should generate pressure by choosing tests, risks, and lines of inquiry.
    Observed failure: The case moves toward the protagonist instead of because of them.
    Reader-visible damage: Suspense weakens because discovery starts to feel prearranged.
-   Smallest viable fix: Add one failed probe and one high-risk inference step that only the protagonist would attempt.
+   Repair direction: The middle run needs protagonist-driven investigation pressure, such as a failed probe or high-risk inference.
+   Handoff target: `longform-story-design`
    Recheck condition: The revised middle run must include at least one investigative advance caused by protagonist initiative rather than by delivered information.
 
 Hypotheses needing broader review:
@@ -65,10 +68,10 @@ What is still working:
 - The victim network provides credible motive density.
 - Chapter 16 briefly restores momentum by tying a clue to immediate personal risk.
 
-Revision priority:
-1. Give mid-arc clues leverage over theory and action.
-2. Rebuild the Chapter 18 reveal so it reframes earlier material.
-3. Restore investigator agency in the middle stretch.
+Handoff priority:
+1. Root cause: mid-arc clues lack leverage over theory and action.
+2. Root cause: Chapter 18 reveal answers without reframing earlier material.
+3. Downstream symptom: investigator agency drops in the middle stretch.
 ```
 
 ## Why This Example Works

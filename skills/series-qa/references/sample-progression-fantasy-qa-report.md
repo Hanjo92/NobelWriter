@@ -30,7 +30,8 @@ Confirmed findings:
    Expected function: Progression should unlock qualitatively different obstacles, not only higher numbers.
    Observed failure: Advancement increases scale without refreshing the dramatic shape of challenge.
    Reader-visible damage: Power growth feels measurable but less thrilling than earlier breakthroughs.
-   Smallest viable fix: Introduce one post-rank-up obstacle that current stats cannot solve without a new cost, method, or sacrifice.
+   Repair direction: The post-rank-up challenge needs an obstacle current stats cannot solve without a new cost, method, or sacrifice.
+   Handoff target: `longform-story-design`
    Recheck condition: The next major confrontation after the breakthrough must require a different problem-solving mode than the pre-breakthrough fights.
 
 2. Training loop repetition is dulling the arc
@@ -42,7 +43,8 @@ Confirmed findings:
    Expected function: Each training stage should alter stakes, method, or consequence.
    Observed failure: The loop repeats its dramatic function without enough mutation.
    Reader-visible damage: Episodes blur together and growth starts to feel routine instead of hard-won.
-   Smallest viable fix: Replace one loop segment with a cost-heavy setback that affects status, body, or team trust.
+   Repair direction: One repeated training loop needs a cost-heavy setback that affects status, body, or team trust.
+   Handoff target: `longform-story-design`
    Recheck condition: Revised training episodes must differ in dramatic function, not only in technique label.
 
 3. Breakthrough cost is fading too quickly
@@ -54,7 +56,8 @@ Confirmed findings:
    Expected function: A major gain should carry visible price long enough to shape subsequent choices.
    Observed failure: Cost exists for flavor and then evaporates.
    Reader-visible damage: Readers register the system as generous rather than demanding.
-   Smallest viable fix: Extend the breakthrough cost into later tactical limits or relational strain.
+   Repair direction: The breakthrough cost needs to persist into later tactical limits or relational strain.
+   Handoff target: `longform-story-design`
    Recheck condition: The next two post-breakthrough episodes must show the gain's cost affecting at least one important decision.
 
 Hypotheses needing broader review:
@@ -65,10 +68,10 @@ What is still working:
 - The power system remains understandable at the local level.
 - Episode 52 restores momentum once the breakthrough is tied to team risk.
 
-Revision priority:
-1. Make post-rank-up challenges qualitatively different.
-2. Break the repeated training loop with a meaningful setback.
-3. Preserve breakthrough cost across subsequent episodes.
+Handoff priority:
+1. Root cause: post-rank-up challenges do not change type.
+2. Root cause: training loop repeats the same dramatic function.
+3. Downstream symptom: breakthrough cost fades too quickly.
 ```
 
 ## Why This Example Works

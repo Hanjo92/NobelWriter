@@ -30,7 +30,8 @@ Confirmed findings:
    Expected function: Each chapter should escalate the commitment problem or alter the cost of refusal.
    Observed failure: The plot replays the same emotional hesitation beat three times with only minor surface variation.
    Reader-visible damage: The arc feels stalled even though events are still happening, and chapter endings stop increasing urgency.
-   Smallest viable fix: Convert one of the repeated hesitation chapters into an irreversible choice or external consequence chapter.
+   Repair direction: The repeated hesitation loop needs one irreversible choice or external consequence so the sequence changes state.
+   Handoff target: `longform-story-design`
    Recheck condition: The revised Chapter 34-38 sequence must show a new cost or changed decision state in each chapter.
 
 2. Early setup around the sealed archive pays off too late and too weakly
@@ -42,7 +43,8 @@ Confirmed findings:
    Expected function: A promised high-risk reveal should materially shift character decisions or power relations.
    Observed failure: The payoff returns as exposition rather than as a story-changing event.
    Reader-visible damage: The reveal reads as smaller than the buildup, so the arc loses force near the point where it should tighten.
-   Smallest viable fix: Tie the archive reveal to an immediate relational break, tactical cost, or changed pursuit objective.
+   Repair direction: The archive reveal needs an immediate relational break, tactical cost, or changed pursuit objective.
+   Handoff target: `longform-story-design`
    Recheck condition: The Chapter 41 reveal must force a different decision path within the next two chapters.
 
 3. Continuity tracking around injury state is drifting
@@ -54,7 +56,8 @@ Confirmed findings:
    Expected function: Injury state should either persist consistently or be explicitly reset.
    Observed failure: The injury behaves according to scene convenience rather than tracked state.
    Reader-visible damage: Trust in consequence handling weakens, especially during action scenes.
-   Smallest viable fix: Either preserve the limitation through Chapter 39 or add a clear reason the limitation temporarily changes.
+   Repair direction: The injury state needs either consistent limitation through Chapter 39 or an explicit recovery/change trigger.
+   Handoff target: `longform-story-design`
    Recheck condition: Adjacent action chapters must now show one consistent injury state or an explicit recovery/change trigger.
 
 Hypotheses needing broader review:
@@ -65,10 +68,10 @@ What is still working:
 - Chapter 42 restores strong forward motion once the pursuit objective becomes concrete.
 - Relationship tension between the protagonist and the archivist still carries reader value even when the plot slows.
 
-Revision priority:
-1. Remove the repeated hesitation loop in Chapters 34-38.
-2. Strengthen the archive payoff in Chapter 41 so it changes action, trust, or stakes.
-3. Repair injury-state continuity in Chapters 37-40 and hand off ledger alignment to the continuity owner.
+Handoff priority:
+1. Root cause: repeated hesitation loop in Chapters 34-38.
+2. Root cause: archive payoff in Chapter 41 lacks action, trust, or stakes consequence.
+3. Downstream symptom: injury-state continuity drift in Chapters 37-40.
 ```
 
 ## Why This Example Works

@@ -72,6 +72,6 @@ Likely cause:
 - Is knowledge flow believable and tracked
 - Do institutions constrain action or merely decorate it
 
-## Repair Rule
+## Repair Direction Rule
 
-Fix political-intrigue failures by restoring incentive clarity, leverage chains, and institutional consequence. More names, titles, or secret meetings will not help if power is not actually moving.
+Report political-intrigue failures as needing incentive clarity, leverage chains, and institutional consequence. More names, titles, or secret meetings will not help if power is not actually moving.

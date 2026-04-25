@@ -71,6 +71,6 @@ Likely cause:
 - Is the investigator making meaningful moves that create risk
 - Can the tension survive basic logic checking
 
-## Repair Rule
+## Repair Direction Rule
 
-Fix mystery failures by restoring clue leverage, investigative agency, and reveal force. More obscurity is not the answer if the logic chain is weak.
+Report mystery failures as needing clue leverage, investigative agency, and reveal force. More obscurity is not the answer if the logic chain is weak.

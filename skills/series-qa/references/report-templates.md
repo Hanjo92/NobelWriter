@@ -16,7 +16,7 @@ Write in QA language, not workshop language.
 - separate confirmed findings from hypotheses
 - cite evidence by chapter, scene, or document location
 - cite artifact evidence by file path or state pointer when the output feeds an orchestrator
-- rank by severity and repair priority
+- rank by severity and handoff priority
 - define what a passing recheck would require
 - keep repair language directional, not reconstructive
 - name the downstream owner when the next step leaves QA scope
@@ -94,7 +94,7 @@ Hypotheses needing broader review:
 What is still working:
 - ...
 
-Revision priority:
+Diagnostic priority:
 1. ...
 2. ...
 3. ...
@@ -113,19 +113,29 @@ Handoff range:
 Directional repair:
 1. Issue:
    Classification: root cause | downstream symptom:
+   First break point:
+   Evidence:
+   Artifact evidence:
+   Observed failure:
+   Reader-visible damage:
    Why it comes first:
-   High-level fix type:
+   Repair direction:
    Repair direction status:
-   Downstream owner:
-   Recheck after downstream revision:
+   Handoff target:
+   Recheck condition:
 
 2. Issue:
    Classification: root cause | downstream symptom:
+   First break point:
+   Evidence:
+   Artifact evidence:
+   Observed failure:
+   Reader-visible damage:
    Why it comes first:
-   High-level fix type:
+   Repair direction:
    Repair direction status:
-   Downstream owner:
-   Recheck after downstream revision:
+   Handoff target:
+   Recheck condition:
 
 Changes that can wait:
 - ...
@@ -151,7 +161,16 @@ Status:
 Primary failure:
 - ...
 
+Classification:
+- root cause | downstream symptom
+
 First break point:
+- ...
+
+Evidence:
+- ...
+
+Reader-visible damage:
 - ...
 
 Outcome:
@@ -185,6 +204,8 @@ Retention-facing finding:
 
 Story-health finding:
 - Core failure:
+- Classification: root cause | downstream symptom
+- First break point:
 - Evidence:
 - Reader trust risk:
 
@@ -217,9 +238,11 @@ Top issue:
 - Evidence:
 - Artifact evidence:
 - First break point:
+- Reader-visible damage:
 - Repair direction:
 - Repair direction status:
 - Handoff target:
+- Recheck condition:
 
 Second issue:
 - Severity:
@@ -227,9 +250,11 @@ Second issue:
 - Evidence:
 - Artifact evidence:
 - First break point:
+- Reader-visible damage:
 - Repair direction:
 - Repair direction status:
 - Handoff target:
+- Recheck condition:
 
 Not checked:
 - ...

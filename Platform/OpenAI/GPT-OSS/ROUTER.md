@@ -137,15 +137,16 @@
 - 캐릭터 드리프트가 있다
 - 세계관 규칙이나 연속성이 흔들린다
 - POV나 톤이 무너진다
-- 수정 우선순위를 정하고 싶다
+- 진단 우선순위와 다음 handoff target을 정하고 싶다
 
 기본 출력:
 
 - ranked issue list
 - root cause analysis
 - QA report
-- smallest viable fix
-- revision brief
+- repair direction
+- handoff target
+- re-audit gate
 
 기본 참조 시작점:
 

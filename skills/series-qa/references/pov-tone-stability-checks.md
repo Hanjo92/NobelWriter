@@ -98,9 +98,9 @@ When reporting POV or tone instability, name:
 
 Do not call it unstable unless you can show both the prior baseline and the later breach.
 
-## Repair Rule
+## Repair Direction Rule
 
-Fix POV and tone instability by restoring control of access, distance, and tonal carryover. Prefer:
+Report POV and tone instability as needing restored control of access, distance, and tonal carryover. Prefer directions such as:
 
 1. one clearly maintained focal frame per scene
 2. consistent narrative distance for similar emotional functions

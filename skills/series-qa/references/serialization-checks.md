@@ -28,6 +28,6 @@ For a quick checkpoint, ask:
 3. What reader promise does the ending make
 4. Does the next episode keep or cheapen that promise
 
-## Repair Rule
+## Repair Direction Rule
 
-Improve serial health by restoring consequence carryover, reducing recap burden, and varying the shape of end hooks rather than by making every episode louder.
+Report serial-health failures as needing consequence carryover, reduced recap burden, and varied end-hook shape rather than louder episodes.

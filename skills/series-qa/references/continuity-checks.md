@@ -20,11 +20,11 @@ Use this file when contradictions or state drift are the main risk.
 - Did a reveal change later behavior
 - Did the rule break only because the plot needed it
 
-## Repair Order
+## Diagnostic Priority Order
 
-1. fix hard contradiction
-2. fix knowledge-state mismatch
-3. fix relationship-state mismatch
-4. fix soft atmosphere or memory inconsistency
+1. flag hard contradiction as the first handoff priority
+2. flag knowledge-state mismatch before softer drift
+3. flag relationship-state mismatch before atmosphere-only inconsistency
+4. leave soft atmosphere or memory inconsistency for later if trust is already broken
 
 Hard contradictions matter first because they damage trust immediately.

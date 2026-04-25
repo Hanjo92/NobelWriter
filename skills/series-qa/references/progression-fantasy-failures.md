@@ -71,6 +71,6 @@ Likely cause:
 - Can the reader still track the system without confusion fatigue
 - Does each power-up widen the story's stakes instead of flattening them
 
-## Repair Rule
+## Repair Direction Rule
 
-Fix progression failures by restoring cost, challenge transformation, and system clarity. Louder abilities do not repair a weak advancement engine.
+Report progression failures as needing cost, challenge transformation, and system clarity. Louder abilities do not repair a weak advancement engine.
