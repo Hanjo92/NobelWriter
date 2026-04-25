@@ -34,8 +34,9 @@
 - 명시된 `projects/<series-slug>/` 런타임을 다음 묶음으로 진행하는 요청이면 `series-completion-loop`를 우선한다.
 - 대사 자체가 문제면 `character-voice-bible`을 우선한다.
 - 서술, 나레이션, 장면 산문이 문제면 `novel-writing`을 우선한다.
-- 장기 구조와 시리즈 설계가 문제면 `longform-story-design`을 우선한다.
-- 기존 원고의 문제 분석, 진단 우선순위, handoff target 결정이 목적이면 `series-qa`를 우선한다.
+- 장기 구조, 시리즈 설계, recovery audit/recovery rebuild가 문제면 `longform-story-design`을 우선한다.
+- 기존 원고의 report-only QA, 진단 우선순위, handoff target 결정만 목적이면 `series-qa`를 우선한다.
+- 기존 원고에서 canon extraction, recovery plan, re-entry drafting packet이 필요하면 `longform-story-design`을 우선한다.
 - `series-completion-loop`는 직접 원고를 쓰거나 설계를 대신하지 않고, 필요한 전문 작업층으로 넘긴 뒤 런타임 증거를 갱신한다.
 - 복합 요청일 때는 한 번에 모든 층을 섞지 말고, 가장 상위의 병목을 먼저 해결한다.
 

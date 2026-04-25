@@ -108,6 +108,7 @@
 - 시리즈, 볼륨, 아크를 설계하고 싶다
 - 장르 패키지 선택이 모호하다
 - 연재가 길어지며 구조가 흔들린다
+- 손상된 장편 원고를 recovery audit 또는 recovery rebuild로 복구하고 싶다
 - 설정집, 연속성 문서, payoff tracker가 필요하다
 - drafting 전에 story engine을 먼저 세워야 한다
 
@@ -119,6 +120,8 @@
 - cast matrix
 - arc/volume plan
 - continuity ledger
+- recovery plan
+- re-entry drafting packet
 
 기본 참조 시작점:
 

@@ -95,17 +95,20 @@ If the user brings broken chapters, conflicting outlines, or a draft that no lon
 2. extract hard canon before suggesting changes
 3. separate timeline damage from motivation damage, knowledge damage, and payoff damage
 4. choose the smallest recovery bundle that clears the first blocking contradiction
-5. repair the active slice before expanding anything else
+5. define the active repaired slice before expanding anything else
 
 When this flow is invoked by `series-completion-loop`, keep recovery inside the current failed slice unless proof shows the first break point predates it. Do not expand into future batches while building the recovery package.
 
 Use this recovery bundle order:
 
 - canon extraction sheet
-- continuity audit report
+- continuity ledger
+- knowledge-state tracker
+- recovery plan
+- re-entry drafting packet
+- continuity audit report only as supporting evidence, not as the package itself
 - history spine if chronology is broken
 - revised active arc plan if the middle has lost direction
-- knowledge-state tracker if secrets or misunderstandings are failing
 - payoff tracker if setup debt is the main problem
 
 Only after the repaired slice is stable should you hand off a drafting packet.

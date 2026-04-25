@@ -11,7 +11,7 @@ Build only the planning layer needed to keep a long Korean fiction project coher
 
 Use this skill for series-level architecture, canon recovery, continuity control, and reusable planning packages.
 
-- Use `series-qa` when the user wants diagnosis only: ranked findings, severity, regression checking, or a report that should not rebuild the project.
+- Use `series-qa` when the user wants report-only QA: ranked findings, severity, regression checking, or a diagnostic report that should not rebuild the project.
 - Use `novel-writing` when the user wants scenes, chapters, prose, or stage-file drafting after the plan is stable.
 - Use `character-voice-bible` when the main problem is dialogue-only repair, register tuning, or cast-wide voice separation.
 - Keep canon extraction, recovery planning, and re-entry packet design here when the goal is to restore the longform structure rather than only describe the break.
@@ -60,7 +60,7 @@ Lock the minimum facts before designing anything large, in canonical order:
 - alias resolution note, if the stated label is cross-package or ambiguous
 - project state: premise only, partial outline, existing chapters, or repair request
 - known ending or ending promise
-- requested output: bible, arc plan, chapter architecture, repair pass, drafting packet
+- requested output: bible, arc plan, chapter architecture, recovery pass, drafting packet
 
 If the prompt is vague, infer the smallest safe scope and state the assumption. For quick intake fields and risk triage, read [references/project-intake.md](references/project-intake.md).
 
@@ -79,7 +79,7 @@ Choose the main job first. Do not mix all modes unless the user clearly needs th
 - `recovery rebuild`: recover canon and structure from an existing, unstable draft, then produce a re-entry drafting packet
 - `continuity audit`: check timeline, knowledge, rules, and payoff consistency without rebuilding the whole project; use `series-qa` if the user only wants findings
 
-`drift repair` is the legacy label for `recovery rebuild`, and `continuity audit` remains the narrow audit-only lane when the user wants diagnosis more than reconstruction.
+If the user uses older drift-repair wording, normalize it to `recovery rebuild`. `continuity audit` remains the narrow audit-only lane when the user wants diagnosis more than reconstruction.
 
 If the project is not yet drafted, stay in `greenfield build` long enough to lock the story engine, growth model, and first major architecture layer before producing chapter-by-chapter plans. If the project already exists, default to `recovery audit` or `recovery rebuild` before anything else.
 
@@ -160,9 +160,9 @@ Default stacks:
 
 - `greenfield build`: story engine sheet, series brief, story bible, core cast matrix, first arc or volume plan
 - `rolling outline`: active arc plan, chapter-range plan, continuity ledger, payoff tracker
-- `recovery audit`: canon extraction sheet, continuity ledger, knowledge-state tracker, recovery plan, continuity audit report
+- `recovery audit`: canon extraction sheet, continuity ledger, knowledge-state tracker, recovery plan, re-entry drafting packet, continuity audit report
 - `recovery rebuild`: canon extraction sheet, continuity ledger, knowledge-state tracker, recovery plan, re-entry drafting packet
-- `continuity audit`: continuity ledger, knowledge-state tracker, payoff tracker, drafting packet
+- `continuity audit`: continuity ledger, knowledge-state tracker, payoff tracker; use `series-qa` if the user only wants findings
 
 When invoked for `series-completion-loop` `slice_planning`, override these general stacks with a current-batch slice packet only.
 
@@ -246,6 +246,16 @@ Omit only what does not govern the next safe move:
 - keep the re-entry drafting packet whenever prose drafting is expected next
 
 Do not return a bare issue list for a recovery job when this skill owns the response.
+
+## Recovery Boundary Drift Check
+
+After editing recovery routing, recovery artifact minimums, drafting handoff rules, or platform copies, run:
+
+```bash
+python3 skills/longform-story-design/scripts/validate_recovery_boundaries.py
+```
+
+Do not treat recovery-boundary edits as complete until the check passes.
 
 ## Work In Layers
 

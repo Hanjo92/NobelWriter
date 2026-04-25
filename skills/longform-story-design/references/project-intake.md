@@ -32,18 +32,18 @@ Match the dominant problem to the first artifact:
 - active chapter drafting drift -> continuity ledger and chapter-range plan
 - secrets or misunderstandings breaking -> knowledge-state tracker
 - setup not landing -> payoff tracker
-- existing contradictory draft -> canon extraction sheet and continuity audit report
-- damaged longform draft with multiple broken chapters -> repair bundle first, then chapter-safe drafting packet
+- existing contradictory draft -> recovery package with canon extraction sheet, continuity ledger, recovery plan, and re-entry drafting packet
+- damaged longform draft with multiple broken chapters -> recovery package first, then re-entry drafting packet
 
 If the request is already a repair request, do not route it through a fresh greenfield stack. Start with the smallest recovery bundle that removes the first blocking contradiction.
 
 First recovery bundle rules:
 
-- chronology or cause-and-effect damage -> canon extraction sheet, continuity audit report, history spine
-- middle drift or stalled momentum -> canon extraction sheet, continuity audit report, revised active arc plan
-- knowledge or secret-state damage -> canon extraction sheet, knowledge-state tracker, continuity audit report
-- payoff debt or dropped setup -> canon extraction sheet, payoff tracker, continuity audit report
-- long damaged draft with no clear safe chapter boundary -> canon extraction sheet, continuity audit report, then isolate the active repaired slice before any prose drafting
+- chronology or cause-and-effect damage -> canon extraction sheet, continuity ledger, recovery plan, re-entry drafting packet, plus history spine if chronology must be reset
+- middle drift or stalled momentum -> canon extraction sheet, continuity ledger, recovery plan, re-entry drafting packet, plus revised active arc plan if arc shape must be reset
+- knowledge or secret-state damage -> canon extraction sheet, continuity ledger, knowledge-state tracker, recovery plan, re-entry drafting packet
+- payoff debt or dropped setup -> canon extraction sheet, continuity ledger, payoff tracker, recovery plan, re-entry drafting packet
+- long damaged draft with no clear safe chapter boundary -> canon extraction sheet, continuity ledger, recovery plan, isolate the active repaired slice, then create a re-entry drafting packet before any prose drafting
 
 ## Genre Package Intake
 
