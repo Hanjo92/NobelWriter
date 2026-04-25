@@ -19,6 +19,8 @@ Treat `longform-story-design` as the primary skill for story continuity, volume 
 
 Treat `series-qa` as the primary skill for diagnosing pacing problems, continuity breaks, character drift, or narrative tension issues across an entire web novel series.
 
+Treat `series-completion-loop` as the primary skill only when an explicit `projects/<series-slug>/` runtime already exists and the task is to advance the next bounded 3~5화 transition, approval gate, QA recovery, or cross-session completion run.
+
 Before drafting or revising, read only the references needed for the task using the `view_file` tool to inspect the minimum relevant files inside `skills/`.
 
 For `novel-writing` tasks, use only the smallest relevant subset of:

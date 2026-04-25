@@ -20,6 +20,7 @@
 - `skills/character-voice-bible/SKILL.md`
 - `skills/longform-story-design/SKILL.md`
 - `skills/novel-writing/SKILL.md`
+- `skills/series-completion-loop/SKILL.md`
 - `skills/series-qa/SKILL.md`
 
 이 파일들은 Codex 운영 파일을 GPT-OSS 방식으로 나누어 옮기기 위한 작업 시작점입니다.
@@ -30,7 +31,7 @@
 
 1. `MIGRATION_MAP.md`를 읽고 Codex 파일이 GPT-OSS에서 어떤 파일로 분해되는지 확인한다.
 2. `SYSTEM_PROMPT.md`와 `ROUTER.md`를 현재 GPT-OSS 환경에 맞게 채운다.
-3. 4개 `skills/*/SKILL.md`를 GPT-OSS용 문구로 다듬는다.
+3. 5개 `skills/*/SKILL.md`를 GPT-OSS용 문구로 다듬는다.
 4. 공용 자산인 루트 `skills/*/references/`와 연결한다.
 5. 초고/개고/원고 저장 규칙은 별도 스크립트나 운영 절차로 보완한다.
 
@@ -88,6 +89,7 @@
 - `skills/character-voice-bible/SKILL.md`
 - `skills/longform-story-design/SKILL.md`
 - `skills/novel-writing/SKILL.md`
+- `skills/series-completion-loop/SKILL.md`
 - `skills/series-qa/SKILL.md`
 
 ### 적용 순서
@@ -95,7 +97,7 @@
 1. `MIGRATION_MAP.md` 확인
 2. `SYSTEM_PROMPT.md` 정리
 3. `ROUTER.md` 정리
-4. 4개 `SKILL.md` 정리
+4. 5개 `SKILL.md` 정리
 5. 실제 GPT-OSS 환경에 주입 테스트
 
 ### 주의사항
