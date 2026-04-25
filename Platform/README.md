@@ -48,6 +48,16 @@
 
 전용 CLI가 있는지, 자연어 요청으로 어떻게 챕터를 쓰는지 같은 공통 질문은 [USAGE_FAQ.md](../USAGE_FAQ.md)를 먼저 보면 빠릅니다.
 
+## 검증
+
+루트 `skills/*/SKILL.md`를 추가, 삭제, 이름 변경하거나 플랫폼 팩 노출 파일을 수정한 뒤에는 아래 명령을 실행합니다.
+
+```bash
+python3 Platform/scripts/validate_skill_exposure.py
+```
+
+이 검증은 Codex, Antigravity, Claude, GPT-OSS, Local/Ollama 운영 파일이 같은 스킬 집합을 노출하는지 확인합니다.
+
 ## 확장 방식
 
 새 플랫폼을 추가할 때는 아래처럼 폴더를 늘립니다.
