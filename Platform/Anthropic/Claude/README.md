@@ -19,6 +19,7 @@ Claude Code는 세션 시작 시 `CLAUDE.md`를 자동으로 읽어 프로젝트
 
 - `CLAUDE.md` — 워크스페이스 루트에 복사하여 사용
 - `skills/character-voice-bible/commands/voice.md` — `/voice` 슬래시 커맨드 정의
+- `skills/series-completion-loop/commands/continue-series.md` — `/continue-series` 슬래시 커맨드 정의
 - `skills/longform-story-design/commands/plot.md` — `/plot` 슬래시 커맨드 정의
 - `skills/novel-writing/commands/draft.md` — `/draft` 슬래시 커맨드 정의
 - `skills/series-qa/commands/qa.md` — `/qa` 슬래시 커맨드 정의

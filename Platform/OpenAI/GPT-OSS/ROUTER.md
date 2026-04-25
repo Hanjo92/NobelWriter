@@ -10,10 +10,40 @@
 - 서술/원고 작성
 - 장편 구조 설계
 - 문제 진단/QA
+- 완주 오케스트레이션
 
 한 요청에 여러 목적이 섞여 보여도 가장 먼저 막히는 병목 하나를 우선 선택한다.
 
 ## 라우팅 규칙
+
+### 0. `series-completion-loop`
+
+아래 중 하나라도 핵심이면 이 층을 우선한다.
+
+- 명시된 `projects/<series-slug>/` 런타임을 다음 묶음으로 진행하고 싶다
+- `state/runtime.yaml`, `state/active-slice.yaml`, `state/handoff.md`를 기준으로 이어 달라고 한다
+- approval-gated 또는 autonomous 완주 모드를 유지해야 한다
+- 3~5화 단위의 다음 전이, QA 복구, 승인 대기, 세션 간 재진입이 핵심이다
+- specialist handoff 결과를 검증하고 런타임 증거를 갱신해야 한다
+
+기본 출력:
+
+- selected runtime
+- starting state and batch
+- attempted transition
+- specialist handoff target
+- accepted evidence or blocked reason
+- updated state and next action
+
+기본 참조 시작점:
+
+- `skills/series-completion-loop/SKILL.md`
+
+주의:
+
+- 명시된 런타임이 없으면 이 층으로 진행하지 않는다.
+- 직접 원고를 쓰거나 장편 설계를 대신하지 않는다.
+- 필요한 경우 `longform-story-design`, `novel-writing`, `series-qa`, `character-voice-bible`로 넘긴다.
 
 ### 1. `character-voice-bible`
 
@@ -131,6 +161,12 @@
 1. `longform-story-design`
 2. 필요 시 `character-voice-bible`
 3. `novel-writing`
+
+### 런타임 완주 진행 + 전문 작업
+
+1. `series-completion-loop`
+2. 현재 상태에 따라 `longform-story-design`, `novel-writing`, `series-qa`, `character-voice-bible`
+3. 다시 `series-completion-loop`에서 반환 증거를 검증하고 상태를 갱신
 
 ### QA + 실제 수정
 
