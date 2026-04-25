@@ -30,7 +30,8 @@ Confirmed findings:
    Expected function: Each major faction should create pressure through distinct incentives, acceptable costs, and preferred tools.
    Observed failure: The factions remain named and present, but their decisions no longer feel meaningfully differentiated.
    Reader-visible damage: Negotiation scenes feel verbose rather than sharp because the reader cannot feel why each side must move differently.
-   Smallest viable fix: Reassert one non-overlapping incentive and one non-overlapping red line for each active faction in the sampled arc.
+   Repair direction: Each active faction needs one non-overlapping incentive and one non-overlapping red line in the sampled arc.
+   Handoff target: `longform-story-design`
    Recheck condition: In the next three faction scenes, each group must pursue a visibly different objective or accept a visibly different cost.
 
 2. The Chapter 56 betrayal lands as surprise rather than as earned strategic outcome
@@ -42,7 +43,8 @@ Confirmed findings:
    Expected function: A political betrayal should read as both surprising in the moment and legible after review.
    Observed failure: The betrayal changes the board, but the preconditions are too thin for it to feel strategically earned.
    Reader-visible damage: The twist creates motion, but reader trust in the intrigue engine weakens because the move feels author-granted.
-   Smallest viable fix: Seed one prior concession failure, one leverage dependency, and one fear trigger that make the betrayal the minister's best available move.
+   Repair direction: The betrayal needs prior pressure evidence: concession failure, leverage dependency, and fear trigger.
+   Handoff target: `longform-story-design`
    Recheck condition: After revision, the Chapter 56 betrayal should be traceable to at least two earlier pressures in the sampled range.
 
 3. Institutional rules stop constraining elite action
@@ -54,7 +56,8 @@ Confirmed findings:
    Expected function: Institutions in political fiction should shape what can be attempted and at what cost.
    Observed failure: The court system keeps its decorative language while losing procedural force.
    Reader-visible damage: Power starts to feel personal only, which flattens the intrigue layer into ordinary confrontation.
-   Smallest viable fix: Restore one visible procedural barrier that forces characters to buy allies, spend legitimacy, or take reputational risk.
+   Repair direction: The court action needs a visible procedural barrier that forces alliance cost, legitimacy spend, or reputational risk.
+   Handoff target: `longform-story-design`
    Recheck condition: The next major power move must show an institutional cost, gate, or dependency instead of proceeding by narrative convenience.
 
 Hypotheses needing broader review:
@@ -65,10 +68,10 @@ What is still working:
 - Private negotiation scenes still carry tension when leverage is concrete.
 - Chapter 59 regains force once the failed alliance produces a public reputational cost.
 
-Revision priority:
-1. Sharpen faction incentives so each side creates distinct pressure again.
-2. Rebuild the Chapter 56 betrayal with clearer leverage and constraint.
-3. Restore institutional cost to major court actions.
+Handoff priority:
+1. Root cause: faction incentives no longer produce distinct pressure.
+2. Root cause: Chapter 56 betrayal lacks enough leverage and constraint evidence.
+3. Downstream symptom: institutional rules stop constraining elite action.
 ```
 
 ## Why This Example Works

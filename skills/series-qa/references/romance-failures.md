@@ -74,6 +74,6 @@ Likely cause:
 - Are both sides carrying visible emotional risk
 - After a breakthrough, does later behavior reflect it
 
-## Repair Rule
+## Repair Direction Rule
 
-Fix romance failures by restoring relational consequence, asymmetry, and irreversible emotional change. Do not rely on more banter or more longing language if the state itself is frozen.
+Report romance failures as needing relational consequence, asymmetry, and irreversible emotional change. Do not frame more banter or more longing language as enough if the state itself is frozen.

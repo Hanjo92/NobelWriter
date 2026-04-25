@@ -93,9 +93,9 @@ When reporting drift, name:
 
 Do not call it drift unless you can show the prior baseline.
 
-## Repair Rule
+## Repair Direction Rule
 
-Fix drift by restoring behavioral carryover, not by adding explanatory dialogue after the fact. Prefer:
+Report drift as needing restored behavioral carryover, not explanatory dialogue after the fact. Prefer directions such as:
 
 1. changed decision patterns
 2. altered trust or avoidance behavior

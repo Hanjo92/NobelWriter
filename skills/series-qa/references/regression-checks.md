@@ -44,8 +44,12 @@ Classify the recheck outcome before adding commentary:
 For each fixed issue, report:
 
 - original failure
+- original evidence
+- prior re-audit gate
 - revision checked
+- revised evidence
 - outcome class
+- pass/fail comparison against the prior gate
 - residual risk
 - next action if still unstable
 - handoff target if the issue stays outside QA scope

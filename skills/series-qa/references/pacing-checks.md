@@ -23,6 +23,6 @@ If many consecutive scenes perform the same function with similar intensity, pac
 - exposition between pressure beats
 - escalation that is larger in scale but equal in emotional value
 
-## Repair Rule
+## Repair Direction Rule
 
-Restore pacing by changing sequence value, not by shortening everything. A short stagnant scene is still stagnant.
+Report pacing failure as needing changed sequence value, not generic shortening. A short stagnant scene is still stagnant.

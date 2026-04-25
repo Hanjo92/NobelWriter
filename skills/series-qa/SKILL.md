@@ -7,7 +7,7 @@ description: Audit long-form Korean fiction manuscripts, chapter batches, story 
 
 ## Overview
 
-Use this skill to inspect accumulated Korean fiction materials and identify the smallest set of failures causing reader-visible weakness. Focus on diagnosis, evidence, and repair priority rather than on fresh drafting.
+Use this skill to inspect accumulated Korean fiction materials and identify the smallest set of failures causing reader-visible weakness. Focus on diagnosis, evidence, and handoff priority rather than on fresh drafting.
 
 This skill is diagnosis-only. Do not rebuild chapters, scenes, arcs, cast sheets, or story systems here.
 Do not take ownership of downstream repair execution, rewrite architecture, prose reconstruction, runtime updates, ledger edits, or planning-file edits.
@@ -227,6 +227,16 @@ Default to this structure unless the user requests a different format:
 For reusable report layouts, read [references/report-templates.md](references/report-templates.md).
 Keep the output QA-first: it should support decision-making, not imply that this skill is responsible for reconstruction.
 
+## Diagnostic Boundary Drift Check
+
+After editing diagnosis-only boundaries, report templates, regression gates, or completed QA samples, run:
+
+```bash
+python3 skills/series-qa/scripts/validate_diagnostic_boundaries.py
+```
+
+Do not treat boundary edits as complete until the check passes.
+
 ## Evidence Standard
 
 Every major finding should answer:
@@ -265,7 +275,7 @@ Rank issues by damage, not by annoyance:
 - medium: weakens a scene, chapter, or local payoff but does not collapse the spine
 - low: polish issue or localized inefficiency
 
-Prefer one critical issue over five medium ones in the revision order.
+Prefer one critical issue over five medium ones in the diagnostic order.
 
 For scoring guidance, read [references/severity-matrix.md](references/severity-matrix.md).
 
@@ -277,14 +287,16 @@ Treat this as quality assurance, not taste ranking. A finding is strongest when 
 - observed failure
 - evidence location
 - user-visible damage
-- minimal repair path
+- repair direction
+- handoff target
+- recheck condition
 
 Avoid vague judgments such as "weak" or "boring" without attaching them to a broken story function.
 Do not phrase the output as if this skill will execute the fix; phrase it as a diagnostic recommendation that points to the next owner.
 
 ## Recheck Rule
 
-After proposing fixes, define what would count as success on a second pass:
+After stating repair direction, define what would count as success on a second pass:
 
 - contradiction removed
 - chapter sequence produces new pressure
@@ -299,7 +311,7 @@ Use the re-audit gate as the end of the diagnostic loop: once the issue is repai
 
 - Diagnose with evidence tied to chapters, scenes, or planning artifacts.
 - Prefer the earliest break point over the loudest downstream symptom.
-- Suggest the smallest revision direction that can restore function before proposing broader downstream work.
+- State the smallest repair direction that can restore function before naming broader downstream work.
 - Distinguish between genre-appropriate repetition and accidental beat reuse.
 - If the user's complaint is vague, convert it into testable failure hypotheses.
 - Keep diagnosis separate from rewriting unless the user asks for proof-of-fix examples.
@@ -314,13 +326,13 @@ Use the re-audit gate as the end of the diagnostic loop: once the issue is repai
 
 ## Relationship To Other Skills
 
-Use this skill for diagnosis and revision prioritization across existing long-form material.
+Use this skill for diagnosis and handoff prioritization across existing long-form material.
 
-- Use `longform-story-design` to build or repair the planning layer when the diagnosis points to structural recovery.
+- Use `longform-story-design` when the diagnosis points to structural recovery or planning-layer repair.
 - Use `character-voice-bible` when the fix is mainly in dialogue differentiation, spoken-line pressure, or relationship-based register repair.
 - Use `novel-writing` when the fix is mainly in narration, scene prose, chapter execution, or exposition control after the diagnosis is clear.
 
-This skill should tell those layers what to fix first and why, but it should not do their planning for them.
+This skill should tell those layers which diagnosed failure comes first and why, but it should not do their planning for them.
 
 ## Resource Map
 

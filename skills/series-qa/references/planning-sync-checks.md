@@ -101,12 +101,12 @@ Do not report "out of sync" without naming both sides of the mismatch.
 
 Report planning sync repair as a handoff direction, not as QA-owned file editing. Prefer:
 
-1. choose the authoritative version
+1. identify the conflicting authority claim
 2. name the stale or conflicting planning artifact
-3. name which tracker should be aligned with current manuscript state
-4. define which downstream owner should update the document after each drafting batch
+3. name the candidate downstream owner for planning-layer alignment
+4. define the evidence needed to prove the next planning packet no longer diverges
 
-Do not preserve multiple competing versions of the same fact just to avoid choosing.
+Do not preserve multiple competing versions of the same fact just to avoid naming the conflict.
 Do not update, retire, rewrite, or align planning files inside QA.
 
 ## Recheck Questions
@@ -114,4 +114,4 @@ Do not update, retire, rewrite, or align planning files inside QA.
 - Does each checked planning document now match the sampled manuscript range
 - Is there one clear source of truth for rules, state, and payoff status
 - Would a new drafting session based on the current planning packet reproduce the manuscript accurately
-- Have stale or dead planning artifacts been updated, replaced, or retired
+- Have stale or dead planning artifacts been flagged as updated, replaced, or retired by the downstream owner

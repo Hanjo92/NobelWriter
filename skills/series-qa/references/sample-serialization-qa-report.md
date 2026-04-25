@@ -30,7 +30,8 @@ Confirmed findings:
    Expected function: End hooks should create a distinct next-episode obligation that produces new story value, not just more anticipation.
    Observed failure: The hook pattern keeps asking for the same reader response while delivering diminishing consequence.
    Reader-visible damage: Readers keep opening the next episode but begin to feel that the series is stalling instead of advancing.
-   Smallest viable fix: Convert at least one of the tease-resolve episodes into a consequence-first episode where the prior hook immediately changes stakes or alignment.
+   Repair direction: At least one tease-resolve episode needs consequence-first follow-through where the prior hook changes stakes or alignment.
+   Handoff target: `longform-story-design`
    Recheck condition: The next three hook-to-resolution pairs must each produce a different type of episode value: consequence, reveal with cost, or irreversible choice.
 
 2. Recap burden is crowding out early-scene movement
@@ -42,7 +43,8 @@ Confirmed findings:
    Expected function: Serial recaps should reorient quickly and hand off to new pressure.
    Observed failure: Orientation material is replacing scene advancement.
    Reader-visible damage: Episodes feel shorter in actual progress than in word count, which amplifies the sense of drag.
-   Smallest viable fix: Cut recap to the minimum needed for orientation and move active consequence or confrontation into the opening segment.
+   Repair direction: The opening segment needs less recap load and earlier active consequence or confrontation.
+   Handoff target: `novel-writing`
    Recheck condition: Revised episode openings should introduce a new problem, cost, or confrontation before repeating established situation framing.
 
 3. Promised reward cadence is slipping behind the delay pattern
@@ -54,7 +56,8 @@ Confirmed findings:
    Expected function: A delayed serial arc should still return meaningful reward at regular intervals through wins, reversals, reveals with force, or relationship changes.
    Observed failure: Delay accumulates faster than reward.
    Reader-visible damage: Even invested readers begin to interpret suspense as withholding rather than tension.
-   Smallest viable fix: Insert one near-term reward beat that materially changes the protagonist's position before extending the longer hidden thread again.
+   Repair direction: The delay pattern needs a near-term reward beat that materially changes the protagonist's position before the longer hidden thread extends again.
+   Handoff target: `longform-story-design`
    Recheck condition: Within the next three episodes, at least one active thread must return with immediate tactical or emotional consequence.
 
 Hypotheses needing broader review:
@@ -65,10 +68,10 @@ What is still working:
 - Relationship friction between the protagonist and second lead still produces strong comment-level interest.
 - Episode 95 regains momentum once the threat becomes concrete instead of implied.
 
-Revision priority:
-1. Break the repeated reveal-tease hook pattern.
-2. Restore faster consequence carryover at the start of episodes.
-3. Add a near-term reward beat before extending the longer mystery again.
+Handoff priority:
+1. Root cause: repeated reveal-tease hook pattern.
+2. Downstream symptom: episode openings carry recap before consequence.
+3. Root cause: reward cadence slips behind the delay pattern.
 ```
 
 ## Why This Example Works

@@ -30,9 +30,9 @@ The setup promised one kind of emotional or plot result, but paid off in another
 
 The story remembers the setup, but the reader no longer cares because pressure moved elsewhere.
 
-## Repair Rule
+## Repair Direction Rule
 
-When possible, strengthen payoff by:
+When reporting payoff repair direction, point toward:
 
 1. reconnecting it to current stakes
 2. making the return alter relationships or decisions
