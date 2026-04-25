@@ -12,6 +12,9 @@
 - last_artifact_pointer:
 - last_proof_predicate:
 - specialist_return_accepted:
+- last_valid_boundary:
+- last_snapshot_paths:
+- last_mismatch_evidence:
 
 ## Specialist Return Evidence
 
@@ -38,6 +41,8 @@
 - must_keep:
 - must_not_break:
 - handoff_target:
+- planning_artifact:
+- proof_artifact_paths:
 
 ### Drafting
 
