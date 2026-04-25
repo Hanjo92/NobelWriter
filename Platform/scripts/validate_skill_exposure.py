@@ -56,6 +56,11 @@ FILE_PATTERNS: tuple[FilePattern, ...] = (
 
 SKILL_DOCS: tuple[DocCheck, ...] = (
     DocCheck(
+        path="AGENTS.md",
+        label="root AGENTS skill routing",
+        required_text=("Use `{skill}`", "projects/<series-slug>", "3~5화"),
+    ),
+    DocCheck(
         path="Platform/OpenAI/Codex/README.md",
         label="Codex README applied files",
         required_text=("skills/{skill}/agents/openai.yaml",),
