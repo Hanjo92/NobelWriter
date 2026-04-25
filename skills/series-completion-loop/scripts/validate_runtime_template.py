@@ -18,6 +18,7 @@ class Check:
     label: str
     needles: tuple[str, ...]
     forbidden: tuple[str, ...] = ()
+    yaml_keys: tuple[str, ...] = ()
 
 
 @dataclass(frozen=True)
@@ -26,6 +27,26 @@ class SectionCheck:
     heading: str
     label: str
     needles: tuple[str, ...]
+
+
+@dataclass(frozen=True)
+class RequiredPath:
+    path: str
+    label: str
+
+
+REQUIRED_PATHS: tuple[RequiredPath, ...] = (
+    RequiredPath("projects/_template/project.md", "project template"),
+    RequiredPath("projects/_template/state/runtime.yaml", "runtime state template"),
+    RequiredPath("projects/_template/state/active-slice.yaml", "active slice template"),
+    RequiredPath("projects/_template/state/handoff.md", "handoff template"),
+    RequiredPath("projects/_template/ledger/continuity.md", "continuity ledger template"),
+    RequiredPath("projects/_template/ledger/knowledge-state.md", "knowledge-state ledger template"),
+    RequiredPath("projects/_template/ledger/payoff-tracker.md", "payoff tracker ledger template"),
+    RequiredPath("projects/_template/qa/latest-report.md", "QA report template"),
+    RequiredPath("projects/_template/recovery/latest-recovery.md", "recovery report template"),
+    RequiredPath("projects/_template/archive/runs/.gitkeep", "run archive template directory marker"),
+)
 
 
 CHECKS: tuple[Check, ...] = (
@@ -44,46 +65,48 @@ CHECKS: tuple[Check, ...] = (
     Check(
         "projects/_template/state/runtime.yaml",
         "runtime state keys",
-        (
-            "mode:",
-            "state:",
-            "next_action:",
-            "approval_pending:",
-            "last_approval_at:",
-            "last_approval_batch_start:",
-            "last_approval_batch_end:",
-            "last_approval_note:",
-            "current_batch_start:",
-            "current_batch_end:",
-            "latest_manuscript_batch:",
-            "last_run_at:",
-            "failure_count:",
-            "blocked_reason:",
-            "last_completed_stage:",
-            "last_completed_transition:",
-            "last_artifact_pointer:",
-            "last_proof_predicate:",
-            "specialist_return_accepted:",
-            "last_valid_boundary:",
-            "last_snapshot_paths:",
-            "last_mismatch_evidence:",
+        (),
+        yaml_keys=(
+            "mode",
+            "state",
+            "next_action",
+            "approval_pending",
+            "last_approval_at",
+            "last_approval_batch_start",
+            "last_approval_batch_end",
+            "last_approval_note",
+            "current_batch_start",
+            "current_batch_end",
+            "latest_manuscript_batch",
+            "last_run_at",
+            "failure_count",
+            "blocked_reason",
+            "last_completed_stage",
+            "last_completed_transition",
+            "last_artifact_pointer",
+            "last_proof_predicate",
+            "specialist_return_accepted",
+            "last_valid_boundary",
+            "last_snapshot_paths",
+            "last_mismatch_evidence",
         ),
     ),
     Check(
         "projects/_template/state/active-slice.yaml",
         "active slice keys",
-        (
-            "chapter_start:",
-            "chapter_end:",
-            "batch_goal:",
-            "success_conditions:",
-            "active_pov:",
-            "active_cast:",
-            "must_keep:",
-            "must_not_break:",
-            "handoff_target:",
-            "planning_artifact:",
-            "proof_artifact_paths:",
+        (),
+        yaml_keys=(
+            "chapter_start",
+            "chapter_end",
+            "batch_goal",
+            "success_conditions",
+            "active_pov",
+            "active_cast",
+            "must_keep",
+            "must_not_break",
+            "handoff_target",
+            "planning_artifact",
+            "proof_artifact_paths",
         ),
     ),
     Check(
@@ -407,6 +430,24 @@ def repo_root_from_args(argv: list[str]) -> Path:
     return Path(__file__).resolve().parents[3]
 
 
+def check_required_path(root: Path, required: RequiredPath) -> list[str]:
+    target = root / required.path
+    if not target.is_file():
+        return [f"{required.path}: missing file for {required.label}"]
+    return []
+
+
+def has_yaml_key(text: str, key: str) -> bool:
+    prefix = f"{key}:"
+    for line in text.splitlines():
+        stripped = line.strip()
+        if not stripped or stripped.startswith("#"):
+            continue
+        if stripped.startswith(prefix):
+            return True
+    return False
+
+
 def run_check(root: Path, check: Check) -> list[str]:
     target = root / check.path
     if not target.exists():
@@ -423,7 +464,12 @@ def run_check(root: Path, check: Check) -> list[str]:
         for needle in check.forbidden
         if needle in text
     ]
-    return missing + forbidden
+    missing_yaml = [
+        f"{check.path}: missing YAML key {key!r} for {check.label}"
+        for key in check.yaml_keys
+        if not has_yaml_key(text, key)
+    ]
+    return missing + forbidden + missing_yaml
 
 
 def heading_level(heading: str) -> int:
@@ -473,6 +519,8 @@ def main(argv: list[str]) -> int:
     root = repo_root_from_args(argv)
     failures: list[str] = []
 
+    for required in REQUIRED_PATHS:
+        failures.extend(check_required_path(root, required))
     for check in CHECKS:
         failures.extend(run_check(root, check))
     for section_check in SECTION_CHECKS:
